@@ -1,0 +1,36 @@
+{% extends "core/base.html" %}
+{% block title %}Welcome to FormaSpace{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="container">
+        <h1>Premium Workspaces. Thoughtfully Designed.</h1>
+        <p>Flexible, elegant offices with everything you need to grow — starting at 21 Wellington Square.</p>
+        <a href="{% url 'enquiries:enquiry_create' %}" class="cta-button">Book a Tour</a>
+    </div>
+</section>
+
+<section class="features">
+    <div class="container grid-3">
+        <div>
+            <h3>24/7 Access</h3>
+            <p>Secure and flexible office access whenever you need it.</p>
+        </div>
+        <div>
+            <h3>Superfast WiFi</h3>
+            <p>Enterprise-grade connection throughout the building.</p>
+        </div>
+        <div>
+            <h3>Meeting Rooms</h3>
+            <p>Bookable rooms for client meetings, calls, and team collaboration.</p>
+        </div>
+    </div>
+</section>
+
+<section class="about">
+    <div class="container">
+        <h2>Why FormaSpace?</h2>
+        <p>We believe workspaces should feel inspiring, calm, and entirely yours. FormaSpace offers premium serviced offices in vibrant locations, starting in Ayr and expanding soon.</p>
+    </div>
+</section>
+{% endblock %}
