@@ -28,11 +28,13 @@ urlpatterns = [
     path('offices/', include('offices.urls')),
     path('blog/', include('blog.urls')),
     path('enquiries/', include('enquiries.urls')),
+    path('locations/', include('locations.urls')),
     path('integrations/', include('integrations.urls')),
 ]
 
 
 if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])
+
 
 

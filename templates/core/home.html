@@ -1,36 +1,127 @@
-{% extends "core/base.html" %}
-{% block title %}Welcome to FormaSpace{% endblock %}
+{% extends "base.html" %}
 
 {% block content %}
-<section class="hero">
+<!-- What We Do Section -->
+<!-- What We Do Section -->
+<section class="what-we-do enhanced">
     <div class="container">
-        <h1>Premium Workspaces. Thoughtfully Designed.</h1>
-        <p>Flexible, elegant offices with everything you need to grow — starting at 21 Wellington Square.</p>
-        <a href="{% url 'enquiries:enquiry_create' %}" class="cta-button">Book a Tour</a>
+        <h2 class="section-title">What We Do</h2>
+        <div class="premium-card-grid">
+            <div class="floating-card">
+                <i class="fas fa-door-open icon"></i>
+                <h3>Private Offices</h3>
+                <p>Dedicated, customisable spaces for your business to thrive.</p>
+            </div>
+            <div class="floating-card">
+                <i class="fas fa-users icon"></i>
+                <h3>Co-Working</h3>
+                <p>Flexible shared workspaces with a vibrant community feel.</p>
+            </div>
+            <div class="floating-card">
+                <i class="fas fa-handshake icon"></i>
+                <h3>Meeting Rooms</h3>
+                <p>Stylish, fully equipped rooms for all types of gatherings.</p>
+            </div>
+            <div class="floating-card">
+                <i class="fas fa-envelope-open-text icon"></i>
+                <h3>Virtual Offices</h3>
+                <p>Professional business address and mail handling solutions.</p>
+            </div>
+        </div>
     </div>
 </section>
 
-<section class="features">
-    <div class="container grid-3">
-        <div>
-            <h3>24/7 Access</h3>
-            <p>Secure and flexible office access whenever you need it.</p>
-        </div>
-        <div>
-            <h3>Superfast WiFi</h3>
-            <p>Enterprise-grade connection throughout the building.</p>
-        </div>
-        <div>
-            <h3>Meeting Rooms</h3>
-            <p>Bookable rooms for client meetings, calls, and team collaboration.</p>
+
+<!-- Locations Section -->
+<section class="locations">
+    <div class="container">
+        <h2 class="section-title">Locations</h2>
+        <p>Elegant spaces in central Ayr</p>
+        <a href="{% url 'locations:list' %}" class="arrow-link">Find Out More &rarr;</a>
+    </div>
+</section>
+
+<!-- How It Works Section -->
+<section class="how-it-works">
+    <div class="container">
+        <h2 class="section-title">How It Works</h2>
+        <div class="steps grid-3">
+            <div class="step">
+                <h3>1. Book a Tour</h3>
+                <p>Come in for a visit to experience our workspaces.</p>
+            </div>
+            <div class="step">
+                <h3>2. Choose Your Plan</h3>
+                <p>Select a membership that fits your needs.</p>
+            </div>
+            <div class="step">
+                <h3>3. Move In</h3>
+                <p>Bring your team and start working immediately.</p>
+            </div>
         </div>
     </div>
 </section>
 
-<section class="about">
-    <div class="container">
-        <h2>Why FormaSpace?</h2>
-        <p>We believe workspaces should feel inspiring, calm, and entirely yours. FormaSpace offers premium serviced offices in vibrant locations, starting in Ayr and expanding soon.</p>
+
+<section class="premium-section">
+  <h2>Why choose 21 Wellington Square?</h2>
+  <p class="lead">Experience workspace redefined by excellence.</p>
+
+  <div class="premium-row">
+    <div class="premium-column premium-image">
+      <img src="https://your-image-url.com/office-premium.jpg" alt="Premium Office Space" />
     </div>
+    <div class="premium-column premium-text">
+      <h3>Premium Workspace</h3>
+      <p class="standout">Crafted for distinction and productivity.</p>
+      <p>Our flagship serviced offices at 21 Wellington Square, Ayr, offer ten high-specification private offices designed for businesses who value excellence, comfort, and a professional environment.</p>
+      <a href="/contact-us" class="premium-button">Get Started</a>
+    </div>
+  </div>
+
+  <div class="premium-row">
+    <div class="premium-column premium-text" style="text-align: right;">
+      <h3>Scalable Solutions</h3>
+      <p class="standout">Designed to grow with your business.</p>
+      <p>Our flexible office plans and fully serviced amenities allow seamless expansion, supporting your business as it evolves without compromise on quality or professionalism.</p>
+      <a href="/contact-us" class="premium-button" style="margin-left:auto;">Get Started</a>
+    </div>
+    <div class="premium-column premium-image">
+      <img src="https://your-image-url.com/office-team-collab.jpg" alt="Collaborative Office Space" />
+    </div>
+  </div>
+
+  <div class="premium-row">
+    <div class="premium-column premium-image">
+      <img src="https://your-image-url.com/office-lounge.jpg" alt="Inspiring Workspace" />
+    </div>
+    <div class="premium-column premium-text">
+      <h3>Unrivalled Experience</h3>
+      <p class="standout">Seamless user experience on every device.</p>
+      <p>Our website and services are designed to provide effortless navigation and engagement, reflecting the premium quality of our workspace and commitment to your success.</p>
+    </div>
+  </div>
+
+  <div class="premium-testimonials">
+    <h2>Our Community Testimonials</h2>
+
+    <div class="testimonial">
+      <strong>Emma Hargraves</strong>
+      "The offices at 21 Wellington Square offer a sophisticated, productive environment with exceptional service. Perfect for growing our business."
+    </div>
+
+    <div class="testimonial">
+      <strong>Jack Cameron</strong>
+      "Flexible and professional – the workspace adapts to our needs, and the team goes above and beyond to support us."
+    </div>
+
+    <div class="testimonial">
+      <strong>Laura Hainsman</strong>
+      "From the modern design to the high-spec facilities, 21 Wellington Square is the ideal place for creativity and collaboration."
+    </div>
+  </div>
 </section>
+
 {% endblock %}
+
+

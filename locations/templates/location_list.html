@@ -1,0 +1,26 @@
+{% extends "core/base.html" %}
+{% block title %}Our Locations | FormaSpace{% endblock %}
+
+{% block content %}
+<section class="hero-parallax">
+    <div class="hero-content">
+        <h1>Elegant Spaces, Unmatched Flexibility</h1>
+        <p>Inspiring locations in Ayr and beyond</p>
+    </div>
+</section>
+
+<section class="location-list">
+    <div class="container location-cards">
+        {% for location in locations %}
+            <div class="location-card reveal">
+                <img src="{{ location.image.url }}" alt="{{ location.name }}">
+                <div class="card-content">
+                    <h2>{{ location.name }}</h2>
+                    <p>{{ location.city }}</p>
+                    <p>{{ location.description }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

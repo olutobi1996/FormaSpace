@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'blog',
     'enquiries',
     'integrations',
+    'locations',
     'core',
 ]
 
