@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def integration_list(request):
+    return render(request, 'integrations/integration_list.html')

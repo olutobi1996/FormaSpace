@@ -1,0 +1,12 @@
+{% extends "core/base.html" %}
+{% block title %}{{ post.title }} — FormaSpace{% endblock %}
+
+{% block content %}
+<section class="post-detail container">
+    <h1>{{ post.title }}</h1>
+    <p class="meta">Published {{ post.published_date|date:"F j, Y" }}</p>
+    <div class="post-body">
+        {{ post.content|safe }}
+    </div>
+</section>
+{% endblock %}

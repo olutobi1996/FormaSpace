@@ -14,9 +14,9 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")  
 
 
 # Quick-start development settings - unsuitable for production
@@ -28,7 +28,8 @@ SECRET_KEY = 'django-insecure-ax_k=v1#h*x)xpp!-y&v$+^+88eymj-zrqu2m*-(9de-$jp0-9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['*']
+
 
 # Application definition
 
@@ -127,3 +128,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+INSTALLED_APPS += ['django.contrib.staticfiles']
+MIDDLEWARE += ['django.middleware.common.CommonMiddleware']
