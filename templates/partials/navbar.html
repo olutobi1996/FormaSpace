@@ -1,11 +1,20 @@
+{% load static %}
 <header class="navbar">
-    <div class="container">
-        <a href="/" class="logo">FormaSpace</a>
+    <div class="container navbar-container">
+        <a href="/" class="logo">
+            <img src="{% static 'images/formaspace-logo.png' %}" alt="FormaSpace logo">
+        </a>
         <nav>
             <ul class="nav-links">
-                <li><a href="{% url 'offices:location_list' %}">Spaces</a></li>
-                <li><a href="{% url 'blog:post_list' %}">Journal</a></li>
-                <li><a href="{% url 'enquiries:enquiry_create' %}">Enquire</a></li>
+                <li><a href="{% url 'offices:location_list' %}">SPACES</a></li>
+                <li><a href="{% url 'blog:post_list' %}">JOURNAL</a></li>
+                <li><a href="{% url 'pages:about' %}">ABOUT</a></li>
+                <li><a href="{% url 'pages:connections' %}">CONNECTIONS</a></li>
+                <li><a href="{% url 'enquiries:enquiry_create' %}">ENQUIRE</a></li>
+                <!-- CONTACT is now its own LI with a class -->
+                <li class="contact-item">
+                    <a href="/contact/" class="contact-link">CONTACT</a>
+                </li>
             </ul>
         </nav>
     </div>

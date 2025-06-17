@@ -1,103 +1,104 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 
-<!-- Hero Section -->
-<section class="hero">
-  <div class="hero-content container">
-    <h1 class="hero-title">Premium Workspace in the Heart of Ayr</h1>
-    <p class="hero-subtitle">Experience modern private offices, co-working, and meeting spaces designed to inspire.</p>
+<!-- HERO SECTION with Background Video -->
+<section class="hero-section video-hero">
+  <!-- Background Video -->
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="{% static 'videos/office-tour.mp4' %}" type="video/mp4">
+    <!-- Fallback image -->
+    <img src="{% static 'images/office-wide.jpg' %}" alt="Premium office interior">
+  </video>
+
+  <!-- Overlay to soften the video -->
+  <div class="hero-overlay"></div>
+
+  <!-- Hero Content -->
+  <div class="container hero-content text-center">
+    <h1 class="heading-xl">Premium Workspace in the Heart of Ayr</h1>
+    <p class="subheading">Private offices, co‑working, and meeting rooms built for productivity and comfort.</p>
     <a href="/book" class="btn-primary">Book a Tour</a>
   </div>
 </section>
 
-<!-- What We Do / Features Section -->
-<section class="features">
+
+<!-- IMAGE BLOCK SECTION (Full Width) -->
+<section class="image-banner">
+  <!-- Replace with your image -->
+  <img src="{% static 'images/office-wide.jpg' %}" alt="Elegant office interior" class="img-full" />
+</section>
+
+<!-- FEATURES SECTION -->
+<section class="features-section">
   <div class="container">
-    <h2 class="section-title">What We Offer</h2>
-    <div class="card-grid">
-      <div class="floating-card">
-        <i class="fas fa-door-open icon"></i>
-        <h3>Private Offices</h3>
-        <p>Dedicated, customisable spaces for your business to thrive.</p>
+    <h2 class="heading-md text-center">What We Offer</h2>
+    <div class="feature-grid">
+      <div class="feature-item">
+        <i class="fas fa-door-open feature-icon"></i>
+        <h3 class="feature-title">Private Offices</h3>
+        <p>Customisable spaces with 24/7 access and business-class amenities.</p>
       </div>
-      <div class="floating-card">
-        <i class="fas fa-users icon"></i>
-        <h3>Co-Working</h3>
-        <p>Flexible shared workspaces with a vibrant community feel.</p>
+      <div class="feature-item">
+        <i class="fas fa-users feature-icon"></i>
+        <h3 class="feature-title">Co-Working</h3>
+        <p>Flexible desk options within a premium community setting.</p>
       </div>
-      <div class="floating-card">
-        <i class="fas fa-handshake icon"></i>
-        <h3>Meeting Rooms</h3>
-        <p>Stylish, fully equipped rooms for all types of gatherings.</p>
+      <div class="feature-item">
+        <i class="fas fa-handshake feature-icon"></i>
+        <h3 class="feature-title">Meeting Rooms</h3>
+        <p>Stylish, fully equipped rooms with online booking support.</p>
       </div>
-      <div class="floating-card">
-        <i class="fas fa-envelope-open-text icon"></i>
-        <h3>Virtual Offices</h3>
-        <p>Professional business address and mail handling solutions.</p>
+      <div class="feature-item">
+        <i class="fas fa-envelope-open-text feature-icon"></i>
+        <h3 class="feature-title">Virtual Offices</h3>
+        <p>Professional Ayr address with mail and business support.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- How It Works (Spider Diagram Style) -->
-<section class="how-it-works">
-  <div class="container">
-    <h2 class="section-title">How It Works</h2>
-    <div class="spider-steps">
-      <div class="central-node">Get Started</div>
-      <div class="node node-1">Book a Tour</div>
-      <div class="node node-2">Choose a Plan</div>
-      <div class="node node-3">Move In</div>
+<!-- IMAGE & TEXT SPLIT SECTION -->
+<section class="split-section">
+  <div class="container split-container">
+    <div class="split-image">
+      <!-- Replace with real image -->
+      <img src="{% static 'images/office-detail.jpg' %}" alt="Workspace detail" />
+    </div>
+    <div class="split-content">
+      <h2 class="heading-md">Why Choose 21 Wellington Square?</h2>
+      <p class="lead">Crafted for professionals who value excellence and focus.</p>
+      <p>Ten high-specification offices, superfast WiFi, secure entry, and stunning surroundings — a perfect home for your business.</p>
+      <a href="/contact-us" class="btn-secondary">Enquire Now</a>
     </div>
   </div>
 </section>
 
-<!-- Premium Highlight Section -->
-<section class="premium-highlight">
+<!-- TESTIMONIAL SECTION -->
+<section class="testimonial-section">
   <div class="container">
-    <h2 class="section-title">Why choose 21 Wellington Square?</h2>
-    <p class="lead">Experience workspace redefined by excellence.</p>
-
-    <div class="premium-row">
-      <div class="premium-image">
-        <img src="https://your-image-url.com/office-premium.jpg" alt="Premium Office Space">
-      </div>
-      <div class="premium-text">
-        <h3>Premium Workspace</h3>
-        <p class="standout">Crafted for distinction and productivity.</p>
-        <p>Our flagship serviced offices at 21 Wellington Square, Ayr, offer ten high-specification private offices designed for businesses who value excellence, comfort, and a professional environment.</p>
-        <a href="/contact-us" class="btn-secondary">Get Started</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Testimonials Section -->
-<section class="testimonials">
-  <div class="container">
-    <h2 class="section-title">What Our Members Say</h2>
-    <div class="testimonial-list">
+    <h2 class="heading-md text-center">What Our Members Say</h2>
+    <div class="testimonial-grid">
       <div class="testimonial">
+        <p>“The offices at Wellington Square offer a polished, productive environment with seamless support.”</p>
         <strong>Emma Hargraves</strong>
-        <p>"The offices at 21 Wellington Square offer a sophisticated, productive environment with exceptional service."</p>
       </div>
       <div class="testimonial">
+        <p>“Flexible and inspiring — ideal for our growing team.”</p>
         <strong>Jack Cameron</strong>
-        <p>"Flexible and professional – the workspace adapts to our needs, and the team goes above and beyond to support us."</p>
       </div>
       <div class="testimonial">
+        <p>“Beautiful design, great service. A professional home for any business.”</p>
         <strong>Laura Hainsman</strong>
-        <p>"From the modern design to the high-spec facilities, 21 Wellington Square is the ideal place for creativity and collaboration."</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA Banner -->
+<!-- CTA BANNER -->
 <section class="cta-banner">
-  <div class="container">
-    <h2>Ready to Elevate Your Work Environment?</h2>
+  <div class="container text-center">
+    <h2 class="heading-md">Ready to Elevate Your Work Environment?</h2>
     <a href="/book" class="btn-primary">Book a Tour</a>
   </div>
 </section>

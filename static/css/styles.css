@@ -1,0 +1,429 @@
+/*------------------------------------
+  Typography & Base Styles
+------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #fff;
+  color: #1a1a1a;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* Utility */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.lead {
+  font-size: 1.125rem;
+  color: #444;
+}
+
+/*------------------------------------
+  Typography Elements
+------------------------------------*/
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #111;
+}
+
+h2, .heading-md {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+/*------------------------------------
+  Navigation (Navbar)
+------------------------------------*/
+
+/* Base navbar styling */
+.navbar {
+  background: #fff;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: 'Manrope', Helvetica, Arial, sans-serif;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+/* Make the logo text larger */
+.logo {
+  font-size: 2rem;      /* up from 1.75rem */
+  /* rest of your .logo rules remain */
+}
+
+.logo img {
+  height: 2.5rem !important;
+  width: auto !important;
+  display: block;
+}
+
+
+/* Navigation links container */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Generic link style */
+.nav-links a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #333;
+  background: transparent;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Hover state for generic links */
+.nav-links a:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #000;
+}
+
+/* Remove any leftover underline pseudo‑rules */
+.nav-links a::after {
+  display: none !important;
+}
+
+/* Push CONTACT to the far right */
+.contact-item {
+  margin-left: auto;
+}
+
+/* Premium black pill for CONTACT link */
+.contact-item .contact-link {
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #fff !important;
+  background: #111 !important;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+/* Hover state for CONTACT */
+.contact-item .contact-link:hover {
+  background: #333 !important;
+  color: #fff !important;
+}
+
+/*------------------------------------
+  Hero Section
+------------------------------------*/
+
+/* VIDEO HERO WRAPPER */
+.video-hero {
+  position: relative;
+  overflow: hidden;
+  height: 80vh;              /* adjust for desired height */
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* BACKGROUND VIDEO */
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: 100%;
+  min-width: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  object-fit: cover;
+}
+
+/* DARK OVERLAY */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 2;
+}
+
+/* HERO CONTENT ON TOP */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  padding: 0 1rem;
+}
+
+/* TEXT STYLES */
+.hero-section .heading-xl {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-section .subheading {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #eee;
+}
+
+/* BUTTON ADJUSTMENT */
+.hero-section .btn-primary {
+  background-color: #fff;
+  color: #111;
+  padding: 0.75rem 1.75rem;
+  font-weight: 600;
+}
+
+.hero-section .btn-primary:hover {
+  background-color: #f0f0f0;
+}
+
+.cta-button,
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #111;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #333;
+}
+
+.btn-secondary {
+  background-color: #f0f0f0;
+  color: #111;
+}
+
+.btn-secondary:hover {
+  background-color: #ddd;
+}
+
+/*------------------------------------
+  Card/Feature Grid Layouts
+------------------------------------*/
+.grid-3, .grid-4, .feature-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.feature-item, .card, .floating-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover, .floating-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  color: #a67c00;
+  margin-bottom: 1rem;
+}
+
+/*------------------------------------
+  Split Section (Image + Text)
+------------------------------------*/
+.split-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: center;
+}
+
+.split-image img {
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.split-content {
+  flex: 1 1 40%;
+}
+
+/*------------------------------------
+  Testimonials
+------------------------------------*/
+.testimonial-section {
+  background: #fafafa;
+  padding: 4rem 1rem;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.testimonial {
+  font-style: italic;
+  padding: 1.5rem;
+  border-left: 4px solid #a67c00;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+/*------------------------------------
+  CTA Banner
+------------------------------------*/
+.cta-banner {
+  background-color: #111;
+  color: white;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+/*------------------------------------
+  Footer
+------------------------------------*/
+.footer {
+  background: #f9f9f9;
+  color: #222;
+  padding: 4rem 1rem;
+  font-size: 0.95rem;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 3rem;
+}
+
+.footer h3, .footer h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.footer a {
+  color: #333;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+#footer-bottom {
+  background: #111;
+  color: #fff;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  list-style: none;
+}
+
+.social-icons a {
+  color: white;
+  transition: opacity 0.3s ease;
+}
+
+.social-icons a:hover {
+  opacity: 0.8;
+}
+
+/*------------------------------------
+  About Section
+------------------------------------*/
+.about-section {
+  padding: 6rem 1rem;
+  background: #fafafa;
+}
+
+.about-section .lead {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  color: #555;
+}
+/*------------------------------------
+  Connection
+------------------------------------*/
+.connections-section {
+  padding: 6rem 1rem;
+}
+
+.connections-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 2rem;
+}
+
+.connection-item {
+  text-align: center;
+  padding: 2rem;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: #fff;
+}
+
+.connection-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+}
+
+.connection-icon {
+  font-size: 2rem;
+  color: #a67c00;
+  margin-bottom: 1rem;
+}

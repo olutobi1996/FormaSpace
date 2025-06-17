@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'integrations',
     'locations',
     'core',
+    'pages',
 ]
 
 MIDDLEWARE = [
