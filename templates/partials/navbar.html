@@ -1,9 +1,11 @@
 {% load static %}
 <header class="navbar">
     <div class="container navbar-container">
-        <a href="/" class="logo">
-            <img src="{% static 'images/formaspace-logo.png' %}" alt="FormaSpace logo">
-        </a>
+       <a href="/" class="logo" style="height: 3.5rem; display: flex; align-items: center;">
+  <img src="{% static 'images/formaspacelogo-wrapper.svg' %}" alt="FormaSpace Logo" style="height: 100%;" />
+</a>
+
+
         <nav>
             <ul class="nav-links">
                 <li><a href="{% url 'offices:location_list' %}">SPACES</a></li>
