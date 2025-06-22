@@ -1,16 +1,25 @@
 /*------------------------------------
   Typography & Base Styles
 ------------------------------------*/
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;600;700&display=swap');
+
 
 /* Import Font Awesome (for icons) */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
+html {
+  font-family: 'Inter', sans-serif;
+}
+
+*, *::before, *::after {
+  font-family: inherit;
+}
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background-color: #fff;
-  color: #1a1a1a;
+  background-color: #0d0d0d; /* deep charcoal */
+  color: #f5f5f5; /* soft off-white for text contrast */
   line-height: 1.7;
   font-weight: 300;
 }
@@ -34,38 +43,73 @@ body {
 /*------------------------------------
   Typography Elements
 ------------------------------------*/
-.section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.75rem;
+
+.section-title,
+.section-heading h2,
+h1, h2, h3, h4, h5, h6,
+.heading-md {
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
-  margin-bottom: 2rem;
+  color: #000;
   text-align: center;
-  color: #111;
+  margin-bottom: 2rem;
+  background: none !important;
 }
 
-h2, .heading-md {
-  font-size: 2rem;
-  font-weight: 600;
-  color: #1a1a1a;
+.heading-xl {
+  font-family: 'DM Serif Display', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-h3 {
-  font-size: 1.5rem;
-  font-weight: 500;
+h1 { font-size: 3rem; }
+h2, .section-title, .section-heading h2 { font-size: 2.5rem; }
+h3 { font-size: 1.75rem; font-weight: 600; }
+h4, .heading-md { font-size: 1.5rem; font-weight: 500; }
+
+/* Fancy Section Title with Gold Underline */
+.section-title h2,
+.section-title.center {
+  position: relative;
+  display: inline-block;
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.75rem;
+  color: #000;
+  margin-bottom: 2rem;
+  background: none !important;
+}
+
+.section-title h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #d4af37;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+
+.section-title,
+.section-title.center,
+.section-title h2 {
+  text-align: center;
+  margin: 0 auto 2rem;
 }
 
 /*------------------------------------
   Navigation (Navbar)
 ------------------------------------*/
-
-/* Base navbar styling */
 .navbar {
-  background: #fff;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+  background: #0d0d0d;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.4);
   position: sticky;
   top: 0;
   z-index: 1000;
-  font-family: 'Manrope', Helvetica, Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .navbar-container {
@@ -75,10 +119,8 @@ h3 {
   padding: 1rem 0;
 }
 
-/* Make the logo text larger */
 .logo {
-  font-size: 2rem;      /* up from 1.75rem */
-  /* rest of your .logo rules remain */
+  font-size: 2rem;
 }
 
 .logo img {
@@ -87,7 +129,6 @@ h3 {
   display: block;
 }
 
-/* Navigation links container */
 .nav-links {
   display: flex;
   align-items: center;
@@ -97,52 +138,46 @@ h3 {
   padding: 0;
 }
 
-/* Generic link style */
 .nav-links a {
   display: inline-block;
   padding: 0.5rem 1rem;
   font-size: 1rem;
   font-weight: 400;
   text-transform: uppercase;
-  color: #333;
+  color: #f5f5f5;
   background: transparent;
   border-radius: 999px;
   text-decoration: none;
   transition: background 0.2s ease, color 0.2s ease;
 }
 
-/* Hover state for generic links */
 .nav-links a:hover {
-  background: rgba(0, 0, 0, 0.05);
-  color: #000;
+  background: rgba(255, 255, 255, 0.05);
+  color: #d4af37;
 }
 
-/* Remove any leftover underline pseudo‑rules */
 .nav-links a::after {
   display: none !important;
 }
 
-/* Push CONTACT to the far right */
 .contact-item {
   margin-left: auto;
 }
 
-/* Premium black pill for CONTACT link */
 .contact-item .contact-link {
   padding: 0.5rem 1.25rem;
   font-size: 1rem;
   font-weight: 400;
   text-transform: uppercase;
-  color: #fff !important;
-  background: #111 !important;
+  color: #0d0d0d !important;
+  background: #d4af37 !important;
   border-radius: 999px;
   text-decoration: none;
   transition: background 0.2s ease;
 }
 
-/* Hover state for CONTACT */
 .contact-item .contact-link:hover {
-  background: #333 !important;
+  background: #bfa128 !important;
   color: #fff !important;
 }
 
@@ -207,14 +242,14 @@ h3 {
 
 /* BUTTON ADJUSTMENT */
 .hero-section .btn-primary {
-  background-color: #fff;
+  background-color: #bfa128;
   color: #111;
   padding: 0.75rem 1.75rem;
   font-weight: 600;
 }
 
 .hero-section .btn-primary:hover {
-  background-color: #f0f0f0;
+  background-color: #bfa128;
 }
 
 .cta-button,
@@ -229,29 +264,43 @@ h3 {
   transition: all 0.3s ease;
 }
 
-.btn-primary {
-  background-color: #111;
-  color: #fff;
+a.btn-primary {
+  background-color: #d4af37; /* gold */
+  color: #0d0d0d;
+  padding: 0.75rem 1.75rem;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
-.btn-primary:hover {
-  background-color: #333;
+a.btn-primary:hover {
+  background-color: #bfa128; /* darker gold */
+  color: #ffffff;
 }
+
 
 .btn-secondary {
-  background-color: #f0f0f0;
-  color: #111;
+    background-color: #d4af37; /* gold */
+  color: #0d0d0d;
+  padding: 0.75rem 1.75rem;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .btn-secondary:hover {
-  background-color: #ddd;
+   background-color: #bfa128; /* darker gold */
+  color: #ffffff;
 }
 /*------------------------------------ 
-  Puzzle Card Grid Layout
+  Circle Grid Layout
 ------------------------------------*/
 .services-grid {
   display: flex;
   flex-wrap: wrap;
+  background: white;
   gap: 1rem 1.75rem; /* horizontal gap */
   padding: 2rem 0;
   justify-content: center;
@@ -292,24 +341,74 @@ h3 {
   box-shadow: 0 15px 35px rgba(255,255,255,0.2);
 }
 
+/* Section wrapper for spacing */
+.services-wrapper {
+  padding: 4rem 1rem; /* top/bottom spacing for neatness */
+  background-color: #f8f8f8; /* subtle light background if desired */
+  text-align: center;
+}
+
+/* Section heading styling */
+.section-heading h2 {
+  font-size: 2.5rem;
+  font-family: 'Inter', sans-serif !important;
+  color: #000;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-heading h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  font-family: 'Inter', sans-serif !important;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
 .card-content {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 0 0.5rem;      /* smaller horizontal padding */
+  align-items: center;           /* center horizontally */
+  justify-content: center;       /* center vertically */
+  padding: 0.5rem 1rem;          /* balanced padding */
+  text-align: center;
   overflow-wrap: break-word;
+  box-sizing: border-box;
 }
 
-.card-content h3,
-.card-content p,
-.learn-link {
+.card-content h3 {
+  color: #f5f5f5;
+  font-size: 1.2rem;
   margin: 0.25rem 0;
-  color: white;           /* keep text visible */
 }
+
+.card-content p {
+  color: #f5f5f5;
+  font-size: 0.9rem;
+  margin: 0.25rem 0;
+}
+
+
+.learn-link {
+  color: #d4af37; /* gold for Learn More link */
+  text-decoration: none;
+}
+
+.learn-link:hover {
+  color: #bfa128; /* darker gold on hover */
+  text-decoration: underline;
+}
+
 
 .card-icon {
-  color: white;           /* icon color to white */
+  color:  #d4af37;          /* icon color to Gold */
   font-size: 1.75rem;
   top: 1rem;
   right: 1rem;
@@ -317,7 +416,7 @@ h3 {
 
 
 .learn-link:hover {
-  color: #ddd;
+  color:  #d4af37;
   text-decoration: underline;
 }
 
@@ -346,9 +445,6 @@ h3 {
 }
 
 /*------------------------------------
-  Location Split
-------------------------------------*/
-/*------------------------------------
   Location Split: Forma Style
 ------------------------------------*/
 .location-split-forma {
@@ -358,19 +454,20 @@ h3 {
   justify-content: center;
   gap: 4rem;
   padding: 6rem 2rem;
-  background-color: #f8f8f8;
+  background-color: white;
 }
 
 .location-box {
   flex: 1 1 40%;
   max-width: 400px;
-  background-color: white;
+  background-color: #000;        /* Black background */
   padding: 3rem 2rem;
   border-radius: 2rem;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
   text-align: center;
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #fff;                   /* All text inside becomes white */
 }
 
 .location-box:hover {
@@ -387,18 +484,18 @@ h3 {
 .location-box h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #1a1a1a;
+  color: #fff;                  /* White heading */
 }
 
 .location-box p {
   font-size: 1.1rem;
-  color: #444;
+  color: #eaeaea;               /* Slightly off-white for contrast */
   margin-bottom: 1.5rem;
 }
 
 .location-box a.btn-primary {
-  background-color: #111;
-  color: white;
+  background-color: #d4af37;
+  color: black;
   padding: 0.75rem 1.75rem;
   border-radius: 40px;
   text-decoration: none;
@@ -406,7 +503,7 @@ h3 {
 }
 
 .location-box a.btn-primary:hover {
-  background-color: #333;
+  background-color: #d4af37;
 }
 
 .location-image {
@@ -444,30 +541,25 @@ h3 {
   Testimonials
 ------------------------------------*/
 .testimonial-section {
-  background: #fafafa;
+  background: #111;
   padding: 4rem 1rem;
-}
-
-.testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
 }
 
 .testimonial {
   font-style: italic;
   padding: 1.5rem;
-  border-left: 4px solid #a67c00;
-  background-color: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  border-left: 4px solid #d4af37;
+  background-color: #1a1a1a;
+  color: #f5f5f5;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 /*------------------------------------
   CTA Banner
 ------------------------------------*/
 .cta-banner {
-  background-color: #111;
-  color: white;
+  background-color: #0d0d0d;
+  color: #f5f5f5;
   padding: 4rem 1rem;
   text-align: center;
 }
@@ -476,8 +568,8 @@ h3 {
   Footer
 ------------------------------------*/
 .footer {
-  background: #f9f9f9;
-  color: #222;
+  background: #111;
+  color: #dcdcdc;
   padding: 4rem 1rem;
   font-size: 0.95rem;
 }
@@ -492,10 +584,11 @@ h3 {
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 1rem;
+  color: #f5f5f5;
 }
 
 .footer a {
-  color: #333;
+  color: #d4af37;
   text-decoration: none;
 }
 
@@ -504,8 +597,8 @@ h3 {
 }
 
 #footer-bottom {
-  background: #111;
-  color: #fff;
+  background: #0d0d0d;
+  color: #f5f5f5;
   padding: 2rem 0;
   text-align: center;
 }
@@ -518,7 +611,7 @@ h3 {
 }
 
 .social-icons a {
-  color: white;
+  color: #d4af37;
   transition: opacity 0.3s ease;
 }
 
@@ -531,19 +624,21 @@ h3 {
 ------------------------------------*/
 .about-section {
   padding: 6rem 1rem;
-  background: #fafafa;
+  background: #111;
 }
 
 .about-section .lead {
   max-width: 600px;
   margin: 0 auto 1.5rem;
-  color: #555;
+  color: #ccc;
 }
+
 /*------------------------------------
   Connection
 ------------------------------------*/
 .connections-section {
   padding: 6rem 1rem;
+  background: #0d0d0d;
 }
 
 .connections-grid {
@@ -556,19 +651,38 @@ h3 {
 .connection-item {
   text-align: center;
   padding: 2rem;
-  border: 1px solid #eee;
+  border: 1px solid #2c2c2c;
   border-radius: 12px;
+  background: #111;
+  color: #f5f5f5;
   transition: transform 0.3s, box-shadow 0.3s;
-  background: #fff;
 }
 
 .connection-item:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.08);
 }
 
 .connection-icon {
   font-size: 2rem;
-  color: #a67c00;
+  color: #d4af37;
   margin-bottom: 1rem;
+}
+
+/*------------------------------------
+  Buttons
+------------------------------------*/
+a.btn-primary {
+  background-color: #d4af37;
+  color: #0d0d0d;
+  padding: 0.75rem 1.75rem;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+a.btn-primary:hover {
+  background-color: #bfa128;
+  color: #ffffff;
 }
