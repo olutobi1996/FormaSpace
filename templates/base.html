@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
-
+    <!-- Phosphor -->
+    <link href="https://unpkg.com/phosphor-icons@1.4.2/src/css/icons.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
@@ -26,14 +27,25 @@
     {% include "partials/footer.html" %}
     <script src="{% static 'js/scroll-animations.js' %}"></script>
     <!-- AOS JS -->
+    <!-- AOS Animation Library -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init({
             duration: 1000,
-            once: true
+            once: false // Re-animate when scrolling back up
         });
     </script>
 
-</body>
+    <!-- Vanilla Tilt for 3D Tilt Effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelectorAll(".service-card, .feature-image img"), {
+            max: 15,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.2
+        });
+    </script>
+
 
 </html>

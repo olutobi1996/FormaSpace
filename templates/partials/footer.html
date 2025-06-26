@@ -1,81 +1,78 @@
 {% load static %}
-<footer id="main-footer" class="footer-enhanced">
-  <div class="footer-container container grid-3-cols">
-    
-    <!-- Company Info -->
-    <div class="footer-info scroll-fade">
-      <h3>Join the Workspace Family</h3>
-      <p>Feel looked after every step of the way.</p>
+<footer id="main-footer" class="footer premium-footer">
+  <div class="footer-glow-box">
+    <!-- Grid Container for Main Content -->
+    <div class="footer-container container" data-aos="fade-up" data-aos-delay="500">
 
-      <h4>Our Flagship Location</h4>
-      <p>21 Wellington Square, Ayr, offering 10 high-specification offices.</p>
-      <p>Our workspace reflects quality, supports future expansion, and ensures a seamless user experience across all devices.</p>
+      <!-- Company Info -->
+      <div class="footer-info scroll-fade">
+        <h3>Be Part of the FormaSpace Collective</h3>
+        <p>Experience support, style, and simplicity — every step of the way.</p>
 
-      <p><strong>Phone:</strong> <a href="tel:01937833311">01273 398387</a></p>
-      <p><strong>Email:</strong> <a href="mailto:enquiries@siblingworkspace.co.uk">enquiries@FormaSpaceworkspace.co.uk</a></p>
-    </div>
+        <h4>Our Flagship Location</h4>
+        <p>
+          <span class="icon gold-icon"><i class="fas fa-map-marker-alt"></i></span>
+          21 Wellington Square, Ayr
+        </p>
+        <p>
+          Offering 10 high-specification offices. Designed for quality, scalability, and a seamless digital experience.
+        </p>
 
-    <!-- Navigation Links -->
-    <div class="footer-links scroll-fade">
-      <h4>Browse</h4>
-      <ul>
-        <li><a href="#">Locations</a></li>
-        <li><a href="#">Office Space</a></li>
-        <li><a href="#">Hot Desking</a></li>
-        <li><a href="#">Meeting Rooms</a></li>
-        <li><a href="#">Virtual Offices</a></li>
-      </ul>
-      <h4>Connectivity</h4>
-      <ul>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">FAQ</a></li>
-      </ul>
-    </div>
+        <p>
+          <span class="icon"><i class="fas fa-phone-alt"></i></span>
+          <strong>Call us:</strong>
+          <a href="tel:01273398387">01273 398 387</a>
+        </p>
 
-    <!-- Contact Form -->
-    <div class="footer-form scroll-fade">
-      <h4>How Can We Help?</h4>
-      <form action="#" method="post" class="contact-form">
-        <input type="text" name="name" placeholder="Name" required />
-        <input type="tel" name="phone" placeholder="Phone" />
-        <input type="email" name="email" placeholder="Email Address" required />
-        <textarea name="message" placeholder="Message" rows="4" required></textarea>
-        <button type="submit" class="cta-button">Submit</button>
-      </form>
-    </div>
-  </div>
+        <p>
+          <span class="icon"><i class="fas fa-envelope"></i></span>
+          <strong>Email:</strong>
+          <a href="mailto:formaspace@hotmail.co.uk">formaspace@hotmail.co.uk</a>
+        </p>
 
-  <!-- Bottom Bar -->
+      </div>
+
+      <!-- Contact Form -->
+      <div class="footer-form scroll-fade">
+        <h4>How Can We Help?</h4>
+        <div class="form-card">
+          <form action="#" method="post" class="contact-form">
+            <input type="text" name="name" placeholder="Name" required />
+            <input type="tel" name="phone" placeholder="Phone" />
+            <input type="email" name="email" placeholder="Email Address" required />
+
+            <!-- NEW Dropdown -->
+            <select name="service" required>
+              <option value="" disabled selected hidden>How can we help?</option>
+              <option value="virtual-offices">Virtual Offices</option>
+              <option value="meeting-rooms">Meeting Rooms</option>
+              <option value="co-working">Co-working</option>
+              <option value="office-space">Office Space</option>
+              <option value="something-else">Something Else</option>
+            </select>
+
+            <textarea name="message" placeholder="Message" rows="4" required></textarea>
+            <button type="submit" class="cta-button">Submit</button>
+          </form>
+        </div>
+      </div>
+
+    </div> <!-- End .footer-container -->
+  </div> <!-- End .footer-glow-box -->
+
+  <!-- ✅ Footer Bottom moved outside the grid -->
   <div id="footer-bottom">
     <div class="container footer-bottom-content">
       <ul class="social-icons">
-        <li><a href="#" aria-label="Facebook">Facebook</a></li>
-        <li><a href="#" aria-label="Twitter">Twitter</a></li>
-        <li><a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">Instagram</a></li>
-        <li><a href="https://www.siblingworkspace.co.uk/feed/" aria-label="RSS">RSS</a></li>
+        <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i
+              class="fab fa-instagram"></i></a></li>
+        <li><a href="#" aria-label="RSS"><i class="fas fa-rss"></i></a></li>
       </ul>
       <p id="footer-info">
-        &copy; {{ now|date:"Y" }} <a href="https://www.siblingworkspace.co.uk/">Sibling Workspace</a> |
-        <a href="/privacy">Privacy</a> | Made by <a href="https://purplelemur.co.uk" target="_blank">Purple Lemur</a>
+        &copy; {{ now|date:"Y" }} <a href="#">FormaSpace</a>
       </p>
     </div>
   </div>
-</footer>
-<script>
-  const faders = document.querySelectorAll('.scroll-fade');
-
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
-
-  faders.forEach(el => observer.observe(el));
-</script>
-
-
+</footer>"

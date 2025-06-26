@@ -9,17 +9,22 @@
 
 html {
   font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   font-family: inherit;
 }
 
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background-color: #0d0d0d; /* deep charcoal */
-  color: #f5f5f5; /* soft off-white for text contrast */
+  background-color: #0d0d0d;
+  /* deep charcoal */
+  color: #f5f5f5;
+  /* soft off-white for text contrast */
   line-height: 1.7;
   font-weight: 300;
 }
@@ -46,7 +51,12 @@ body {
 
 .section-title,
 .section-heading h2,
-h1, h2, h3, h4, h5, h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 .heading-md {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
@@ -65,10 +75,26 @@ h1, h2, h3, h4, h5, h6,
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-h1 { font-size: 3rem; }
-h2, .section-title, .section-heading h2 { font-size: 2.5rem; }
-h3 { font-size: 1.75rem; font-weight: 600; }
-h4, .heading-md { font-size: 1.5rem; font-weight: 500; }
+h1 {
+  font-size: 3rem;
+}
+
+h2,
+.section-title,
+.section-heading h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+h4,
+.heading-md {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
 
 /* Fancy Section Title with Gold Underline */
 .section-title h2,
@@ -104,8 +130,8 @@ h4, .heading-md { font-size: 1.5rem; font-weight: 500; }
   Navigation (Navbar)
 ------------------------------------*/
 .navbar {
-  background: #0d0d0d;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.4);
+  background: white;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -144,7 +170,7 @@ h4, .heading-md { font-size: 1.5rem; font-weight: 500; }
   font-size: 1rem;
   font-weight: 400;
   text-transform: uppercase;
-  color: #f5f5f5;
+  color: black;
   background: transparent;
   border-radius: 999px;
   text-decoration: none;
@@ -189,7 +215,8 @@ h4, .heading-md { font-size: 1.5rem; font-weight: 500; }
 .video-hero {
   position: relative;
   overflow: hidden;
-  height: 80vh;              /* adjust for desired height */
+  height: 80vh;
+  /* adjust for desired height */
   min-height: 500px;
   display: flex;
   align-items: center;
@@ -240,60 +267,55 @@ h4, .heading-md { font-size: 1.5rem; font-weight: 500; }
   color: #eee;
 }
 
-/* BUTTON ADJUSTMENT */
-.hero-section .btn-primary {
-  background-color: #bfa128;
-  color: #111;
-  padding: 0.75rem 1.75rem;
-  font-weight: 600;
-}
-
-.hero-section .btn-primary:hover {
-  background-color: #bfa128;
-}
-
+/* Universal Button Base */
 .cta-button,
 .btn-primary,
 .btn-secondary {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 500;
+  padding: 0.85rem 2rem;
+  border-radius: 40px;
+  font-weight: 600;
   font-size: 1rem;
-  transition: all 0.3s ease;
-}
-
-a.btn-primary {
-  background-color: #d4af37; /* gold */
-  color: #0d0d0d;
-  padding: 0.75rem 1.75rem;
-  border-radius: 40px;
   text-decoration: none;
-  font-weight: 500;
+  cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #d4af37, #bfa128);
+  color: #111;
 }
 
-a.btn-primary:hover {
-  background-color: #bfa128; /* darker gold */
-  color: #ffffff;
-}
 
-
-.btn-secondary {
-    background-color: #d4af37; /* gold */
-  color: #0d0d0d;
-  padding: 0.75rem 1.75rem;
-  border-radius: 40px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
+/* Hover Effect */
+.cta-button:hover,
+.btn-primary:hover,
 .btn-secondary:hover {
-   background-color: #bfa128; /* darker gold */
-  color: #ffffff;
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #bfa128, #8a7315);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
+
+/* Specific Overrides */
+.hero-section .btn-primary {
+  font-weight: 600;
+  background: linear-gradient(135deg, #bfa128, #a88f1e);
+  color: #fff;
+  padding: 1rem 2.25rem;
+}
+
+.hero-section .btn-primary:hover {
+  background: linear-gradient(135deg, #a88f1e, #8a7315);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Legacy override for anchor buttons (safe fallback) */
+a.btn-primary,
+a.btn-secondary {
+  border-radius: 40px;
+  text-decoration: none;
+}
+
 /*------------------------------------ 
   Circle Grid Layout
 ------------------------------------*/
@@ -301,7 +323,8 @@ a.btn-primary:hover {
   display: flex;
   flex-wrap: wrap;
   background: white;
-  gap: 1rem 1.75rem; /* horizontal gap */
+  gap: 1rem 1.75rem;
+  /* horizontal gap */
   padding: 2rem 0;
   justify-content: center;
   max-width: none;
@@ -319,10 +342,13 @@ a.btn-primary:hover {
 
 .service-card {
   width: 100%;
-  aspect-ratio: 1 / 1;          /* perfect circle */
-  background: black;            /* black circle background */
-  border-radius: 50%;           /* make it circular */
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  aspect-ratio: 1 / 1;
+  /* perfect circle */
+  background: black;
+  /* black circle background */
+  border-radius: 50%;
+  /* make it circular */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -330,21 +356,26 @@ a.btn-primary:hover {
   flex-direction: column;
   cursor: pointer;
   text-align: center;
-  padding: 1rem;                /* add some padding */
-  box-sizing: border-box;       /* include padding in size */
-  color: white;                 /* white text for contrast */
+  padding: 1rem;
+  /* add some padding */
+  box-sizing: border-box;
+  /* include padding in size */
+  color: white;
+  /* white text for contrast */
 }
 
 
 .service-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 15px 35px rgba(255,255,255,0.2);
+  box-shadow: 0 15px 35px rgba(255, 255, 255, 0.2);
 }
 
 /* Section wrapper for spacing */
 .services-wrapper {
-  padding: 4rem 1rem; /* top/bottom spacing for neatness */
-  background-color: #f8f8f8; /* subtle light background if desired */
+  padding: 4rem 1rem;
+  /* top/bottom spacing for neatness */
+  background-color: white;
+  /* subtle light background if desired */
   text-align: center;
 }
 
@@ -371,13 +402,27 @@ a.btn-primary:hover {
   border-radius: 2px;
 }
 
+.feature-image img,
+.service-card img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.feature-image img:hover,
+.service-card img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4), 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
 .card-content {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;           /* center horizontally */
-  justify-content: center;       /* center vertically */
-  padding: 0.5rem 1rem;          /* balanced padding */
+  align-items: center;
+  /* center horizontally */
+  justify-content: center;
+  /* center vertically */
+  padding: 0.5rem 1rem;
+  /* balanced padding */
   text-align: center;
   overflow-wrap: break-word;
   box-sizing: border-box;
@@ -397,50 +442,80 @@ a.btn-primary:hover {
 
 
 .learn-link {
-  color: #d4af37; /* gold for Learn More link */
+  color: #d4af37;
+  /* gold for Learn More link */
   text-decoration: none;
 }
 
 .learn-link:hover {
-  color: #bfa128; /* darker gold on hover */
+  color: #bfa128;
+  /* darker gold on hover */
   text-decoration: underline;
 }
 
 
 .card-icon {
-  color:  #d4af37;          /* icon color to Gold */
+  color: #d4af37;
+  /* icon color to Gold */
   font-size: 1.75rem;
   top: 1rem;
   right: 1rem;
 }
 
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.card-icon {
+  animation: float 3s ease-in-out infinite;
+}
 
 .learn-link:hover {
-  color:  #d4af37;
+  color: #d4af37;
   text-decoration: underline;
 }
 
 .service-card img {
   width: 100%;
   height: auto;
-  border-radius: 50% 50% 0 0; /* rounded top edges */
-  object-fit: cover;          /* ensure no distortion */
-  max-height: 50%;            /* so image doesn't take too much vertical space */
+  border-radius: 50% 50% 0 0;
+  /* rounded top edges */
+  object-fit: cover;
+  /* ensure no distortion */
+  max-height: 50%;
+  /* so image doesn't take too much vertical space */
 }
 
 
 @media (max-width: 768px) {
   .services-grid {
-    flex-wrap: wrap;      /* allow wrapping */
-    flex-direction: column; /* stack vertically */
-    align-items: center;  /* center the circles */
-    max-width: 100%;      /* full width on small */
+    flex-wrap: wrap;
+    /* allow wrapping */
+    flex-direction: column;
+    /* stack vertically */
+    align-items: center;
+    /* center the circles */
+    max-width: 100%;
+    /* full width on small */
   }
 
   .hex-container {
-    width: 90vw;          /* almost full viewport width */
-    max-width: 340px;     /* but no wider than original */
-    margin-bottom: 2rem;  /* space between stacked circles */
+    width: 90vw;
+    /* almost full viewport width */
+    max-width: 340px;
+    /* but no wider than original */
+    margin-bottom: 2rem;
+    /* space between stacked circles */
   }
 }
 
@@ -460,14 +535,16 @@ a.btn-primary:hover {
 .location-box {
   flex: 1 1 40%;
   max-width: 400px;
-  background-color: #000;        /* Black background */
+  background-color: white;
+  /* Black background */
   padding: 3rem 2rem;
   border-radius: 2rem;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
   text-align: center;
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  color: #fff;                   /* All text inside becomes white */
+  color: #fff;
+  /* All text inside becomes white */
 }
 
 .location-box:hover {
@@ -476,20 +553,25 @@ a.btn-primary:hover {
 }
 
 .location-box .logo-icon {
-  width: 60px;
-  margin-bottom: 1rem;
-  opacity: 0.9;
+  width: 120px;
+  /* 100–150px depending on visual balance */
+  height: auto;
+  margin-bottom: 2rem;
+  opacity: 0.95;
 }
+
 
 .location-box h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #fff;                  /* White heading */
+  color: black;
+  /* White heading */
 }
 
 .location-box p {
   font-size: 1.1rem;
-  color: #eaeaea;               /* Slightly off-white for contrast */
+  color: black;
+  /* Slightly off-white for contrast */
   margin-bottom: 1.5rem;
 }
 
@@ -519,9 +601,17 @@ a.btn-primary:hover {
   transition: transform 0.4s ease;
 }
 
-.location-image img:hover {
-  transform: scale(1.03);
+.location-image img,
+.feature-image img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
+
+.location-image img:hover,
+.feature-image:hover img {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4), 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
 
 /* Responsive stacking on small screens */
 @media (max-width: 768px) {
@@ -539,40 +629,156 @@ a.btn-primary:hover {
 /*------------------------------------
   How it Works Section
 ------------------------------------*/
-.puzzle-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  max-width: 1000px;
-  margin: 0 auto 40px;
+.steps-flow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 60px;
+  position: relative;
 }
 
-.how-it-works {
+.flow-step {
+  max-width: 280px;
   text-align: center;
-  padding: 60px 20px;
-  background-color: #fff;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
 }
 
-.how-it-works h2 {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
+.icon-circle {
+  background-color: #bfa128;
+  color: white;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin: 0 auto 20px;
+  box-shadow: 0 4px 12px rgba(191, 161, 40, 0.3);
+}
+
+.flow-arrow {
+  font-size: 32px;
+  color: #bfa128;
+  align-self: center;
+  position: relative;
+}
+
+.step-title {
+  font-size: 1.4rem;
+  font-weight: 600;
   color: #111;
+  margin-bottom: 10px;
 }
 
-.cta-button {
-  display: inline-block;
-  background-color: #111;
+.step-desc {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Responsive: stack steps on mobile */
+@media (max-width: 768px) {
+  .steps-flow-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .flow-arrow {
+    transform: rotate(90deg);
+  }
+}
+
+/* Glowing icon on hover */
+.flow-step:hover .icon-circle {
+  box-shadow: 0 0 12px rgba(191, 161, 40, 0.6), 0 0 24px rgba(191, 161, 40, 0.4);
+  transition: box-shadow 0.4s ease;
+}
+
+/* Glowing arrows */
+.flow-arrow i {
+  transition: all 0.4s ease;
+  animation: arrowPulse 2s infinite ease-in-out;
+}
+
+@keyframes arrowPulse {
+
+  0%,
+  100% {
+    text-shadow: 0 0 8px rgba(191, 161, 40, 0.5);
+  }
+
+  50% {
+    text-shadow: 0 0 16px rgba(191, 161, 40, 0.9);
+  }
+}
+
+.flow-arrow::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  right: -20px;
+  height: 2px;
+  background-image: repeating-linear-gradient(to right,
+      #bfa128,
+      #bfa128 4px,
+      transparent 4px,
+      transparent 8px);
+  z-index: -1;
+  transform: translateY(-50%);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.icon-circle {
+  animation: float 3s ease-in-out infinite;
+}
+
+.flow-step:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 16px 36px rgba(191, 161, 40, 0.2);
+}
+
+
+.btn-primary {
+  background-color: #bfa128;
   color: #fff;
-  padding: 15px 30px;
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
   text-decoration: none;
-  font-weight: bold;
-  border-radius: 30px;
-  transition: background 0.3s;
+  box-shadow: 0 6px 18px rgba(191, 161, 40, 0.3);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.cta-button:hover {
-  background-color: #333;
+.btn-primary:hover {
+  background-color: #a88f1a;
+  box-shadow: 0 10px 30px rgba(191, 161, 40, 0.5);
 }
+
 
 /*------------------------------------
   Why Choose Us Section
@@ -594,12 +800,25 @@ a.btn-primary:hover {
   flex-direction: row-reverse;
 }
 
+.feature-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
 .feature-image img {
   width: 100%;
   max-width: 500px;
   border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
+
+.feature-image:hover img {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4), 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
 
 .feature-text {
   flex: 1;
@@ -621,8 +840,8 @@ a.btn-primary:hover {
 
 .btn-primary {
   display: inline-block;
-  background-color: #000;
-  color: #fff;
+  background-color: #bfa128;
+  color: #111;
   padding: 12px 24px;
   text-decoration: none;
   border-radius: 8px;
@@ -631,7 +850,8 @@ a.btn-primary:hover {
 }
 
 .btn-primary:hover {
-  background-color: #444;
+  background-color: #bfa128;
+  color: #ffffff;
 }
 
 /*------------------------------------
@@ -648,72 +868,217 @@ a.btn-primary:hover {
   border-left: 4px solid #d4af37;
   background-color: #1a1a1a;
   color: #f5f5f5;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Make section titles white in dark sections */
+.testimonial-section .section-title h2,
+.testimonial-section .section-title.center,
+.testimonial-section h2,
+.testimonial-section .heading-md,
+.cta-banner .section-title h2,
+.cta-banner .section-title.center,
+.cta-banner h2,
+.cta-banner .heading-md {
+  color: #fff;
+}
+
+.testimonial-section .section-title h2::after,
+.cta-banner .section-title h2::after {
+  background: #d4af37;
 }
 
 /*------------------------------------
   CTA Banner
 ------------------------------------*/
-.cta-banner {
-  background-color: #0d0d0d;
-  color: #f5f5f5;
-  padding: 4rem 1rem;
-  text-align: center;
+.enhanced-cta {
+  padding: 6rem 1rem;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  color: black;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
+
+.enhanced-cta .section-title h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: black;
+}
+
+.cta-subtext {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: black;
+}
+
+.cta-perks ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 2rem;
+  max-width: 600px;
+}
+
+.cta-perks li {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.large-btn {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
 
 /*------------------------------------
   Footer
 ------------------------------------*/
-.footer {
-  background: #111;
-  color: #dcdcdc;
-  padding: 4rem 1rem;
-  font-size: 0.95rem;
+
+/* Entire Footer Background */
+.premium-footer {
+  background-color: #000; /* One seamless black background */
+  color: #ccc;
 }
 
-.footer-container {
+/* Grid Layout */
+.premium-footer .footer-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: 1.2fr 2fr;
   gap: 3rem;
+  padding: 4rem 0;
+  border-bottom: none; /* REMOVE divider */
 }
 
-.footer h3, .footer h4 {
-  font-size: 1.2rem;
-  font-weight: 600;
+/* Responsive Grid */
+@media (max-width: 768px) {
+  .premium-footer .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .premium-footer .contact-form input,
+  .premium-footer .contact-form textarea,
+  .premium-footer .contact-form select {
+    width: 100%;
+  }
+}
+
+/* Headings White */
+.premium-footer h3,
+.premium-footer h4 {
+  color: #fff;
   margin-bottom: 1rem;
-  color: #f5f5f5;
 }
 
-.footer a {
+/* Phone & Email gold */
+.footer-info a[href^="tel"],
+.footer-info a[href^="mailto"],
+.footer-info i.fa-phone-alt,
+.footer-info i.fa-envelope {
   color: #d4af37;
-  text-decoration: none;
+  font-weight: bold;
 }
 
-.footer a:hover {
-  text-decoration: underline;
+/* Contact Form Styling */
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+  box-sizing: border-box;
 }
 
+.contact-form button.cta-button {
+  background-color: #d4af37;
+  color: #111;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button.cta-button:hover {
+  background-color: #b48a2c;
+}
+
+/* Social Icons - No gap from above */
 #footer-bottom {
-  background: #0d0d0d;
-  color: #f5f5f5;
-  padding: 2rem 0;
+  background-color: #000; /* Ensure continuous black */
+  padding: 2rem 0 3rem;
+  margin: 0;
+  border: none;
+  color: #888;
   text-align: center;
 }
 
-.social-icons {
+/* Push icons flush to bottom visually */
+.footer-bottom-content {
   display: flex;
-  gap: 1.2rem;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Social Icons Styling */
+.social-icons {
   list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.social-icons li {
+  display: inline-block;
 }
 
 .social-icons a {
   color: #d4af37;
+  font-size: 1.4rem;
   transition: opacity 0.3s ease;
 }
 
 .social-icons a:hover {
-  opacity: 0.8;
+  opacity: 0.75;
+}
+
+/* Footer Info Link Styling */
+#footer-info a {
+  color: #d4af37;
+  text-decoration: none;
+}
+
+/* Make location icon gold */
+.gold-icon i.fa-map-marker-alt {
+  color: #d4af37;
+}
+
+/* Improve spacing in contact info */
+.footer-info .icon {
+  margin-right: 0.5rem;
+}
+
+/* Form Field Hover Effects */
+.contact-form input:hover,
+.contact-form textarea:hover,
+.contact-form select:hover {
+  background-color: #f7f7f7;
+  outline: 2px solid #d4af37;
+  transition: all 0.2s ease;
+}
+
+/* Optional: Focus effect for accessibility */
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  outline: 2px solid #d4af37;
+  background-color: #fff;
 }
 
 /*------------------------------------
@@ -783,4 +1148,3 @@ a.btn-primary:hover {
   background-color: #bfa128;
   color: #ffffff;
 }
-
