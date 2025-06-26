@@ -1,17 +1,18 @@
 {% load static %}
 <header class="navbar">
     <div class="container navbar-container">
-       <a href="/" class="logo" style="height: 3.5rem; display: flex; align-items: center;">
-  <img src="{% static 'images/formaspacelogo-wrapper.svg' %}" alt="FormaSpace Logo" style="height: 100%;" />
-</a>
+        <a href="/" class="logo" style="height: 3.5rem; display: flex; align-items: center;">
+            <img src="{% static 'images/formaspacelogo-wrapper.svg' %}" alt="FormaSpace Logo" style="height: 100%;" />
+        </a>
         <nav>
+            <!-- Toggle button outside ul -->
+            <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
             <ul class="nav-links">
                 <li><a href="{% url 'offices:location_list' %}">SPACES</a></li>
                 <li><a href="{% url 'blog:post_list' %}">JOURNAL</a></li>
                 <li><a href="{% url 'pages:about' %}">ABOUT</a></li>
                 <li><a href="{% url 'pages:connections' %}">CONNECTIONS</a></li>
                 <li><a href="{% url 'enquiries:enquiry_create' %}">ENQUIRE</a></li>
-                <!-- CONTACT is now its own LI with a class -->
                 <li class="contact-item">
                     <a href="/contact/" class="contact-link">CONTACT</a>
                 </li>

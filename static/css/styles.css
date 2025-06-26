@@ -207,6 +207,49 @@ h4,
   color: #fff !important;
 }
 
+/* Hamburger button */
+.menu-toggle {
+  display: none;
+  background: none;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: white;
+    display: none;
+    gap: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+
+  .contact-item {
+    margin-left: 0;
+  }
+}
+
+
 /*------------------------------------
   Hero Section
 ------------------------------------*/
@@ -725,6 +768,7 @@ a.btn-secondary {
   content: '';
   position: absolute;
   top: 50%;
+  display: none;
   left: -20px;
   right: -20px;
   height: 2px;
@@ -785,7 +829,7 @@ a.btn-secondary {
 ------------------------------------*/
 .why-choose-us {
   padding: 80px 20px;
-  background-color: #f8f8f8;
+  background-color: none;
 }
 
 .feature-block {
@@ -929,15 +973,16 @@ a.btn-secondary {
   font-size: 1.1rem;
 }
 
-
 /*------------------------------------
   Footer
 ------------------------------------*/
 
 /* Entire Footer Background */
 .premium-footer {
-  background-color: #000; /* One seamless black background */
+  background-color: #000;
+  /* One seamless black background */
   color: #ccc;
+  padding: 0; /* add some padding */
 }
 
 /* Grid Layout */
@@ -945,8 +990,7 @@ a.btn-secondary {
   display: grid;
   grid-template-columns: 1.2fr 2fr;
   gap: 3rem;
-  padding: 4rem 0;
-  border-bottom: none; /* REMOVE divider */
+  padding:  0; 
 }
 
 /* Responsive Grid */
@@ -1009,10 +1053,13 @@ a.btn-secondary {
 
 /* Social Icons - No gap from above */
 #footer-bottom {
-  background-color: #000; /* Ensure continuous black */
-  padding: 2rem 0 3rem;
+  padding: 0.5rem 0 0;
   margin: 0;
-  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: #000;
   color: #888;
   text-align: center;
 }
@@ -1028,17 +1075,19 @@ a.btn-secondary {
 .social-icons {
   list-style: none;
   padding: 0;
-  margin: 0 0 1rem 0;
+  margin-bottom: 1rem;
   display: flex;
   justify-content: center;
   gap: 1.2rem;
 }
 
 .social-icons li {
+  position: relative; 
   display: inline-block;
 }
 
 .social-icons a {
+  position: relative; 
   color: #d4af37;
   font-size: 1.4rem;
   transition: opacity 0.3s ease;
@@ -1079,6 +1128,26 @@ a.btn-secondary {
 .contact-form select:focus {
   outline: 2px solid #d4af37;
   background-color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .premium-footer {
+    padding: 2rem 1rem;
+  }
+  .premium-footer .footer-container {
+    grid-template-columns: 1fr;
+    padding: 0;
+    gap: 2rem;
+  }
+  .premium-footer .contact-form input,
+  .premium-footer .contact-form textarea,
+  .premium-footer .contact-form select {
+    width: 100%;
+  }
+  #footer-bottom {
+    padding: 1.5rem 1rem 2rem;
+  }
 }
 
 /*------------------------------------

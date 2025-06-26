@@ -22,9 +22,19 @@
 <body>
     {% include "partials/navbar.html" %}
 
+
     <main>{% block content %}{% endblock %}</main>
 
     {% include "partials/footer.html" %}
+    <!-- Navbar toggle script -->
+    <script>
+        const toggleButton = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        toggleButton.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+    </script>
     <script src="{% static 'js/scroll-animations.js' %}"></script>
     <!-- AOS JS -->
     <!-- AOS Animation Library -->
