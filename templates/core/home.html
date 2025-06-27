@@ -3,10 +3,12 @@
 {% block content %}
 
 <!-- HERO SECTION with Background Video -->
+{% if video %}
+<!-- HERO SECTION with Background Video -->
 <section class="hero-section video-hero">
   <!-- Background Video -->
   <video class="hero-video" autoplay muted loop playsinline>
-    <source src="{% static 'videos/office-tour.mp4' %}" type="video/mp4">
+      <source src="{% static 'videos/office-tour.mp4' %}" type="video/mp4">
     <!-- Fallback image -->
     <img src="{% static 'images/office-wide.jpg' %}" alt="Premium office interior">
   </video>
@@ -21,6 +23,9 @@
     <a href="/book" class="btn-primary">Book a Tour</a>
   </div>
 </section>
+{% else %}
+  <p>No video available.</p>
+{% endif %}
 
 <!-- What we offer title -->
 <section class="services-wrapper" data-aos="fade-up">

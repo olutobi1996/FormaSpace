@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from core.models import MyVideo
 
 def home(request):
-    return render(request, 'core/home.html')
+    video = MyVideo.objects.first()  
+    return render(request, 'core/home.html', {'video': video})
