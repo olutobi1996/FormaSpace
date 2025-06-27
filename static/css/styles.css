@@ -569,11 +569,11 @@ a.btn-secondary {
   }
 
   .card-content h3 {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .card-content p {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 
   .card-icon {
@@ -581,7 +581,7 @@ a.btn-secondary {
   }
 
   .learn-link {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
   }
 }
 
