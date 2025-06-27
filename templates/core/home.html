@@ -4,19 +4,15 @@
 
 <!-- HERO SECTION with Background Video -->
 {% if video %}
-<!-- HERO SECTION with Background Video -->
 <section class="hero-section video-hero">
   <!-- Background Video -->
   <video class="hero-video" autoplay muted loop playsinline>
-      <source src="{% static 'videos/office-tour.mp4' %}" type="video/mp4">
-    <!-- Fallback image -->
+    <source src="{{ video.video.url }}" type="video/mp4">
     <img src="{% static 'images/office-wide.jpg' %}" alt="Premium office interior">
   </video>
 
-  <!-- Overlay to soften the video -->
   <div class="hero-overlay"></div>
 
-  <!-- Hero Content -->
   <div class="container hero-content text-center">
     <h1 class="heading-xl">Premium Workspace in the Heart of Ayr</h1>
     <p class="subheading">Private offices, co‑working, and meeting rooms built for productivity and comfort.</p>
@@ -26,6 +22,9 @@
 {% else %}
   <p>No video available.</p>
 {% endif %}
+
+{% endblock %}
+
 
 <!-- What we offer title -->
 <section class="services-wrapper" data-aos="fade-up">
