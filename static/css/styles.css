@@ -553,27 +553,26 @@ a.btn-secondary {
   }
 
   .hex-container {
-    width: 90vw;
-    /* almost full viewport width */
-    max-width: 340px;
-    /* but no wider than original */
+    width: 85vw;        /* slightly smaller */
+    max-width: 300px;   /* reduced max width */
     margin-bottom: 2rem;
-    /* space between stacked circles */
   }
-}
 
-@media (max-width: 768px) {
   .service-card {
-    padding: 0.75rem;
+    padding: 0.5rem;    /* reduced padding */
     font-size: 0.85rem;
   }
 
+  .service-card img {
+    max-height: 35%;    /* shrink image height */
+  }
+
   .card-content h3 {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
   .card-content p {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
   }
 
   .card-icon {
@@ -581,9 +580,10 @@ a.btn-secondary {
   }
 
   .learn-link {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
   }
 }
+
 
 
 /*------------------------------------
