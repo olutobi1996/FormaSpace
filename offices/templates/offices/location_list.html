@@ -1,85 +1,99 @@
-{% extends 'base.html' %}
+"{% extends 'base.html' %}
 {% load static %}
 
 {% block title %}Spaces — FormaSpace{% endblock %}
 {% block content %}
 
-
-<!-- HERO SECTION with Background Image & Overlay -->
-<section class="hero-section video-hero">
-    <img src="{% static 'images/office-wide.jpg' %}" alt="Premium office interior">
-
+<!-- HERO SECTION -->
+<section class="hero-banner">
     <div class="hero-overlay"></div>
-    <div class="container hero-content text-center">
+    <div class="hero-content container text-center">
         <h1 class="heading-xl">Private Offices</h1>
         <a href="/book" class="btn-primary">Book a Tour</a>
     </div>
 </section>
 
-<!-- Intro Text -->
+
+<!-- INTRO TEXT -->
+
 <section class="intro-section text-center" data-aos="fade-up">
+
     <div class="container">
+
         <p class="subheading">Step into a space where productivity meets privacy. Ideal for focused teams and solo
+
             professionals who value comfort, connectivity, and peace of mind.</p>
+
     </div>
+
 </section>
 
-<!-- Dynamic Grid Image Gallery -->
+
+
+<!-- IMAGE GALLERY -->
+
 <section class="image-gallery container" data-aos="fade-up">
+
     <div class="image-grid">
+
         <div class="grid-item large"><img src="{% static 'images/office-long.jpg' %}" alt="Spacious Private Office" />
         </div>
+
         <div class="grid-item medium"><img src="{% static 'images/office-wide1.jpg' %}" alt="Wide Office View" /></div>
+
         <div class="grid-item medium"><img src="{% static 'images/office-wide2.jpg' %}" alt="Office with Furniture" />
         </div>
+
         <div class="grid-item large-square"><img src="{% static 'images/office-big.jpg' %}"
                 alt="Premium Furnished Office" /></div>
+
+
+
     </div>
+
 </section>
 
-<!-- Gold Feature Grid -->
+<!-- Gold Feature Grid with Updated Icons -->
 <section class="gold-feature-grid container" data-aos="fade-up">
-  <div class="grid-title text-center">
-    <h2>Everything You Need</h2>
-  </div>
-  <div class="gold-grid">
-    <div class="gold-box">
-      <span class="icon"><i class="ph ph-parking-circle"></i></span>
-      <p>On-site<br>parking</p>
+    <div class="grid-title text-center">
+        <h2>Everything You Need</h2>
     </div>
-    <div class="gold-box">
-      <span class="icon"><i class="ph ph-armchair"></i></span>
-      <p>Furniture<br>included</p>
+    <div class="gold-grid">
+        <div class="gold-box">
+            <span class="icon"><i class="ph ph-car"></i></span> <!-- Car icon for parking -->
+            <p>On-site<br>parking</p>
+        </div>
+        <div class="gold-box">
+            <span class="icon"><i class="ph ph-armchair"></i></span>
+            <p>Furniture<br>included</p>
+        </div>
+        <div class="gold-box">
+            <span class="icon"><i class="ph ph-buildings"></i></span> <!-- Updated to building icon -->
+            <p>Maintained<br>grounds</p>
+        </div>
+        <div class="gold-box">
+            <span class="icon"><i class="ph ph-clock-afternoon"></i></span>
+            <p>Access<br>anytime</p>
+        </div>
+        <div class="gold-box">
+            <span class="icon"><i class="ph ph-wifi-high"></i></span>
+            <p>State of the art<br>technology</p>
+        </div>
+        <div class="gold-box">
+            <span class="icon"><i class="ph ph-lightbulb"></i></span>
+            <p>Utilities<br>Included</p>
+        </div>
+        <div class="gold-box">
+            <span class="icon"><i class="ph ph-users-three"></i></span>
+            <p>Discounted<br>Meeting Rooms</p>
+        </div>
     </div>
-    <div class="gold-box">
-      <span class="icon"><i class="ph ph-plant"></i></span>
-      <p>Maintained<br>grounds</p>
-    </div>
-    <div class="gold-box">
-      <span class="icon"><i class="ph ph-clock-afternoon"></i></span>
-      <p>Access<br>anytime</p>
-    </div>
-    <div class="gold-box">
-      <span class="icon"><i class="ph ph-wifi-high"></i></span>
-      <p>State of the art<br>technology</p>
-    </div>
-    <div class="gold-box">
-      <span class="icon"><i class="ph ph-lightbulb"></i></span>
-      <p>Utilities<br>Included</p>
-    </div>
-    <div class="gold-box">
-      <span class="icon"><i class="ph ph-users-three"></i></span>
-      <p>Discounted<br>Meeting Rooms</p>
-    </div>
-  </div>
 </section>
 
-
-
-<!-- Updated "How It Works" Section -->
-<section class="how-it-works-section container" data-aos="fade-up">
+<!-- Updated "How It Works" Section with Clean Background -->
+<section class="how-it-works-section how-it-works-clean container" data-aos="fade-up">
     <div class="section-title center">
-        <h2>Getting Started is Simple</h2>
+        <h2 class="black-title">Getting Started is Simple</h2>
     </div>
     <div class="steps-flow-wrapper">
         <div class="flow-step" data-aos="zoom-in" data-aos-delay="100">
@@ -91,7 +105,7 @@
         <div class="flow-arrow"><i class="ph ph-arrow-right"></i></div>
 
         <div class="flow-step" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-circle"><i class="ph ph-office-chair"></i></div>
+            <div class="icon-circle"><i class="ph ph-map-pin"></i></div> <!-- Added correct icon -->
             <h3 class="step-title">Pick Your Space</h3>
             <p class="step-desc">Choose from private suites, co-working desks, or virtual plans tailored to you.</p>
         </div>
@@ -108,29 +122,4 @@
         <a href="#get-started" class="btn-primary">Book Now</a>
     </div>
 </section>
-
-<!-- Updated Testimonials -->
-<section class="testimonial-section" data-aos="fade-up">
-    <div class="container">
-        <div class="section-title center">
-            <h2>Hear From Our Clients</h2>
-        </div>
-        <div class="testimonial-grid">
-            <div class="testimonial" data-aos="fade-up" data-aos-delay="100">
-                <p>"The private offices are immaculate, quiet, and fully equipped. Perfect for client meetings too."</p>
-                <strong>Alex R., Consultant</strong>
-            </div>
-            <div class="testimonial" data-aos="fade-up" data-aos-delay="200">
-                <p>"I started with a virtual office package — now I'm full-time in their co-working space. Fantastic
-                    service."</p>
-                <strong>Jordan T., Startup Founder</strong>
-            </div>
-            <div class="testimonial" data-aos="fade-up" data-aos-delay="300">
-                <p>"Everything just works. Great technology, flexible terms, and a professional atmosphere."</p>
-                <strong>Rebecca D., Marketing Exec</strong>
-            </div>
-        </div>
-    </div>
-</section>
-
 {% endblock %}
