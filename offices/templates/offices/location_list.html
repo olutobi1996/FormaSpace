@@ -1,125 +1,119 @@
-"{% extends 'base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block title %}Spaces — FormaSpace{% endblock %}
+
 {% block content %}
-
-<!-- HERO SECTION -->
-<section class="hero-banner">
-    <div class="hero-overlay"></div>
-    <div class="hero-content container text-center">
-        <h1 class="heading-xl">Private Offices</h1>
-        <a href="/book" class="btn-primary">Book a Tour</a>
+<div class="page-light-theme">
+  <!-- HERO SECTION -->
+  <section class="private-hero-banner" data-aos="fade-in">
+    <div class="private-hero-overlay"></div>
+    <div class="private-hero-content container text-center">
+      <h1 class="heading-xl">Private Offices</h1> <!-- Changed class -->
+      <a href="/book" class="btn-primary">Book a Tour</a> <!-- Changed class -->
     </div>
+  </section>
+
+  <!-- INTRO TEXT -->
+ <section class="private-intro-section" data-aos="fade-up">
+  <div class="section-title text-center">
+    <h2 class="section-heading">More Than Just Office Space</h2>
+    <div class="intro-grid">
+      <div class="intro-card" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="intro-title">Privacy & Style</h3>
+        <p class="intro-text">
+          Elegant private offices designed for focus, meetings, and teamwork.
+        </p>
+      </div>
+      <div class="intro-card" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="intro-title">Always Connected</h3>
+        <p class="intro-text">
+          Reliable super-fast Wi-Fi and cutting-edge tech keep you linked in.
+        </p>
+      </div>
+      <div class="intro-card" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="intro-title">Flexible Spaces</h3>
+        <p class="intro-text">
+          From solo retreats to team suites — scalable workspaces for every need.
+        </p>
+      </div>
+    </div>
+  </div>
 </section>
 
 
-<!-- INTRO TEXT -->
 
-<section class="intro-section text-center" data-aos="fade-up">
-
-    <div class="container">
-
-        <p class="subheading">Step into a space where productivity meets privacy. Ideal for focused teams and solo
-
-            professionals who value comfort, connectivity, and peace of mind.</p>
-
+  <!-- IMAGE GALLERY -->
+  <section class="private-image-gallery container" data-aos="fade-up"data-aos-delay="100">
+    <div class="private-image-grid">
+      <div class="grid-item large"><img src="{% static 'images/office-long.jpg' %}" alt="Spacious Private Office" />
+      </div>
+      <div class="grid-item medium"><img src="{% static 'images/office-wide1.jpg' %}" alt="Wide Office View" /></div>
+      <div class="grid-item medium"><img src="{% static 'images/office-wide2.jpg' %}" alt="Office with Furniture" />
+      </div>
+      <div class="grid-item large-square"><img src="{% static 'images/office-big.jpg' %}"
+          alt="Premium Furnished Office" /></div>
     </div>
+  </section>
 
-</section>
-
-
-
-<!-- IMAGE GALLERY -->
-
-<section class="image-gallery container" data-aos="fade-up">
-
-    <div class="image-grid">
-
-        <div class="grid-item large"><img src="{% static 'images/office-long.jpg' %}" alt="Spacious Private Office" />
-        </div>
-
-        <div class="grid-item medium"><img src="{% static 'images/office-wide1.jpg' %}" alt="Wide Office View" /></div>
-
-        <div class="grid-item medium"><img src="{% static 'images/office-wide2.jpg' %}" alt="Office with Furniture" />
-        </div>
-
-        <div class="grid-item large-square"><img src="{% static 'images/office-big.jpg' %}"
-                alt="Premium Furnished Office" /></div>
-
-
-
+  <!-- FEATURES -->
+  <section class="private-feature-grid container" data-aos="fade-up" data-aos-delay="200">
+    <div class="section-title text-center">
+      <h2>Everything You Need</h2>
     </div>
-
-</section>
-
-<!-- Gold Feature Grid with Updated Icons -->
-<section class="gold-feature-grid container" data-aos="fade-up">
-    <div class="grid-title text-center">
-        <h2>Everything You Need</h2>
+    <div class="private-grid">
+      <div class="private-box"><span class="icon"><i class="ph ph-car"></i></span>
+        <p>On-site<br>parking</p>
+      </div>
+      <div class="private-box"><span class="icon"><i class="ph ph-armchair"></i></span>
+        <p>Furniture<br>included</p>
+      </div>
+      <div class="private-box"><span class="icon"><i class="ph ph-buildings"></i></span>
+        <p>Maintained<br>grounds</p>
+      </div>
+      <div class="private-box"><span class="icon"><i class="ph ph-clock-afternoon"></i></span>
+        <p>Access<br>anytime</p>
+      </div>
+      <div class="private-box"><span class="icon"><i class="ph ph-wifi-high"></i></span>
+        <p>State of the art<br>technology</p>
+      </div>
+      <div class="private-box"><span class="icon"><i class="ph ph-lightbulb"></i></span>
+        <p>Utilities<br>Included</p>
+      </div>
+      <div class="private-box"><span class="icon"><i class="ph ph-users-three"></i></span>
+        <p>Discounted<br>Meeting Rooms</p>
+      </div>
     </div>
-    <div class="gold-grid">
-        <div class="gold-box">
-            <span class="icon"><i class="ph ph-car"></i></span> <!-- Car icon for parking -->
-            <p>On-site<br>parking</p>
-        </div>
-        <div class="gold-box">
-            <span class="icon"><i class="ph ph-armchair"></i></span>
-            <p>Furniture<br>included</p>
-        </div>
-        <div class="gold-box">
-            <span class="icon"><i class="ph ph-buildings"></i></span> <!-- Updated to building icon -->
-            <p>Maintained<br>grounds</p>
-        </div>
-        <div class="gold-box">
-            <span class="icon"><i class="ph ph-clock-afternoon"></i></span>
-            <p>Access<br>anytime</p>
-        </div>
-        <div class="gold-box">
-            <span class="icon"><i class="ph ph-wifi-high"></i></span>
-            <p>State of the art<br>technology</p>
-        </div>
-        <div class="gold-box">
-            <span class="icon"><i class="ph ph-lightbulb"></i></span>
-            <p>Utilities<br>Included</p>
-        </div>
-        <div class="gold-box">
-            <span class="icon"><i class="ph ph-users-three"></i></span>
-            <p>Discounted<br>Meeting Rooms</p>
-        </div>
-    </div>
-</section>
+  </section>
 
-<!-- Updated "How It Works" Section with Clean Background -->
-<section class="how-it-works-section how-it-works-clean container" data-aos="fade-up">
-    <div class="section-title center">
-        <h2 class="black-title">Getting Started is Simple</h2>
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works-section" data-aos="fade-up" data-aos-delay="300">
+    <div class="section-title text-center">
+      <h2>Getting Started is Simple</h2>
     </div>
     <div class="steps-flow-wrapper">
-        <div class="flow-step" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-circle"><i class="ph ph-calendar-check"></i></div>
-            <h3 class="step-title">Book a Visit</h3>
-            <p class="step-desc">Schedule a private tour or virtual walkthrough of our spaces.</p>
-        </div>
-
-        <div class="flow-arrow"><i class="ph ph-arrow-right"></i></div>
-
-        <div class="flow-step" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-circle"><i class="ph ph-map-pin"></i></div> <!-- Added correct icon -->
-            <h3 class="step-title">Pick Your Space</h3>
-            <p class="step-desc">Choose from private suites, co-working desks, or virtual plans tailored to you.</p>
-        </div>
-
-        <div class="flow-arrow"><i class="ph ph-arrow-right"></i></div>
-
-        <div class="flow-step" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-circle"><i class="ph ph-rocket-launch"></i></div>
-            <h3 class="step-title">Start Instantly</h3>
-            <p class="step-desc">Everything's ready — furniture, Wi-Fi, meeting access, and support.</p>
-        </div>
+      <div class="flow-step" data-aos="zoom-in" data-aos-delay="100">
+        <div class="icon-circle"><i class="ph ph-calendar-check"></i></div>
+        <h3 class="step-title">Book a Visit</h3>
+        <p class="step-desc">Schedule a private tour or virtual walkthrough of our spaces.</p>
+      </div>
+      <div class="flow-arrow"><i class="ph ph-arrow-right"></i></div>
+      <div class="flow-step" data-aos="zoom-in" data-aos-delay="200">
+        <div class="icon-circle"><i class="ph ph-map-pin"></i></div>
+        <h3 class="step-title">Pick Your Space</h3>
+        <p class="step-desc">Choose from private suites, co-working desks, or virtual plans tailored to you.</p>
+      </div>
+      <div class="flow-arrow"><i class="ph ph-arrow-right"></i></div>
+      <div class="flow-step" data-aos="zoom-in" data-aos-delay="300">
+        <div class="icon-circle"><i class="ph ph-rocket-launch"></i></div>
+        <h3 class="step-title">Start Instantly</h3>
+        <p class="step-desc">Everything's ready — furniture, Wi-Fi, meeting access, and support.</p>
+      </div>
     </div>
-    <div class="cta-container text-center" data-aos="fade-up" data-aos-delay="400">
-        <a href="#get-started" class="btn-primary">Book Now</a>
+    <div class="cta-container text-center cta-spacing" data-aos="fade-up" data-aos-delay="400">
+      <a href="#get-started" class="btn-primary">Book Now</a>
     </div>
-</section>
+  </section>
+</div>
+
 {% endblock %}

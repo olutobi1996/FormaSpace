@@ -1008,7 +1008,7 @@ a.btn-secondary {
   background-color: #000;
   /* One seamless black background */
   color: #ccc;
-  padding: 0;
+  padding-top: 4rem;
   /* add some padding */
 }
 
@@ -1017,7 +1017,7 @@ a.btn-secondary {
   display: grid;
   grid-template-columns: 1.2fr 2fr;
   gap: 3rem;
-  padding: 0;
+  padding: 1rem;
 }
 
 /* Responsive Grid */
@@ -1247,28 +1247,135 @@ a.btn-primary:hover {
   background-color: #bfa128;
   color: #ffffff;
 }
-
 /*------------------------------------
   Other HTML templates 
 ------------------------------------*/
-.gold-feature-grid {
+.private-hero-banner {
+  position: relative;
+  height: 80vh;
+  min-height: 500px;
+  width: 100%;
+  background-image: url('/static/images/office-wide.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.private-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+.private-hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.private-heading-xl {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.btn-private-primary {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #d4af37, #bfa128);
+  color: #111;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-private-primary:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #bfa128, #8a7315);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .private-heading-xl {
+    font-size: 2rem;
+  }
+}
+
+/* Intro Text - FIXED: now targets .subheading (matches HTML) */
+.private-intro-section .subheading {
+  font-size: 1.25rem;
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: #111; /* dark color for readability */
+}
+
+/* Image Gallery */
+.private-image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 200px;
+  gap: 1rem;
+}
+
+.private-image-grid .grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+.grid-item.large {
+  grid-row: span 2;
+}
+
+.grid-item.large-square {
+  grid-row: span 2;
+  grid-column: span 2;
+}
+
+.grid-item.medium {
+  grid-row: span 1;
+}
+
+/* Feature Grid */
+.private-feature-grid {
   padding: 4rem 1rem;
 }
 
-.gold-feature-grid .grid-title h2 {
+.private-feature-grid .grid-title h2 {
   font-size: 2.5rem;
   margin-bottom: 3rem;
   color: #111;
 }
 
-.gold-grid {
+.private-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
 }
 
-.gold-box {
+.private-box {
   background-color: #fff;
   border: 2px solid #eee;
   border-radius: 16px;
@@ -1282,189 +1389,163 @@ a.btn-primary:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  cursor: default;
 }
 
-.gold-box:hover {
+.private-box:hover {
   border-color: #d4af37;
   box-shadow: 0 0 16px rgba(212, 175, 55, 0.4), 0 0 24px rgba(0, 0, 0, 0.1);
   transform: translateY(-5px) scale(1.02);
 }
 
-.gold-box .icon {
-  font-size: 3rem;
+.private-box .icon {
+  font-size: 2.75rem;
   color: #d4af37;
   margin-bottom: 1rem;
 }
 
-.gold-box p {
+.private-box p {
   font-size: 1.1rem;
-  color: #333;
+  color: #111;
   font-weight: 500;
   line-height: 1.4;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
-  .gold-box {
+  .private-box {
     width: 100%;
     max-width: 300px;
   }
 }
 
-/* Distinct HERO BANNER STYLING */
-.hero-banner {
-  position: relative;
-  height: 85vh;
-  width: 100%;
-  background-image: url('/static/images/office-wide.jpg');
-  /* Adjust path if needed */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+/* Steps */
+.private-how-it-works .flow-step {
+  margin-bottom: 40px;
 }
 
-.hero-banner .hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+.step-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1rem 0 0.5rem;
+  color: #111;
+}
+
+.step-desc {
+  font-size: 1rem;
+  color: #555;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* FIXED: Icon colors forced solid gold and no opacity */
+.private-how-it-works .icon-circle {
+  font-size: 2.5rem;
+}
+
+.cta-spacing {
+  margin-top: 3rem; 
+}
+
+.cta-container {
+  padding-bottom: 3rem;
+}
+
+.page-light-theme {
+  background-color: #fff;
+}
+/*------------------------------------
+  Private Office Intro Section (Styled)
+------------------------------------*/
+.intro-wrapper {
+  padding: 4rem 1rem;
+}
+
+.section-heading {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+  color: #111;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  justify-items: center;
+}
+
+.intro-card {
+  max-width: 320px;
+  text-align: center;
+  padding: 24px;
+  background: #fff; /* pure white, no tint */
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 12px rgba(191, 161, 40, 0.4); /* subtle gold shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.intro-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 14px 36px rgba(191, 161, 40, 0.6); /* stronger gold glow on hover */
+}
+
+.intro-card::before {
+  content: none; /* removed the gold gradient background */
+}
+
+
+.intro-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 12px;
+  position: relative;
   z-index: 1;
 }
 
-.hero-banner .hero-content {
-  position: relative;
-  z-index: 2;
-  color: #fff;
-  text-align: center;
-}
-
-.hero-banner .heading-xl {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  font-family: 'YourHeadingFont', sans-serif;
-}
-
-.hero-banner .btn-primary {
-  background-color: #d4af37;
-  color: #fff;
-  border: none;
-  padding: 0.75rem 2rem;
+.intro-text {
   font-size: 1rem;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  text-decoration: none;
+  color: #555;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
 }
 
-.hero-banner .btn-primary:hover {
-  background-color: #b3912f;
-}
-
-/* Responsive for smaller screens */
-@media (max-width: 768px) {
-  .hero-banner .heading-xl {
-    font-size: 2rem;
+/* Responsive layout */
+@media (min-width: 768px) {
+  .intro-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-.hero-banner {
-  background-attachment: fixed;
+/* Add glowing animation */
+.intro-card:hover::before {
+  box-shadow: 0 0 12px rgba(191, 161, 40, 0.6), 0 0 24px rgba(191, 161, 40, 0.4);
+  transition: box-shadow 0.4s ease;
 }
 
-/* INTRO TEXT */
-
-.intro-section p {
-
-  font-size: 1.25rem;
-
-  max-width: 700px;
-
-  margin: 0 auto;
-
-  font-family: 'YourHeadingFont', sans-serif;
-  /* match the title font */
-
+/* Optional: matching CTA button if needed */
+.btn-primary {
+  background-color: #bfa128;
+  color: #fff;
+  padding: 14px 32px;
+  font-size: 1rem;
   font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(191, 161, 40, 0.3);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
 
-  color: #333;
-
+.btn-primary:hover {
+  background-color: #a88f1a;
+  box-shadow: 0 10px 30px rgba(191, 161, 40, 0.5);
 }
 
 
 
-/* IMAGE GALLERY MASONRY */
-
-.image-grid {
-
-  display: grid;
-
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-
-  grid-auto-rows: 200px;
-
-  gap: 1rem;
-
-}
-
-
-
-.image-grid .grid-item img {
-
-  width: 100%;
-
-  height: 100%;
-
-  object-fit: cover;
-
-  display: block;
-  border-radius: 12px;
-}
-
-
-
-.grid-item.large {
-  grid-row: span 2;
-
-}
-
-
-
-.grid-item.large-square {
-  grid-row: span 2;
-  grid-column: span 2;
-
-}
-
-
-
-.grid-item.medium {
-  grid-row: span 1;
-
-}
-
-
-
-/* Custom no-background section for Getting Started */
-.how-it-works-clean {
-  background: none !important;
-  background-color: #ffffff;
-  padding: 60px 0;
-}
-
-/* Ensure the title is black in this custom section only */
-.how-it-works-clean .section-title h2,
-.how-it-works-clean .black-title {
-  color: #000 !important;
-}
-
-/* Optional: maintain visual spacing if needed */
-.how-it-works-clean .flow-step {
-  margin-bottom: 40px;
-}
