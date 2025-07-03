@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Co-working — FormaSpace{% endblock %}
+
+{% block content %}
+{% if video %}
+<div class="page-light-theme">
+
+  <!-- HERO SECTION with Background Video -->
+  <section class="hero-section video-hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="https://formaspace-assets.s3.eu-north-1.amazonaws.com/office-tour.mp4" type="video/mp4">
+      <img src="{% static 'images/office-wide.jpg' %}" alt="FormaSpace co-working space" />
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content text-center">
+      <h1 class="heading-xl">Collaborate with Us</h1>
+      <p class="subheading">Isolation is solved here — join a vibrant community of like-minded professionals.</p>
+      <a href="/book" class="btn-primary">Find Out More</a>
+    </div>
+  </section>
+
+{% else %}
+<p>No video available.</p>
+{% endif %}
+
+  <!-- INTRO -->
+  <section class="private-intro-section" data-aos="fade-up">
+    <div class="section-title text-center">
+      <h2 class="section-heading">More Than a Shared Desk</h2>
+    </div>
+    <div class="intro-grid">
+      <div class="intro-card" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="intro-title">Work Your Way</h3>
+        <p class="intro-text">Choose from day passes or longer packages — no strings, just space.</p>
+      </div>
+      <div class="intro-card" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="intro-title">Be Part of Something</h3>
+        <p class="intro-text">Surround yourself with creatives, freelancers, and thinkers who inspire you.</p>
+      </div>
+      <div class="intro-card" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="intro-title">Stay Connected</h3>
+        <p class="intro-text">Superfast broadband, kitchen facilities, and discounted meeting rooms included.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="private-feature-grid container" data-aos="fade-up" data-aos-delay="200">
+    <div class="section-title text-center">
+      <h2>All of Our Spaces Offer…</h2>
+    </div>
+    <div class="private-grid">
+      <div class="private-box"><span class="icon"><i class="ph ph-clock"></i></span>
+        <p>Access<br>Mon–Fri 9am–5pm</p>
+      </div>
+      <div class="private-box"><span class="icon"><i class="ph ph-ticket"></i></span>
+        <p>Day rates<br>& Passes</p>
+      </div>
+      <div class="private-box"><span class="icon"><i class="ph ph-wifi-high"></i></span>
+        <p>Superfast<br>Broadband</p>
+      </div>
+      <div class="private-box"><span class="icon"><i class="ph ph-fork-knife"></i></span>
+        <p>Kitchen<br>Facilities</p>
+      </div>
+      <div class="private-box"><span class="icon"><i class="ph ph-handshake"></i></span>
+        <p>Discounted<br>Meeting Rooms</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works-section" data-aos="fade-up" data-aos-delay="300">
+    <div class="section-title text-center">
+      <h2>A Few Easy Steps</h2>
+    </div>
+    <div class="steps-flow-wrapper">
+      <div class="flow-step" data-aos="zoom-in" data-aos-delay="100">
+        <div class="icon-circle"><i class="ph ph-envelope-simple"></i></div>
+        <h3 class="step-title">1. Enquire Now</h3>
+        <p class="step-desc">Send us a message to book a visit and tour the space.</p>
+      </div>
+      <div class="flow-arrow"><i class="ph ph-arrow-right"></i></div>
+      <div class="flow-step" data-aos="zoom-in" data-aos-delay="200">
+        <div class="icon-circle"><i class="ph ph-smiley"></i></div>
+        <h3 class="step-title">2. Try It Out</h3>
+        <p class="step-desc">Work with us for the day — no obligation, just good vibes.</p>
+      </div>
+      <div class="flow-arrow"><i class="ph ph-arrow-right"></i></div>
+      <div class="flow-step" data-aos="zoom-in" data-aos-delay="300">
+        <div class="icon-circle"><i class="ph ph-calendar-check"></i></div>
+        <h3 class="step-title">3. Book Your Spot</h3>
+        <p class="step-desc">Grab your pass and get to work in your new space.</p>
+      </div>
+    </div>
+    <div class="cta-container text-center cta-spacing" data-aos="fade-up" data-aos-delay="400">
+      <a href="#get-started" class="btn-primary">Get Started</a>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section class="coworking-packages-section container" data-aos="fade-up" data-aos-delay="400">
+    <div class="section-title text-center">
+      <h2>Hot Desking Packages</h2>
+    </div>
+    <div class="private-grid">
+      <div class="private-box"><span class="icon"><i class="ph ph-calendar"></i></span>
+        <p>Day Rate<br>£18.00</p>
+      </div>
+      <div class="private-box"><span class="icon"><i class="ph ph-calendar-range"></i></span>
+        <p>5 Day Pass<br>£84.00</p>
+      </div>
+      <div class="private-box"><span class="icon"><i class="ph ph-calendar-x"></i></span>
+        <p>10 Day Pass<br>£155.00</p>
+      </div>
+    </div>
+    <div class="cta-container text-center cta-spacing" data-aos="fade-up">
+      <a href="/book" class="btn-primary">Book a Pass</a>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section" data-aos="fade-up" data-aos-delay="400">
+    <div class="section-title text-center">
+      <h2>What Our Members Say</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+        <p class="quote">“I was feeling isolated freelancing from home — FormaSpace gave me a community and a boost.”</p>
+        <p class="author">— Sam L., Graphic Designer</p>
+      </div>
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+        <p class="quote">“I met my current collaborators over coffee in the lounge. The vibe here is genuinely inspiring.”</p>
+        <p class="author">— Priya N., Startup Founder</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+{% endblock %}

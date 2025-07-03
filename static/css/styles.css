@@ -146,8 +146,10 @@ h4,
 }
 
 .logo {
-  font-size: 2rem;
+  flex-shrink: 0;
+  margin-right: 2rem; 
 }
+
 
 .logo img {
   height: 5rem;
@@ -162,6 +164,13 @@ h4,
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+
+/* Add position relative to each list item for dropdown positioning */
+.nav-links > li {
+  position: relative;  /* Added for dropdown */
+  margin-right: 2rem;  /* Keep your existing spacing */
 }
 
 .nav-links a {
@@ -207,6 +216,53 @@ h4,
   color: #fff !important;
 }
 
+/* Dropdown menu container */
+.dropdown-menu {
+  display: none;
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 180px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+  border-radius: 4px;
+  padding: 0.5rem 0;
+}
+
+/* Dropdown menu list items */
+.dropdown-menu li {
+  margin: 0;
+}
+
+/* Dropdown menu links */
+.dropdown-menu a {
+  padding: 0.5rem 1rem;
+  color: #333;
+  display: block;
+  text-decoration: none;
+}
+
+/* Hover state for dropdown menu links */
+.dropdown-menu a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Show dropdown menu on parent hover or focus */
+.dropdown:hover > .dropdown-menu,
+.dropdown:focus-within > .dropdown-menu {
+  display: block;
+}
+
+/* Add arrow after dropdown toggle */
+.dropdown-toggle::after {
+  content: ' ▼';
+  font-size: 0.6rem;
+  margin-left: 0.2rem;
+  color: #333;
+}
+
 /* Hamburger button */
 .menu-toggle {
   display: none;
@@ -247,8 +303,21 @@ h4,
   .contact-item {
     margin-left: 0;
   }
-}
 
+  /* Optional: Make dropdown-menu inside mobile menu display block on click
+     You can add JS to toggle this if needed */
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+  }
+
+  .dropdown-menu a {
+    padding-left: 2rem; /* indent dropdown items on mobile */
+    color: #000;
+  }
+}
 
 /*------------------------------------
   Hero Section

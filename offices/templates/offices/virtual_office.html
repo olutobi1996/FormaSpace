@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Virtual Offices — FormaSpace{% endblock %}
+
+{% block content %}
+{% if video %}
+<div class="page-light-theme">
+
+  <!-- HERO SECTION with Background Video -->
+  <section class="hero-section video-hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="https://formaspace-assets.s3.eu-north-1.amazonaws.com/office-tour.mp4" type="video/mp4">
+      <img src="{% static 'images/office-wide.jpg' %}" alt="FormaSpace virtual office" />
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content text-center">
+      <h1 class="heading-xl">Virtual Office, Real Impact</h1>
+      <p class="subheading">Create a professional impression from anywhere, with our flexible virtual packages.</p>
+      <a href="/book" class="btn-primary">Get Started</a>
+    </div>
+  </section>
+
+{% else %}
+<p>No video available.</p>
+{% endif %}
+
+  <!-- INTRO -->
+  <section class="private-intro-section" data-aos="fade-up">
+    <div class="section-title text-center">
+      <h2 class="section-heading">A Professional Presence, Anywhere</h2>
+      <p class="intro-paragraph">Enjoy the perks of a city office without the overheads — our virtual office solutions help remote professionals and businesses maintain credibility, privacy, and flexibility.</p>
+    </div>
+    <div class="intro-grid">
+      <div class="intro-card" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="intro-title">Prestigious Business Address</h3>
+        <p class="intro-text">Use our central address to elevate your business image online and on paper.</p>
+      </div>
+      <div class="intro-card" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="intro-title">Call & Mail Handling</h3>
+        <p class="intro-text">From phone answering to secure mail forwarding — we’ve got it covered.</p>
+      </div>
+      <div class="intro-card" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="intro-title">Work When You Need</h3>
+        <p class="intro-text">Drop in with free co-working days included in every package.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES TABLE -->
+  <section class="coworking-packages-section container" data-aos="fade-up" data-aos-delay="200">
+    <div class="section-title text-center">
+      <h2>Virtual Office Packages</h2>
+      <p class="intro-paragraph">Choose a package that fits your business needs — all prices exclude VAT.</p>
+    </div>
+    <div class="pricing-table-wrapper">
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Features</th>
+            <th>Basic<br>£36 p/m</th>
+            <th>Professional<br>£60 p/m</th>
+            <th>Executive<br>£80 p/m</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>A Prestigious Business Address</td><td>✔</td><td>✔</td><td>✔</td></tr>
+          <tr><td>Mail Collection and Forwarding Service</td><td>✔</td><td>✔</td><td>✔</td></tr>
+          <tr><td>Discounted Room Hire</td><td></td><td>✔</td><td>✔</td></tr>
+          <tr><td>Business Phone Number</td><td></td><td>✔</td><td>✔</td></tr>
+          <tr><td>Call Forwarding</td><td></td><td>✔</td><td>✔</td></tr>
+          <tr><td>Virtual Receptionist</td><td></td><td></td><td>✔</td></tr>
+          <tr><td>Message Handling</td><td></td><td></td><td>✔</td></tr>
+          <tr><td>Free Co-Working Days / month</td><td>2</td><td>4</td><td>4</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cta-container text-center cta-spacing" data-aos="fade-up">
+      <a href="/book" class="btn-primary">Get Started</a>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works-section" data-aos="fade-up" data-aos-delay="300">
+    <div class="section-title text-center">
+      <h2>How It Works</h2>
+      <p class="intro-paragraph">A few easy steps away from a stress-free virtual presence.</p>
+    </div>
+    <div class="steps-flow-wrapper">
+      <div class="flow-step" data-aos="zoom-in" data-aos-delay="100">
+        <div class="icon-circle"><i class="ph ph-envelope-simple"></i></div>
+        <h3 class="step-title">1. Enquire Now</h3>
+        <p class="step-desc">Send us a message and we'll guide you through the options.</p>
+      </div>
+      <div class="flow-arrow"><i class="ph ph-arrow-right"></i></div>
+      <div class="flow-step" data-aos="zoom-in" data-aos-delay="200">
+        <div class="icon-circle"><i class="ph ph-star"></i></div>
+        <h3 class="step-title">2. Choose Your Package</h3>
+        <p class="step-desc">Select the plan that suits your goals and growth.</p>
+      </div>
+      <div class="flow-arrow"><i class="ph ph-arrow-right"></i></div>
+      <div class="flow-step" data-aos="zoom-in" data-aos-delay="300">
+        <div class="icon-circle"><i class="ph ph-map-pin-line"></i></div>
+        <h3 class="step-title">3. Start Using Your Address</h3>
+        <p class="step-desc">Promote your new business address and enjoy the benefits instantly.</p>
+      </div>
+    </div>
+    <div class="cta-container text-center cta-spacing" data-aos="fade-up" data-aos-delay="400">
+      <a href="/book" class="btn-primary">Get Started</a>
+    </div>
+  </section>
+
+  <!-- BENEFITS / FEATURED CONTENT -->
+  <section class="private-feature-grid container" data-aos="fade-up" data-aos-delay="400">
+    <div class="section-title text-center">
+      <h2>Why Go Virtual with FormaSpace?</h2>
+    </div>
+    <div class="private-grid">
+      <div class="private-box"><span class="icon"><i class="ph ph-shield-check"></i></span>
+        <p>Secure<br>Mail Handling</p>
+      </div>
+      <div class="private-box"><span class="icon"><i class="ph ph-phone-call"></i></span>
+        <p>Reliable<br>Call Management</p>
+      </div>
+      <div class="private-box"><span class="icon"><i class="ph ph-map-pin"></i></span>
+        <p>Prestige<br>Business Address</p>
+      </div>
+      <div class="private-box"><span class="icon"><i class="ph ph-chat-text"></i></span>
+        <p>Live<br>Message Handling</p>
+      </div>
+      <div class="private-box"><span class="icon"><i class="ph ph-laptop"></i></span>
+        <p>Free<br>Co-Working Access</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="cta-highlight-section text-center" data-aos="fade-up" data-aos-delay="400">
+    <div class="section-title">
+      <h2>Discover an Office Without Walls</h2>
+      <p class="intro-paragraph">Trust our team to handle your mail, calls, and image — wherever work takes you.</p>
+    </div>
+    <a href="/book" class="btn-primary">Get Started</a>
+  </section>
+
+</div>
+{% endblock %}
