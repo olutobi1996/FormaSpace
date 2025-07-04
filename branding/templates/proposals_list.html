@@ -1,9 +1,0 @@
-{% extends "base.html" %}
-{% block content %}
-<h1>Brand Name Proposals</h1>
-<ul>
-  {% for proposal in proposals %}
-    <li>{{ proposal.name }} - Domain: {{ proposal.domain_available }} - Trademark: {{ proposal.trademark_suitable }}</li>
-  {% endfor %}
-</ul>
-{% endblock %}

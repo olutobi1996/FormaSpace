@@ -21,9 +21,9 @@
     </div>
   </section>
 
-{% else %}
-<p>No video available.</p>
-{% endif %}
+  {% else %}
+  <p>No video available.</p>
+  {% endif %}
 
   <!-- INTRO -->
   <section class="private-intro-section" data-aos="fade-up">
@@ -43,6 +43,19 @@
         <h3 class="intro-title">Stay Connected</h3>
         <p class="intro-text">Superfast broadband, kitchen facilities, and discounted meeting rooms included.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- IMAGE GALLERY -->
+  <section class="private-image-gallery container" data-aos="fade-up" data-aos-delay="100">
+    <div class="private-image-grid">
+      <div class="grid-item large"><img src="{% static 'images/office-long.jpg' %}" alt="Spacious Private Office" />
+      </div>
+      <div class="grid-item medium"><img src="{% static 'images/office-wide1.jpg' %}" alt="Wide Office View" /></div>
+      <div class="grid-item medium"><img src="{% static 'images/office-wide2.jpg' %}" alt="Office with Furniture" />
+      </div>
+      <div class="grid-item large-square"><img src="{% static 'images/office-big.jpg' %}"
+          alt="Premium Furnished Office" /></div>
     </div>
   </section>
 
@@ -108,10 +121,10 @@
       <div class="private-box"><span class="icon"><i class="ph ph-calendar"></i></span>
         <p>Day Rate<br>£18.00</p>
       </div>
-      <div class="private-box"><span class="icon"><i class="ph ph-calendar-range"></i></span>
+      <div class="private-box"><span class="icon"><i class="ph ph-calendar"></i></i></span>
         <p>5 Day Pass<br>£84.00</p>
       </div>
-      <div class="private-box"><span class="icon"><i class="ph ph-calendar-x"></i></span>
+      <div class="private-box"><span class="icon"><i class="ph ph-calendar"></i></span>
         <p>10 Day Pass<br>£155.00</p>
       </div>
     </div>
@@ -121,21 +134,29 @@
   </section>
 
   <!-- TESTIMONIALS -->
-  <section class="testimonials-section" data-aos="fade-up" data-aos-delay="400">
-    <div class="section-title text-center">
-      <h2>What Our Members Say</h2>
-    </div>
-    <div class="testimonial-grid">
-      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-        <p class="quote">“I was feeling isolated freelancing from home — FormaSpace gave me a community and a boost.”</p>
-        <p class="author">— Sam L., Graphic Designer</p>
+  <section class="testimonials-section dark-bg" data-aos="fade-up" data-aos-delay="400">
+    <div class="container">
+      <div class="section-title text-center">
+        <h2>What Our Members Say</h2>
       </div>
-      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-        <p class="quote">“I met my current collaborators over coffee in the lounge. The vibe here is genuinely inspiring.”</p>
-        <p class="author">— Priya N., Startup Founder</p>
+      <div class="testimonial-grid">
+        <div class="testimonial" data-aos="fade-up" data-aos-delay="100">
+          <p class="quote">“I was feeling isolated freelancing from home — FormaSpace gave me a community and a boost.”
+          </p>
+          <p class="author">— Sam L., Graphic Designer</p>
+        </div>
+        <div class="testimonial" data-aos="fade-up" data-aos-delay="200">
+          <p class="quote">“I met my current collaborators over coffee in the lounge. The vibe here is genuinely
+            inspiring.”</p>
+          <p class="author">— Priya N., Startup Founder</p>
+        </div>
+        <div class="testimonial" data-aos="fade-up" data-aos-delay="400">
+          <p>“Co-working here gives me the structure of an office with the freedom of freelancing — it's the perfect
+            balance.”</p>
+          <strong>Daniel Reeve, UX Consultant</strong>
+        </div>
       </div>
     </div>
   </section>
-
 </div>
 {% endblock %}

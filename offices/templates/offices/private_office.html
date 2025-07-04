@@ -8,56 +8,54 @@
 {% if video %}
 
 <div class="page-light-theme">
-<section class="hero-section video-hero">
-  <!-- Background Video -->
-  <video class="hero-video" autoplay muted loop playsinline>
-    <source src="https://formaspace-assets.s3.eu-north-1.amazonaws.com/office-tour.mp4" type="video/mp4">
-    <img src="{% static 'images/office-wide.jpg' %}" alt="Premium office interior">
-  </video>
+  <section class="hero-section video-hero">
+    <!-- Background Video -->
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="https://formaspace-assets.s3.eu-north-1.amazonaws.com/office-tour.mp4" type="video/mp4">
+      <img src="{% static 'images/office-wide.jpg' %}" alt="Premium office interior">
+    </video>
 
-  <div class="hero-overlay"></div>
+    <div class="hero-overlay"></div>
 
-  <div class="container hero-content text-center">
-    <h1 class="heading-xl">Premium Workspace in the Heart of Ayr</h1>
-    <p class="subheading">Private offices, co‑working, and meeting rooms built for productivity and comfort.</p>
-    <a href="/book" class="btn-primary">Book a Tour</a>
-  </div>
-</section>
-{% else %}
-<p>No video available.</p>
-{% endif %}
+    <div class="container hero-content text-center">
+      <h1 class="heading-xl">Premium Workspace in the Heart of Ayr</h1>
+      <p class="subheading">Private offices, co‑working, and meeting rooms built for productivity and comfort.</p>
+      <a href="/book" class="btn-primary">Book a Tour</a>
+    </div>
+  </section>
+  {% else %}
+  <p>No video available.</p>
+  {% endif %}
 
   <!-- INTRO TEXT -->
- <section class="private-intro-section" data-aos="fade-up">
-  <div class="section-title text-center">
-    <h2 class="section-heading">More Than Just Office Space</h2>
-    <div class="intro-grid">
-      <div class="intro-card" data-aos="fade-up" data-aos-delay="100">
-        <h3 class="intro-title">Privacy & Style</h3>
-        <p class="intro-text">
-          Elegant private offices designed for focus, meetings, and teamwork.
-        </p>
-      </div>
-      <div class="intro-card" data-aos="fade-up" data-aos-delay="200">
-        <h3 class="intro-title">Always Connected</h3>
-        <p class="intro-text">
-          Reliable super-fast Wi-Fi and cutting-edge tech keep you linked in.
-        </p>
-      </div>
-      <div class="intro-card" data-aos="fade-up" data-aos-delay="300">
-        <h3 class="intro-title">Flexible Spaces</h3>
-        <p class="intro-text">
-          From solo retreats to team suites — scalable workspaces for every need.
-        </p>
+  <section class="private-intro-section" data-aos="fade-up">
+    <div class="section-title text-center">
+      <h2 class="section-heading">More Than Just Office Space</h2>
+      <div class="intro-grid">
+        <div class="intro-card" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="intro-title">Privacy & Style</h3>
+          <p class="intro-text">
+            Elegant private offices designed for focus, meetings, and teamwork.
+          </p>
+        </div>
+        <div class="intro-card" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="intro-title">Always Connected</h3>
+          <p class="intro-text">
+            Reliable super-fast Wi-Fi and cutting-edge tech keep you linked in.
+          </p>
+        </div>
+        <div class="intro-card" data-aos="fade-up" data-aos-delay="300">
+          <h3 class="intro-title">Flexible Spaces</h3>
+          <p class="intro-text">
+            From solo retreats to team suites — scalable workspaces for every need.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
-
+  </section>
 
   <!-- IMAGE GALLERY -->
-  <section class="private-image-gallery container" data-aos="fade-up"data-aos-delay="100">
+  <section class="private-image-gallery container" data-aos="fade-up" data-aos-delay="100">
     <div class="private-image-grid">
       <div class="grid-item large"><img src="{% static 'images/office-long.jpg' %}" alt="Spacious Private Office" />
       </div>
@@ -129,4 +127,31 @@
   </section>
 </div>
 </div>
+
+<!-- TESTIMONIALS – PRIVATE OFFICES -->
+<section class="testimonials-section dark-bg" data-aos="fade-up" data-aos-delay="400">
+  <div class="container">
+    <div class="section-title text-center">
+      <h2>What Our Members Say</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial" data-aos="fade-up" data-aos-delay="100">
+        <p class="quote">“Our private office at FormaSpace has elevated how we work. It’s quiet, secure, and beautifully
+          designed.”</p>
+        <p class="author">— Rachel M., Financial Consultant</p>
+      </div>
+      <div class="testimonial" data-aos="fade-up" data-aos-delay="200">
+        <p class="quote">“Having our own dedicated space gave us the focus we needed to scale — without the overhead of
+          a traditional lease.”</p>
+        <p class="author">— Kevin T., SaaS Startup Co-Founder</p>
+      </div>
+      <div class="testimonial" data-aos="fade-up" data-aos-delay="400">
+        <p>“The flexibility and professionalism of the private offices are unmatched. Our clients are always impressed.”
+        </p>
+        <strong>Amira K., Legal Advisor</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
 {% endblock %}

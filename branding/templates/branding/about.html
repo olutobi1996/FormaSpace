@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us — FormaSpace{% endblock %}
+
+{% block content %}
+{% if video %}
+<div class="page-light-theme">
+  <!-- HERO SECTION -->
+  <section class="hero-section video-hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="https://formaspace-assets.s3.eu-north-1.amazonaws.com/office-tour.mp4" type="video/mp4">
+      <img src="{% static 'images/office-wide.jpg' %}" alt="FormaSpace office interior" />
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content text-center">
+      <h1 class="heading-xl">Welcome to 21 Wellington Square, Ayr</h1>
+      <p class="subheading">10 high-specification offices designed for quality, scalability & a seamless digital
+        experience.</p>
+    </div>
+  </section>
+  {% else %}
+  <p>No video available.</p>
+  {% endif %}
+
+  <!-- GALLERY + TEXT SECTION -->
+  <section class="about-gallery-text container" data-aos="fade-up">
+    <div class="gallery-text-grid">
+      <div class="gallery-image">
+        <img src="{% static 'images/office-large.jpg' %}" alt="Office workspace">
+      </div>
+      <div class="gallery-text-content refined-box">
+        <h2>Built on Community & Excellence</h2>
+        <p>FormaSpace was born from a vision to redefine workspaces — offering more than just desks, but a connected
+          ecosystem of creativity and ambition.</p>
+        <p>Starting under the Commer Group, our doors welcomed local businesses, freelancers, and change-makers. Over
+          time, that spark became a full-fledged community rooted in trust, collaboration, and service.</p>
+        <p>Today, FormaSpace is where bold ideas are nurtured, partnerships grow, and businesses thrive.</p>
+        <a href="#get-started" class="btn-small" style="max-width: fit-content; display: inline-block;">Get In Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="faq-section container" data-aos="fade-up">
+    <div class="section-title text-center">
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <button class="faq-question">Do members have 24/7 access?</button>
+        <div class="faq-answer">
+          <p>Yes — our offices are accessible anytime. Reception support is available Mon–Fri, 9 am–5 pm.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">How long are contracts?</button>
+        <div class="faq-answer">
+          <p>We offer flexible terms: from short‑term stays to long‑term office commitments.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can I bring a guest?</button>
+        <div class="faq-answer">
+          <p>Absolutely! Guests are welcome during reception hours and on booked meeting room usage.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Is furniture included?</button>
+        <div class="faq-answer">
+          <p>Yes — all offices come fully furnished with high‑quality desks, chairs and storage.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Do you have on‑site parking?</button>
+        <div class="faq-answer">
+          <p>Yes — ample secure parking is available at our location.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Is AV equipment provided?</button>
+        <div class="faq-answer">
+          <p>Yes — our meeting rooms are equipped with modern AV tech for seamless presentations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- BENEFITS / FEATURED CONTENT -->
+  <section class="private-feature-grid container" data-aos="fade-up" data-aos-delay="400">
+    <div class="section-title text-center">
+      <h2>Why Go Virtual with FormaSpace?</h2>
+    </div>
+    <div class="private-grid">
+      <div class="private-box"><span class="icon"><i class="ph ph-pen"></i></span>
+        <p>Creativity<br><small>Encouraging innovation and collaboration.</small></p>
+      </div>
+      <div class="private-box"><span class="icon"><i class="ph ph-check-circle"></i></span>
+        <p>Resourcefulness<br><small>Delivering efficient, effective solutions.</small></p>
+      </div>
+      <div class="private-box"><span class="icon"><i class="ph ph-users"></i></span>
+        <p>Resilience<br><small>Supporting each other through every challenge.</small></p>
+      </div>
+      <div class="private-box"><span class="icon"><i class="ph ph-heart"></i></span>
+        <p>Empathy<br><small>Fostering kindness and understanding.</small></p>
+      </div>
+      <div class="private-box"><span class="icon"><i class="ph ph-shield-check"></i></span>
+        <p>Integrity<br><small>Upholding transparency and trust.</small></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonial-section" data-aos="fade-up">
+    <div class="container">
+      <div class="section-title center">
+        <h2>What Our Community Says</h2>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial" data-aos="fade-up" data-aos-delay="100">
+          <p>“FormaSpace transformed our team’s dynamic—professional setting, warm community spirit.”</p>
+          <strong>Emma Hargraves, Creative Agency</strong>
+        </div>
+        <div class="testimonial" data-aos="fade-up" data-aos-delay="200">
+          <p>“The facilities and service here are excellent. It feels like home for our business.”</p>
+          <strong>Jack Cameron, Startup Founder</strong>
+        </div>
+        <div class="testimonial" data-aos="fade-up" data-aos-delay="300">
+          <p>“Choosing FormaSpace was the best decision—it’s stylish, supportive and future-ready.”</p>
+          <strong>Laura Hainsman, Consultant</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

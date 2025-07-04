@@ -4,5 +4,6 @@ from . import views
 app_name = 'branding'
 
 urlpatterns = [
-    path('', views.proposals_list, name='proposals_list'),
+    path('about/', views.about, name='about'),
 ]
+

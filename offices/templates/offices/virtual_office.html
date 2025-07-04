@@ -21,15 +21,14 @@
     </div>
   </section>
 
-{% else %}
-<p>No video available.</p>
-{% endif %}
+  {% else %}
+  <p>No video available.</p>
+  {% endif %}
 
   <!-- INTRO -->
   <section class="private-intro-section" data-aos="fade-up">
     <div class="section-title text-center">
       <h2 class="section-heading">A Professional Presence, Anywhere</h2>
-      <p class="intro-paragraph">Enjoy the perks of a city office without the overheads — our virtual office solutions help remote professionals and businesses maintain credibility, privacy, and flexibility.</p>
     </div>
     <div class="intro-grid">
       <div class="intro-card" data-aos="fade-up" data-aos-delay="100">
@@ -47,31 +46,103 @@
     </div>
   </section>
 
+  <!-- IMAGE GALLERY -->
+  <section class="private-image-gallery container" data-aos="fade-up" data-aos-delay="100">
+    <div class="private-image-grid">
+      <div class="grid-item large"><img src="{% static 'images/office-long.jpg' %}" alt="Spacious Private Office" />
+      </div>
+      <div class="grid-item medium"><img src="{% static 'images/office-wide1.jpg' %}" alt="Wide Office View" /></div>
+      <div class="grid-item medium"><img src="{% static 'images/office-wide2.jpg' %}" alt="Office with Furniture" />
+      </div>
+      <div class="grid-item large-square"><img src="{% static 'images/office-big.jpg' %}"
+          alt="Premium Furnished Office" /></div>
+    </div>
+  </section>
+
   <!-- PACKAGES TABLE -->
   <section class="coworking-packages-section container" data-aos="fade-up" data-aos-delay="200">
     <div class="section-title text-center">
       <h2>Virtual Office Packages</h2>
-      <p class="intro-paragraph">Choose a package that fits your business needs — all prices exclude VAT.</p>
     </div>
     <div class="pricing-table-wrapper">
       <table class="pricing-table">
         <thead>
           <tr>
-            <th>Features</th>
-            <th>Basic<br>£36 p/m</th>
-            <th>Professional<br>£60 p/m</th>
-            <th>Executive<br>£80 p/m</th>
+            <th>
+              <div class="header-cell">
+                <span class="package-title">Features</span>
+              </div>
+            </th>
+            <th>
+              <div class="header-cell">
+                <span class="package-title">Basic</span>
+                <span class="package-price">£36 p/m</span>
+              </div>
+            </th>
+            <th>
+              <div class="header-cell">
+                <span class="package-title">Professional</span>
+                <span class="package-price">£60 p/m</span>
+              </div>
+            </th>
+            <th>
+              <div class="header-cell">
+                <span class="package-title">Executive</span>
+                <span class="package-price">£80 p/m</span>
+              </div>
+            </th>
           </tr>
         </thead>
+
         <tbody>
-          <tr><td>A Prestigious Business Address</td><td>✔</td><td>✔</td><td>✔</td></tr>
-          <tr><td>Mail Collection and Forwarding Service</td><td>✔</td><td>✔</td><td>✔</td></tr>
-          <tr><td>Discounted Room Hire</td><td></td><td>✔</td><td>✔</td></tr>
-          <tr><td>Business Phone Number</td><td></td><td>✔</td><td>✔</td></tr>
-          <tr><td>Call Forwarding</td><td></td><td>✔</td><td>✔</td></tr>
-          <tr><td>Virtual Receptionist</td><td></td><td></td><td>✔</td></tr>
-          <tr><td>Message Handling</td><td></td><td></td><td>✔</td></tr>
-          <tr><td>Free Co-Working Days / month</td><td>2</td><td>4</td><td>4</td></tr>
+          <tr>
+            <td>A Prestigious Business Address</td>
+            <td><i class="icon-check ph ph-check-circle"></i></td>
+            <td><i class="icon-check ph ph-check-circle"></i></td>
+            <td><i class="icon-check ph ph-check-circle"></i></td>
+          </tr>
+          <tr>
+            <td>Mail Collection & Forwarding</td>
+            <td><i class="icon-check ph ph-check-circle"></i></td>
+            <td><i class="icon-check ph ph-check-circle"></i></td>
+            <td><i class="icon-check ph ph-check-circle"></i></td>
+          </tr>
+          <tr>
+            <td>Discounted Room Hire</td>
+            <td></td>
+            <td><i class="icon-check ph ph-check-circle"></i></td>
+            <td><i class="icon-check ph ph-check-circle"></i></td>
+          </tr>
+          <tr>
+            <td>Business Phone Number</td>
+            <td></td>
+            <td><i class="icon-check ph ph-check-circle"></i></td>
+            <td><i class="icon-check ph ph-check-circle"></i></td>
+          </tr>
+          <tr>
+            <td>Call Forwarding</td>
+            <td></td>
+            <td><i class="icon-check ph ph-check-circle"></i></td>
+            <td><i class="icon-check ph ph-check-circle"></i></td>
+          </tr>
+          <tr>
+            <td>Virtual Receptionist</td>
+            <td></td>
+            <td></td>
+            <td><i class="icon-check ph ph-check-circle"></i></td>
+          </tr>
+          <tr>
+            <td>Message Handling</td>
+            <td></td>
+            <td></td>
+            <td><i class="icon-check ph ph-check-circle"></i></td>
+          </tr>
+          <tr>
+            <td>Free Co‑Working Days / month</td>
+            <td>2</td>
+            <td>4</td>
+            <td>4</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -80,11 +151,11 @@
     </div>
   </section>
 
+
   <!-- HOW IT WORKS -->
   <section class="how-it-works-section" data-aos="fade-up" data-aos-delay="300">
     <div class="section-title text-center">
       <h2>How It Works</h2>
-      <p class="intro-paragraph">A few easy steps away from a stress-free virtual presence.</p>
     </div>
     <div class="steps-flow-wrapper">
       <div class="flow-step" data-aos="zoom-in" data-aos-delay="100">
@@ -134,14 +205,30 @@
     </div>
   </section>
 
-  <!-- CLOSING CTA -->
-  <section class="cta-highlight-section text-center" data-aos="fade-up" data-aos-delay="400">
-    <div class="section-title">
-      <h2>Discover an Office Without Walls</h2>
-      <p class="intro-paragraph">Trust our team to handle your mail, calls, and image — wherever work takes you.</p>
+  <!-- TESTIMONIALS – VIRTUAL OFFICES -->
+  <section class="testimonials-section dark-bg" data-aos="fade-up" data-aos-delay="400">
+    <div class="container">
+      <div class="section-title text-center">
+        <h2>What Our Members Say</h2>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial" data-aos="fade-up" data-aos-delay="100">
+          <p class="quote">“The virtual office package helped me register my business professionally while working
+            remotely.”</p>
+          <p class="author">— Jamie L., Digital Marketing Consultant</p>
+        </div>
+        <div class="testimonial" data-aos="fade-up" data-aos-delay="200">
+          <p class="quote">“Having a central London business address without the overhead is a game-changer for my solo
+            practice.”</p>
+          <p class="author">— Marcus D., Freelance Accountant</p>
+        </div>
+        <div class="testimonial" data-aos="fade-up" data-aos-delay="400">
+          <p>“Mail handling, call answering, and a legit office presence — FormaSpace’s virtual service is seamless and
+            smart.”</p>
+          <strong>Elena G., E-commerce Entrepreneur</strong>
+        </div>
+      </div>
     </div>
-    <a href="/book" class="btn-primary">Get Started</a>
   </section>
-
 </div>
 {% endblock %}

@@ -1566,7 +1566,6 @@ a.btn-primary:hover {
   content: none; /* removed the gold gradient background */
 }
 
-
 .intro-title {
   font-size: 1.4rem;
   font-weight: 600;
@@ -1616,5 +1615,189 @@ a.btn-primary:hover {
   box-shadow: 0 10px 30px rgba(191, 161, 40, 0.5);
 }
 
+.dark-bg {
+  background-color: #000;
+}
 
+.dark-bg h2 {
+  color: white;
+}
 
+.pricing-table-wrapper {
+  overflow-x: auto;
+  margin: 2rem 0;
+}
+
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+.pricing-table thead {
+  background-color: #bfa128;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.pricing-table th, .pricing-table td {
+  padding: 1rem 0.75rem;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #111;
+}
+
+.pricing-table td:first-child {
+  font-weight: 600;
+  text-align: left;
+}
+
+.pricing-table tbody tr:hover {
+  background: rgba(191, 161, 40, 0.05);
+}
+
+.pricing-table .icon-check {
+  color: #bfa128;
+  font-size: 1.2rem;
+}
+
+/* Make table captions bold for the packages */
+.pricing-table th .header-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pricing-table th .package-title {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.pricing-table th .package-price {
+  font-size: 0.9rem;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .pricing-table th, .pricing-table td {
+    padding: 0.8rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* About Gallery + Text */
+.gallery-text-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.gallery-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Gold glow text box */
+.refined-box {
+  background-color: white;
+  border: 2px solid #bfa128;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.refined-box h2 {
+  color: #111;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.refined-box p {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* FAQ */
+.faq-question {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 1rem;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+}
+
+.faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 1rem;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question::after {
+  content: '-';
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 1rem;
+  background-color: black;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding: 1rem;
+}
+
+.value-card {
+  background: rgba(255,255,255,0.95);
+  padding:2rem;
+  border-radius:16px;
+  text-align:center;
+  position:relative;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+  transition:box-shadow 0.3s ease;
+}
+.value-card:hover { box-shadow:0 0 16px rgba(191,161,40,0.4),0 0 24px rgba(0,0,0,0.1); }
+.value-icon {
+  font-size:2.5rem;
+  color:#bfa128;
+  margin-bottom:1rem;
+}
+
+.btn-small {
+  background-color: #bfa128;
+  color: #fff;
+  padding: 8px 16px; /* smaller padding */
+  font-size: 0.9rem; /* slightly smaller text */
+  font-weight: 600;
+  border: none;
+  border-radius: 6px; /* a bit less round */
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(191, 161, 40, 0.3); /* lighter shadow */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+  width: auto;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.btn-small:hover {
+  background-color: #e5c100;
+}

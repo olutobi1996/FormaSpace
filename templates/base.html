@@ -35,6 +35,16 @@
             navLinks.classList.toggle('open');
         });
     </script>
+    <!-- About script -->
+    <script>
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+
     <script src="{% static 'js/scroll-animations.js' %}"></script>
     <!-- AOS JS -->
     <!-- AOS Animation Library -->
@@ -58,4 +68,5 @@
     </script>
 
 </body>
+
 </html>
