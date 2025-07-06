@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Post
+from .models import Post, Event
 
 
 def post_list(request):
@@ -10,3 +10,8 @@ def post_list(request):
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
+
+
+def event_list(request):
+    events = Event.objects.order_by('event_date')
+    return render(request, 'blog/event_list.html', {'events': events})

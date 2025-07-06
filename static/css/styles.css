@@ -1913,3 +1913,38 @@ a.btn-primary:hover {
     grid-column: span 1;
   }
 }
+/* Blog page  */
+.blog-post-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-top: 2rem;
+}
+
+.blog-post-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.blog-post-card:hover {
+  box-shadow: 0 4px 25px rgba(218, 165, 32, 0.4); /* subtle gold glow */
+}
+
+.post-title {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.post-snippet {
+  color: #555;
+}
+
+.btn-text {
+  color: #DAA520;
+  font-weight: 500;
+  text-decoration: none;
+}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="page-light-theme">
+<section class="container py-5">
+  <h2 class="mb-4">Upcoming Events at FormaSpace</h2>
+
+  {% for event in events %}
+    <div class="event-card bg-light p-4 mb-4 rounded shadow-sm">
+      <h3>{{ event.title }}</h3>
+      <p class="text-muted">Scheduled for {{ event.event_date|date:"F j, Y @ H:i" }}</p>
+      <p>{{ event.description|linebreaks }}</p>
+    </div>
+  {% empty %}
+    <p>No events scheduled yet. Check back soon!</p>
+  {% endfor %}
+</section>
+</div>
+{% endblock %}
+

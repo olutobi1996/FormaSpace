@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="page-light-theme">
+<section class="blog-detail container" data-aos="fade-up">
+  <article class="post-article">
+    <h1 class="post-title">{{ post.title }}</h1>
+    <p class="post-date">{{ post.published_at|date:"F j, Y" }}</p>
+    <div class="post-body">
+      {{ post.content|linebreaks }}
+    </div>
+    <div class="post-tags">
+      {% if post.tags %}<strong>Tags:</strong> {{ post.tags }}{% endif %}
+    </div>
+  </article>
+
+  <a href="{% url 'blog:post_list' %}" class="btn-secondary mt-4">← Back to Blog</a>
+</section>
+</div>
+{% endblock %}
