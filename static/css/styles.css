@@ -1948,3 +1948,15 @@ a.btn-primary:hover {
   font-weight: 500;
   text-decoration: none;
 }
+
+.blog-featured-image img,
+.event-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.post-body, .event-content {
+  line-height: 1.7;
+  font-size: 1.1rem;
+  color: #000;
+}

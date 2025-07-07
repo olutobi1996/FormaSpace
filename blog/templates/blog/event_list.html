@@ -1,20 +1,36 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <div class="page-light-theme">
-<section class="container py-5">
-  <h2 class="mb-4">Upcoming Events at FormaSpace</h2>
-
-  {% for event in events %}
-    <div class="event-card bg-light p-4 mb-4 rounded shadow-sm">
-      <h3>{{ event.title }}</h3>
-      <p class="text-muted">Scheduled for {{ event.event_date|date:"F j, Y @ H:i" }}</p>
-      <p>{{ event.description|linebreaks }}</p>
+  <section class="container py-5" data-aos="fade-up">
+    <div class="section-title text-center mb-5">
+      <h2 class="section-heading">Upcoming Events at FormaSpace</h2>
     </div>
-  {% empty %}
-    <p>No events scheduled yet. Check back soon!</p>
-  {% endfor %}
-</section>
+
+    {% for event in events %}
+      <div class="refined-box p-5 rounded shadow-sm mb-5">
+        {% if event.featured_image %}
+          <div class="event-image text-center mb-4">
+            <img src="{{ event.featured_image.url }}" alt="{{ event.title }}" class="img-fluid rounded">
+          </div>
+        {% endif %}
+
+        <h3 class="text-dark">{{ event.title }}</h3>
+        <p class="text-muted mb-3">Scheduled for {{ event.event_date|date:"F j, Y @ H:i" }}</p>
+
+        <div class="event-content text-dark">
+          {{ event.description|linebreaks }}
+        </div>
+
+        <div class="text-center mt-4">
+          <a href="{% url 'blog:post_list' %}" class="btn btn-primary">Explore the Journal</a>
+        </div>
+      </div>
+    {% empty %}
+      <p class="text-dark">No events scheduled yet. Check back soon!</p>
+    {% endfor %}
+  </section>
 </div>
 {% endblock %}
 

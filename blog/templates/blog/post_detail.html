@@ -3,19 +3,36 @@
 
 {% block content %}
 <div class="page-light-theme">
-<section class="blog-detail container" data-aos="fade-up">
-  <article class="post-article">
-    <h1 class="post-title">{{ post.title }}</h1>
-    <p class="post-date">{{ post.published_at|date:"F j, Y" }}</p>
-    <div class="post-body">
-      {{ post.content|linebreaks }}
-    </div>
-    <div class="post-tags">
-      {% if post.tags %}<strong>Tags:</strong> {{ post.tags }}{% endif %}
-    </div>
-  </article>
+  <section class="container py-5" data-aos="fade-up">
 
-  <a href="{% url 'blog:post_list' %}" class="btn-secondary mt-4">← Back to Blog</a>
-</section>
+    <div class="refined-box p-5 rounded shadow-sm">
+      {% if post.featured_image %}
+        <div class="text-center mb-4">
+          <img src="{{ post.featured_image.url }}" alt="{{ post.title }}" class="img-fluid rounded">
+        </div>
+      {% endif %}
+
+      <article class="post-article">
+        <h1 class="post-title text-dark">{{ post.title }}</h1>
+        <p class="post-date text-muted mb-3">{{ post.published_at|date:"F j, Y" }}</p>
+
+        <div class="post-body text-dark">
+          {{ post.content|linebreaks }}
+        </div>
+
+        {% if post.tags %}
+        <div class="post-tags mt-4">
+          <strong class="text-dark">Tags:</strong> {{ post.tags }}
+        </div>
+        {% endif %}
+      </article>
+
+      <div class="text-center mt-5">
+        <a href="{% url 'blog:post_list' %}" class="btn btn-primary">← Back to Blog</a>
+      </div>
+    </div>
+
+  </section>
 </div>
 {% endblock %}
+
