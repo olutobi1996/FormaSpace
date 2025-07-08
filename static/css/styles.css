@@ -1985,3 +1985,39 @@ a.btn-primary:hover {
   justify-content: center;
   align-items: center;
 }
+/* For About/Location */
+.fancy-hover-box {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  will-change: transform;
+  position: relative;
+  border: 2px solid transparent;
+  color: #000; /* Make text black */
+}
+
+.fancy-hover-box:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12);
+  border-color: #d4af37; /* Gold border */
+}
+
+/* Paragraph text color inside */
+.fancy-hover-box p {
+  color: #000;
+}
+
+/* Optional: matching title spacing */
+.fancy-hover-box .section-title {
+  margin-bottom: 1.5rem;
+}
+/* Location font styles*/
+.location-text {
+  color: #000; /* Ensure black text */
+}
+
+.location-text p {
+  color: #000;
+}
