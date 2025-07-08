@@ -1960,3 +1960,28 @@ a.btn-primary:hover {
   font-size: 1.1rem;
   color: #000;
 }
+
+/* Pricing Box ul items */
+.pricing-box ul li {
+  color: #000; 
+}
+
+.pricing-box ul {
+  list-style: none;           /* Removes bullet points */
+  padding: 0;                 /* Removes left indentation */
+  text-align: center;         /* Centers all list text */
+}
+
+.pricing-box ul li {
+  color: #000;                /* Ensures text is visible */
+  margin: 4px 0;              /* Optional: adds spacing between list items */
+}
+
+/* Icon alignment inside box */
+.private-box.pricing-box .icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}

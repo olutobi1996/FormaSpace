@@ -1,0 +1,225 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Meeting Rooms — FormaSpace{% endblock %}
+
+{% block content %}
+{% if video %}
+<div class="page-light-theme">
+
+  <!-- HERO SECTION -->
+  <section class="hero-section video-hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="https://formaspace-assets.s3.eu-north-1.amazonaws.com/office-tour.mp4" type="video/mp4">
+      <img src="{% static 'images/office-wide.jpg' %}" alt="FormaSpace Meeting Rooms" />
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content text-center">
+      <h1 class="heading-xl">Meeting Rooms, Made to Impress</h1>
+      <p class="subheading">Host productive, professional meetings with AV-equipped, beautifully designed spaces.</p>
+      <a href="/book" class="btn-primary">Book a Room</a>
+    </div>
+  </section>
+{% endif %}
+
+  <!-- INTRO -->
+  <section class="private-intro-section" data-aos="fade-up">
+    <div class="section-title text-center">
+      <h2 class="section-heading">Spaces Designed to Empower Collaboration</h2>
+    </div>
+    <div class="intro-grid">
+      <div class="intro-card" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="intro-title">Luxury Meets Practicality</h3>
+        <p class="intro-text">Contemporary and comfortable environments perfect for any type of meeting.</p>
+      </div>
+      <div class="intro-card" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="intro-title">AV & Tech Ready</h3>
+        <p class="intro-text">State-of-the-art AV setups and high-speed internet — included in every room.</p>
+      </div>
+      <div class="intro-card" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="intro-title">Book with Ease</h3>
+        <p class="intro-text">Flexible half-day or full-day bookings, with easy online scheduling.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES INCLUDED -->
+  <section class="private-feature-grid container" data-aos="fade-up" data-aos-delay="400">
+    <div class="section-title text-center">
+      <h2>Our Meeting Rooms Include</h2>
+    </div>
+    <div class="private-grid">
+      <div class="private-box"><span class="icon"><i class="ph ph-wifi-high"></i></span>
+        <p>Internet Connection<br><small>Free High-Speed Wifi</small></p>
+      </div>
+      <div class="private-box"><span class="icon"><i class="ph ph-fork-knife"></i></span>
+        <p>Catering<br><small>Available On Request</small></p>
+      </div>
+      <div class="private-box"><span class="icon"><i class="ph ph-coffee"></i></span>
+        <p>Refreshments<br><small>Tea, Coffee & Water</small></p>
+      </div>
+      <div class="private-box"><span class="icon"><i class="ph ph-user-circle"></i></span>
+        <p>Receptionist<br><small>Guest Greeting Service</small></p>
+      </div>
+      <div class="private-box"><span class="icon"><i class="ph ph-monitor-play"></i></span>
+        <p>AV Technology<br><small>Access AV Equipment</small></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROOM PRICING -->
+  <section class="private-feature-grid container" data-aos="fade-up" data-aos-delay="400">
+    <div class="section-title text-center">
+      <h2>Meeting Room Pricing</h2>
+    </div>
+    <div class="private-grid">
+      <div class="private-box pricing-box">
+        <span class="icon"><i class="ph ph-briefcase-metal"></i></span>
+        <p><strong>The Boardroom</strong><br><small>Commer & York House</small></p>
+        <ul>
+          <li>£90 / Half-Day</li>
+          <li>£160 / Full Day</li>
+          <li>Seats 10–12</li>
+        </ul>
+      </div>
+      <div class="private-box pricing-box">
+        <span class="icon"><i class="ph ph-buildings"></i></span>
+        <p><strong>The Exec Room</strong><br><small>Commer House</small></p>
+        <ul>
+          <li>£70 / Half-Day</li>
+          <li>£125 / Full Day</li>
+          <li>Seats 8</li>
+        </ul>
+      </div>
+      <div class="private-box pricing-box">
+        <span class="icon"><i class="ph ph-armchair"></i></span>
+        <p><strong>The Snug</strong><br><small>York House</small></p>
+        <ul>
+          <li>£60 / Half-Day</li>
+          <li>£100 / Full Day</li>
+          <li>Seats 4</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+<!-- WHY CHOOSE US SECTION -->
+<section class="why-choose-us" data-aos="fade-up" data-aos-delay="100">
+
+  <!-- Block 1 -->
+  <div class="feature-block">
+    <div class="feature-image" data-aos="fade-up">
+      <img src="{% static 'images/meeting-room-exterior.jpg' %}" alt="Modern Meeting Room Exterior">
+    </div>
+    <div class="feature-text">
+      <h2>Prime Meeting Space in Ayr</h2>
+      <p>Located in the heart of Ayr, our professionally designed meeting rooms offer a polished environment for client meetings, team strategy sessions, and presentations.</p>
+      <a href="#get-started" class="btn-primary">Book a Room →</a>
+    </div>
+  </div>
+
+  <!-- Block 2 -->
+  <div class="feature-block reverse">
+    <div class="feature-image" data-aos="fade-down">
+      <img src="{% static 'images/meeting-room-tech.jpg' %}" alt="Meeting Room Technology Setup">
+    </div>
+    <div class="feature-text">
+      <h2>AV-Ready & Fully Equipped</h2>
+      <p>Each meeting space is equipped with modern AV technology, presentation screens, video conferencing, and high-speed Wi-Fi — everything you need to make an impact.</p>
+      <a href="#get-started" class="btn-primary">Check Availability →</a>
+    </div>
+  </div>
+
+  <!-- Block 3 -->
+  <div class="feature-block">
+    <div class="feature-image" data-aos="fade-up">
+      <img src="{% static 'images/professional-meeting.jpg' %}" alt="Professional Meeting Environment">
+    </div>
+    <div class="feature-text">
+      <h2>Professional & Comfortable</h2>
+      <p>Designed with both aesthetics and comfort in mind, our meeting rooms set the tone for productive discussions in a quiet, polished environment.</p>
+      <a href="#get-started" class="btn-primary">Enquire Now →</a>
+    </div>
+  </div>
+
+  <!-- Block 4 -->
+  <div class="feature-block reverse">
+    <div class="feature-image" data-aos="fade-down">
+      <img src="{% static 'images/high-spec-interior.jpg' %}" alt="Flexible Booking Options">
+    </div>
+    <div class="feature-text">
+      <h2>Flexible Booking Options</h2>
+      <p>Book by the hour, half-day, or full day — with simple online scheduling and transparent pricing to suit your team’s needs and meeting frequency.</p>
+      <a href="#get-started" class="btn-primary">View Pricing →</a>
+    </div>
+  </div>
+
+  <!-- Block 5 -->
+  <div class="feature-block">
+    <div class="feature-image" data-aos="fade-up">
+      <img src="{% static 'images/virtual.jpg' %}" alt="Client Meeting Setup">
+    </div>
+    <div class="feature-text">
+      <h2>Impress Your Clients</h2>
+      <p>Whether you’re pitching a big idea or hosting a workshop, our spaces are designed to elevate your professionalism and leave a lasting impression.</p>
+      <a href="#get-started" class="btn-primary">Get Started →</a>
+    </div>
+  </div>
+
+</section>
+
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works-section" data-aos="fade-up" data-aos-delay="300">
+    <div class="section-title text-center">
+      <h2>Book in Just a Few Steps</h2>
+    </div>
+    <div class="steps-flow-wrapper">
+      <div class="flow-step" data-aos="zoom-in" data-aos-delay="100">
+        <div class="icon-circle"><i class="ph ph-envelope-simple"></i></div>
+        <h3 class="step-title">1. Enquire</h3>
+        <p class="step-desc">Let us know your preferred room, date, and any special requirements.</p>
+      </div>
+      <div class="flow-arrow"><i class="ph ph-arrow-right"></i></div>
+      <div class="flow-step" data-aos="zoom-in" data-aos-delay="200">
+        <div class="icon-circle"><i class="ph ph-calendar-check"></i></div>
+        <h3 class="step-title">2. Confirm Booking</h3>
+        <p class="step-desc">We’ll check availability and confirm your slot right away.</p>
+      </div>
+      <div class="flow-arrow"><i class="ph ph-arrow-right"></i></div>
+      <div class="flow-step" data-aos="zoom-in" data-aos-delay="300">
+        <div class="icon-circle"><i class="ph ph-chalkboard-simple"></i></div>
+        <h3 class="step-title">3. Host With Confidence</h3>
+        <p class="step-desc">Arrive to a clean, fully-equipped space ready for your meeting.</p>
+      </div>
+    </div>
+    <div class="cta-container text-center cta-spacing" data-aos="fade-up" data-aos-delay="400">
+      <a href="/book" class="btn-primary">Book Now</a>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section dark-bg" data-aos="fade-up" data-aos-delay="400">
+    <div class="container">
+      <div class="section-title text-center">
+        <h2>What Our Clients Say</h2>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial" data-aos="fade-up" data-aos-delay="100">
+          <p class="quote">“The Boardroom setup was flawless — the tech just worked and the atmosphere was spot-on.”</p>
+          <p class="author">— Anna B., Marketing Director</p>
+        </div>
+        <div class="testimonial" data-aos="fade-up" data-aos-delay="200">
+          <p class="quote">“The Snug was perfect for a private team brainstorm. Cosy, quiet, and just right.”</p>
+          <p class="author">— Tom S., Product Manager</p>
+        </div>
+        <div class="testimonial" data-aos="fade-up" data-aos-delay="400">
+          <p class="quote">“The AV setup made our hybrid client meeting seamless. Impressed guests = happy us.”</p>
+          <p class="author">— Kira L., Consultant</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+{% endblock %}
