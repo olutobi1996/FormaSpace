@@ -8,29 +8,30 @@
       <h2 class="section-heading">Upcoming Events at FormaSpace</h2>
     </div>
 
-    {% for event in events %}
-      <div class="refined-box p-5 rounded shadow-sm mb-5">
-        {% if event.featured_image %}
-          <div class="event-image text-center mb-4">
-            <img src="{{ event.featured_image.url }}" alt="{{ event.title }}" class="img-fluid rounded">
+    <div class="events-grid">
+      {% for event in events %}
+        <div class="fancy-hover-box event-card">
+          {% if event.featured_image %}
+            <div class="event-image mb-3">
+              <img src="{{ event.featured_image.url }}" alt="{{ event.title }}" class="img-fluid rounded">
+            </div>
+          {% endif %}
+
+          <h3 class="event-title">{{ event.title }}</h3>
+          <p class="event-date">Scheduled for {{ event.event_date|date:"F j, Y @ H:i" }}</p>
+
+          <div class="event-description">
+            {{ event.description|linebreaks }}
           </div>
-        {% endif %}
 
-        <h3 class="text-dark">{{ event.title }}</h3>
-        <p class="text-muted mb-3">Scheduled for {{ event.event_date|date:"F j, Y @ H:i" }}</p>
-
-        <div class="event-content text-dark">
-          {{ event.description|linebreaks }}
+          <div class="text-center mt-3">
+            <a href="{% url 'blog:post_list' %}" class="btn-small">Explore the Journal</a>
+          </div>
         </div>
-
-        <div class="text-center mt-4">
-          <a href="{% url 'blog:post_list' %}" class="btn btn-primary">Explore the Journal</a>
-        </div>
-      </div>
-    {% empty %}
-      <p class="text-dark">No events scheduled yet. Check back soon!</p>
-    {% endfor %}
+      {% empty %}
+        <p class="text-dark">No events scheduled yet. Check back soon!</p>
+      {% endfor %}
+    </div>
   </section>
 </div>
 {% endblock %}
-

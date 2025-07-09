@@ -2021,3 +2021,123 @@ a.btn-primary:hover {
 .location-text p {
   color: #000;
 }
+
+/* TEXT CARD: Consistent sizing and spacing */
+.connections-hero {
+  padding: 4rem 0;
+}
+
+.hero-text-card {
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  text-align: center;
+}
+
+/* Fancy hover card */
+.fancy-hover-box {
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.fancy-hover-box:hover {
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+  transform: translateY(-5px);
+}
+
+/* Horizontal Gallery Container */
+.horizontal-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Individual Image Blocks */
+.gallery-item {
+  flex: 1 1 200px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Optional: Size variations for visual interest */
+.gallery-item.wide {
+  flex: 2 1 400px;
+  aspect-ratio: 16 / 9;
+}
+
+.gallery-item.tall {
+  aspect-ratio: 3 / 4;
+}
+
+.gallery-item.medium {
+  flex: 1.5 1 250px;
+  aspect-ratio: 4 / 3;
+}
+
+.black-bg-wrapper {
+  background-color: #000;
+  color: #fff;
+  padding: 4rem 0;
+  width: 100%;
+}
+/* Testimonial Section for Connections PAge */
+.black-bg-wrapper .section-heading,
+.black-bg-wrapper .testimonial,
+.black-bg-wrapper strong,
+.black-bg-wrapper p {
+  color: #fff;
+}
+
+.black-bg-wrapper .testimonial {
+  background-color: transparent;
+  border: none;
+}
+
+/* Force full black background on testimonial section */
+.full-width-black-bg {
+  background-color: #000;
+  color: #fff;
+  padding: 4rem 0;
+  width: 100%;
+}
+
+/* Ensure all text is white inside testimonial section */
+.full-width-black-bg .section-heading,
+.full-width-black-bg p,
+.full-width-black-bg strong {
+  color: #fff;
+}
+
+/* Keep it centered inside a max-width container */
+.testimonial-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+/* Google Maps  */
+.map-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

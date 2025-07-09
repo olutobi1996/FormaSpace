@@ -14,59 +14,72 @@
 
     <!-- GALLERY + TEXT SECTION -->
     <section class="about-gallery-text container" data-aos="fade-up">
-      <div class="gallery-text-grid">
-        <div class="gallery-image">
-          <img src="{% static 'images/ayr-town.jpg' %}" alt="Ayr Town Centre">
+      <div class="gallery-text-grid" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem;">
+
+        <!-- Image Left -->
+        <div class="gallery-image" style="flex: 1; min-width: 300px;">
+          <img src="{% static 'images/ayr-location.jpg' %}" alt="Ayr Town Centre"
+            style="max-width: 100%; height: auto; border-radius: 8px;">
         </div>
-        <div class="gallery-text-content fancy-hover-box">
+
+        <!-- Text Right -->
+        <div class="gallery-text-content fancy-hover-box" style="flex: 1; min-width: 300px;">
           <div class="section-title">
             <h2 class="section-heading">Ayr: Coastal Charm Meets Modern Workspaces</h2>
           </div>
-          <p>Set against Scotland’s west coast, Ayr combines seaside serenity with urban accessibility. Known for its
-            historic charm, vibrant culture, and strong business network — it’s the perfect place to grow and thrive.
-          </p>
+          <p>Set against Scotland’s west coast, Ayr combines seaside serenity with urban accessibility...</p>
           <p>Our Ayr location offers flexible, high-quality office spaces designed to support a wide range of
-            professionals — from solo consultants to expanding teams. Each space reflects our commitment to
-            functionality, aesthetics, and a seamless experience.</p>
+            professionals...</p>
           <p>FormaSpace delivers more than just desks — we offer an environment where focus, community, and ambition
             flourish.</p>
           <a href="#get-started" class="btn-small" style="max-width: fit-content; display: inline-block;">Get In
             Touch</a>
         </div>
+
       </div>
     </section>
 
-    <!-- LOCATIONS OVERVIEW -->
-    <section class="locations-overview container" data-aos="fade-up">
-      <div class="section-title">
-        <h2 class="section-heading"> Our Ayr Workspaces</h2>
+    <!-- OUR AYR WORKSPACES – Restyled to Match WHY CHOOSE US -->
+    <section class="why-choose-us" data-aos="fade-up" data-aos-delay="100">
+      <div class="section-title text-center">
+        <h2 class="section-heading">Our Ayr Workspaces</h2>
       </div>
       <p class="lead-text text-center">
         FormaSpace Ayr is our flagship location — offering a variety of office solutions in one beautifully restored
         building in the heart of town.
       </p>
-      <h3></h3>
-      <div class="location-block">
-        <img src="{% static 'images/ayr-interior-1.jpg' %}" alt="Modern Ayr Office Space" class="location-img left">
-        <div class="location-text">
+
+      <!-- Block 1: Premium Private Offices -->
+      <div class="feature-block">
+        <div class="feature-image" data-aos="flip-left">
+          <img src="{% static 'images/meeting.jpg' %}" alt="Modern Ayr Office Space">
+        </div>
+        <div class="feature-text">
           <div class="section-title">
             <h2 class="section-heading">Premium Private Offices</h2>
           </div>
-          <p>Designed for professionals and small teams, our private offices provide the peace, style, and
+          <p>
+            Designed for professionals and small teams, our private offices provide the peace, style, and
             infrastructure needed to do your best work — whether you're a legal firm, creative agency, or scaling
-            startup.</p>
+            startup.
+          </p>
           <a href="#get-started" class="btn-primary">Book a Tour</a>
         </div>
       </div>
 
-      <div class="location-block reverse">
-        <img src="{% static 'images/ayr-interior-2.jpg' %}" alt="Shared Workspace Ayr" class="location-img right">
-        <div class="location-text">
+      <!-- Block 2: Flexible Shared Spaces -->
+      <div class="feature-block reverse">
+        <div class="feature-image" data-aos="flip-right">
+          <img src="{% static 'images/location-exterior.jpg' %}" alt="Shared Workspace Ayr">
+        </div>
+        <div class="feature-text">
           <div class="section-title">
             <h2 class="section-heading">Flexible Shared Spaces</h2>
           </div>
-          <p>Need flexibility without compromise? Our shared spaces include hot desks, quiet zones, and lounge areas —
-            ideal for freelancers, consultants, and collaborators who value a dynamic, stylish environment.</p>
+          <p>
+            Need flexibility without compromise? Our shared spaces include hot desks, quiet zones, and lounge areas —
+            ideal for freelancers, consultants, and collaborators who value a dynamic, stylish environment.
+          </p>
           <a href="#get-started" class="btn-primary">Join the Community</a>
         </div>
       </div>
@@ -78,13 +91,12 @@
         <div class="section-title text-center">
           <h2 class="section-heading">Find Us Here</h2>
         </div>
-        <div class="map-container">
+        <div class="map-container" data-aos="fade-up" data-aos-delay="200">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3386.1234567890123!2d-4.6261234!3d55.4581234!2m3!1f0!2f0!3f0!3m2!"
+            src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2262.0963954598487!2d-4.6400214732436345!3d55.46098622297759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s21%20Wellington%20Square%2C%20Ayr!5e0!3m2!1sen!2suk!4v1752071156109!5m2!1sen!2suk"
             width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
       </section>
-
 
       <!-- SERVICES SUMMARY GRID -->
       <section class="private-feature-grid container" data-aos="fade-up" data-aos-delay="400">
@@ -92,7 +104,8 @@
           <h2>Spaces & Services on Offer</h2>
         </div>
         <div class="private-grid">
-          <div class="private-box"><span class="icon"><i class="ph ph-building"></i></span>
+          <!-- Example with storefront -->
+          <div class="private-box"><span class="icon"><i class="ph ph-briefcase"></i></span>
             <p>Private Offices</p>
           </div>
           <div class="private-box"><span class="icon"><i class="ph ph-users-three"></i></span>
