@@ -5,34 +5,36 @@
 <div class="page-light-theme">
   <section class="container py-5" data-aos="fade-up">
 
-    <div class="refined-box p-5 rounded shadow-sm">
-      {% if post.featured_image %}
-        <div class="text-center mb-4">
-          <img src="{{ post.featured_image.url }}" alt="{{ post.title }}" class="img-fluid rounded">
-        </div>
-      {% endif %}
-
-      <article class="post-article">
-        <h1 class="post-title text-dark">{{ post.title }}</h1>
-        <p class="post-date text-muted mb-3">{{ post.published_at|date:"F j, Y" }}</p>
-
-        <div class="post-body text-dark">
-          {{ post.content|linebreaks }}
-        </div>
-
-        {% if post.tags %}
-        <div class="post-tags mt-4">
-          <strong class="text-dark">Tags:</strong> {{ post.tags }}
-        </div>
-        {% endif %}
-      </article>
-
-      <div class="text-center mt-5">
-        <a href="{% url 'blog:post_list' %}" class="btn btn-primary">← Back to Blog</a>
-      </div>
+    <!-- Section Title -->
+    <div class="section-title text-center mb-5">
+      <h2 class="section-heading">{{ post.title }}</h2>
     </div>
 
+    <div class="fancy-hover-box post-detail-card p-5">
+      {% if post.image %}
+      <div class="text-center mb-4">
+        <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid rounded mx-auto d-block"
+          style="max-width: 100%; height: auto;">
+      </div>
+      {% endif %}
+
+
+      <p class="post-date text-muted text-center">{{ post.published_at|date:"F j, Y" }}</p>
+
+      <div class="post-body mt-4 text-dark">
+        {{ post.content|linebreaks }}
+      </div>
+
+      {% if post.tags %}
+      <div class="post-tags mt-4 text-center">
+        <strong>Tags:</strong> {{ post.tags }}
+      </div>
+      {% endif %}
+
+      <div class="text-center mt-5">
+        <a href="{% url 'blog:post_list' %}" class="btn-small">← Back to Blog</a>
+      </div>
+    </div>
   </section>
 </div>
 {% endblock %}
-

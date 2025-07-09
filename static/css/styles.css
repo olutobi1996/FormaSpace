@@ -2141,3 +2141,89 @@ a.btn-primary:hover {
   height: 100%;
   border: 0;
 }
+/* Event/Blog Styling */
+.fancy-hover-box {
+  background: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fancy-hover-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.event-card, .blog-post-card, .post-detail-card {
+  text-align: left;
+}
+
+.blog-post-grid, .events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+/* Apply to content generated via CKEditor */
+.post-body p,
+.event-description p {
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Make titles bold */
+.section-heading,
+.post-title,
+.event-title {
+  font-weight: bold;
+}
+
+/* Optional: Add consistent font family */
+.post-body,
+.event-description {
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.section-heading:hover {
+  color: #d4af37;
+  cursor: default; /* Optional: shows it's not clickable */
+}
+
+.section-heading a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.section-heading a:hover {
+  color: #d4af37;
+  text-decoration: none;
+}
+
+.btn-small, .btn-text {
+  padding: 0.5rem 1.2rem;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  background-color: #d4af37; /* gold */
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-small:hover, .btn-text:hover {
+  background-color: #b7952f; /* slightly darker gold */
+  color: #fff;
+}
+
+
+.post-title a {
+  text-decoration: none;
+  color: #212529;
+  transition: color 0.3s;
+}
+
+.post-title a:hover {
+  color: var(--primary-color, #d4af37);
+}

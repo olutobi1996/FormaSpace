@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'locations',
     'core',
     'pages',
+    'ckeditor',
     'cloudinary',
     'cloudinary_storage',
 ]
