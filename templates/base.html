@@ -26,15 +26,6 @@
     <main>{% block content %}{% endblock %}</main>
 
     {% include "partials/footer.html" %}
-    <!-- Navbar toggle script -->
-    <script>
-        const toggleButton = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-
-        toggleButton.addEventListener('click', () => {
-            navLinks.classList.toggle('open');
-        });
-    </script>
     <!-- About script -->
     <script>
         document.querySelectorAll('.faq-question').forEach(button => {
@@ -59,13 +50,47 @@
     <!-- Vanilla Tilt for 3D Tilt Effects -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
     <script>
-        VanillaTilt.init(document.querySelectorAll(".service-card, .feature-image img"), {
+        // Select all images and the specific elements, excluding the logo
+        const tiltElements = Array.from(document.querySelectorAll("img, .service-card, .feature-image img"))
+            .filter(el => !el.closest(".logo")); // Exclude any inside .logo
+
+        VanillaTilt.init(tiltElements, {
             max: 15,
             speed: 400,
             glare: true,
-            "max-glare": 0.2
+            "max-glare": 0.2,
+            gyroscope: true,
+            scale: 1.05
         });
     </script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navWrapper = document.querySelector('.nav-wrapper');
+            const navLinks = document.querySelectorAll('.nav-links');
+            const dropdowns = document.querySelectorAll('.dropdown');
+
+            // Hamburger menu toggle
+            menuToggle.addEventListener('click', () => {
+                navWrapper.classList.toggle('open');
+                navLinks.forEach(ul => ul.classList.toggle('open'));
+            });
+
+            // Dropdown toggle for mobile
+            dropdowns.forEach(dropdown => {
+                const toggle = dropdown.querySelector('.dropdown-toggle');
+                toggle.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('open');
+                    }
+                });
+            });
+        });
+    </script>
+
 
 </body>
 

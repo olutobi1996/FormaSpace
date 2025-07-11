@@ -1,32 +1,53 @@
 {% load static %}
 <header class="navbar">
-    <div class="container navbar-container">
-        <a href="/" class="logo" style="height: 3.5rem; display: flex; align-items: center;">
-            <img src="{% static 'images/formaspacelogo-wrapper.svg' %}" alt="FormaSpace Logo" style="height: 100%;" />
-        </a>
-        <nav>
-            <!-- Toggle button outside ul -->
-            <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
-            <ul class="nav-links">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">SPACES</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{% url 'offices:private_office' %}">Private Offices</a></li>
-                        <li><a href="{% url 'offices:co_working' %}">Co-working</a></li>
-                        <li><a href="{% url 'offices:virtual_office' %}">Virtual Offices</a></li>
-                        <li><a href="{% url 'offices:meeting_rooms' %}">Meeting Rooms</a></li>
-                    </ul>
-                </li>
-                <li><a href="{% url 'blog:post_list' %}">JOURNAL</a></li>
-                <li><a href="{% url 'branding:about' %}">ABOUT</a></li>
-                <li><a href="{% url 'pages:connectivity' %}">CONNECTIONS</a></li>
-                <li><a href="{% url 'enquiries:enquiry_create' %}">ENQUIRE</a></li>
-                <li><a href="{% url 'locations:location' %}">LOCATIONS</a></li>
-                <li><a href="{% url 'blog:event_list' %}">EVENTS</a></li>
-                <li class="contact-item">
-                    <a href="/contact/" class="contact-link">CONTACT</a>
-                </li>
-            </ul>
-        </nav>
+  <div class="navbar-container">
+    <!-- Logo -->
+    <a href="/" class="logo">
+      <img src="{% static 'images/formaspacelogo-wrapper.svg' %}" alt="FormaSpace Logo" />
+    </a>
+
+    <!-- Hamburger button (for mobile) -->
+    <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+
+    <!-- Navigation wrapper -->
+    <div class="nav-wrapper">
+      <!-- Main Navigation -->
+      <ul class="nav-links main-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">SPACES</a>
+          <ul class="dropdown-menu">
+            <li><a href="{% url 'offices:private_office' %}">Private Offices</a></li>
+            <li><a href="{% url 'offices:co_working' %}">Co-working</a></li>
+            <li><a href="{% url 'offices:virtual_office' %}">Virtual Offices</a></li>
+            <li><a href="{% url 'offices:meeting_rooms' %}">Meeting Rooms</a></li>
+          </ul>
+        </li>
+        <li><a href="{% url 'blog:post_list' %}">JOURNAL</a></li>
+        <li><a href="{% url 'branding:about' %}">ABOUT</a></li>
+        <li><a href="{% url 'pages:connectivity' %}">CONNECTIONS</a></li>
+        <li><a href="{% url 'enquiries:enquiry_create' %}">ENQUIRE</a></li>
+        <li><a href="{% url 'locations:location' %}">LOCATIONS</a></li>
+        <li><a href="{% url 'blog:event_list' %}">EVENTS</a></li>
+      </ul>
+
+      <!-- Auth / Contact Links -->
+      <ul class="nav-links auth-nav">
+        <li><a href="/contact/" class="contact-link">CONTACT</a></li>
+        {% if user.is_authenticated %}
+          <li class="auth-item">Welcome, {{ user.get_username }}!</li>
+          <li>
+            <form method="post" action="{% url 'logout' %}">
+              {% csrf_token %}
+              <button type="submit" class="logout-button">LOGOUT</button>
+            </form>
+          </li>
+        {% else %}
+          <li><a href="{% url 'login' %}">LOGIN</a></li>
+          <li><a href="{% url 'enquiries:signup' %}">SIGN UP</a></li>
+        {% endif %}
+      </ul>
     </div>
+  </div>
 </header>
+
+

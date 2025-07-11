@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Sign Up — FormaSpace{% endblock %}
+
+{% block content %}
+<div class="page-light-theme">
+  <section class="page-hero py-5 bg-light">
+    <div class="container">
+      <div class="fancy-hover-box p-5 text-center">
+
+        <!-- Title & Subheading -->
+        <div class="section-title mb-3">
+          <h1 class="section-heading">Join FormaSpace</h1>
+        </div>
+        <p class="text-muted mb-4">Create an account to book rooms and send enquiries.</p>
+
+        <!-- Sign Up Form -->
+        <form method="post" class="text-start">
+          {% csrf_token %}
+          {{ form.non_field_errors }}
+
+          <div class="mb-3">
+            {{ form.username.label_tag }} {{ form.username }}
+          </div>
+          <div class="mb-3">
+            {{ form.password1.label_tag }} {{ form.password1 }}
+          </div>
+          <div class="mb-3">
+            {{ form.password2.label_tag }} {{ form.password2 }}
+          </div>
+          {% if form.errors %}
+          <div class="alert alert-danger">
+            {% for field, errors in form.errors.items %}
+            {% for error in errors %}
+            <div>{{ error }}</div>
+            {% endfor %}
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          <div class="text-center">
+            <button type="submit" class="btn-small">Create Account</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

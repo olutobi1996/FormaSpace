@@ -20,6 +20,7 @@ from django.urls import path, include
 from core.views import home
 from django.conf import settings
 from django.conf.urls.static import static
+from enquiries.views import thank_you
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,6 +32,7 @@ urlpatterns = [
     path('enquiries/', include('enquiries.urls')),
     path('locations/', include('locations.urls')),
     path('integrations/', include('integrations.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
 
 

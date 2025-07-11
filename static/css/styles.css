@@ -126,9 +126,31 @@ h4,
   margin: 0 auto 2rem;
 }
 
+/* Headings With Gold Underline */
+.section-heading {
+  font-family: 'DM Serif Display', serif !important;
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: #000;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.section-heading::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #d4af37;
+  border-radius: 2px;
+  margin: 0.5rem auto 0;
+}
+
 /*------------------------------------
   Navigation (Navbar)
 ------------------------------------*/
+
 .navbar {
   background: white;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
@@ -136,107 +158,135 @@ h4,
   top: 0;
   z-index: 1000;
   font-family: 'Inter', sans-serif;
+  font-size: 1rem;
 }
 
 .navbar-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 0;
+  padding: 1rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 2rem;
 }
 
+/* LOGO */
 .logo {
   flex-shrink: 0;
-  margin-right: 2rem; 
+  display: flex;
+  align-items: center;
 }
 
-
 .logo img {
-  height: 5rem;
+  height: 3rem;
   width: auto;
   display: block;
 }
 
-.nav-links {
+/* NAVIGATION WRAPPER */
+.nav-wrapper {
   display: flex;
   align-items: center;
-  gap: 2rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  justify-content: space-between;
+  flex: 1;
+  gap: 3rem;
 }
 
+/* NAV LISTS */
+.main-nav,
+.auth-nav {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-/* Add position relative to each list item for dropdown positioning */
-.nav-links > li {
-  position: relative;  /* Added for dropdown */
-  margin-right: 2rem;  /* Keep your existing spacing */
+.main-nav {
+  flex: 1;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.auth-nav {
+  flex-shrink: 0;
+  justify-content: flex-end;
+  gap: 1.5rem;
+}
+
+/* NAV LINKS */
+.nav-links li {
+  position: relative;
 }
 
 .nav-links a {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  color: black;
-  background: transparent;
-  border-radius: 999px;
   text-decoration: none;
-  transition: background 0.2s ease, color 0.2s ease;
+  padding: 0.5rem 0.75rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #000;
+  font-size: 1rem;
+  transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
-  background: rgba(255, 255, 255, 0.05);
   color: #d4af37;
 }
 
-.nav-links a::after {
-  display: none !important;
-}
-
-.contact-item {
-  margin-left: auto;
-}
-
-.contact-item .contact-link {
-  padding: 0.5rem 1.25rem;
-  font-size: 1rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  color: #0d0d0d !important;
-  background: #d4af37 !important;
+/* CONTACT BUTTON */
+.contact-link {
+  background: #d4af37;
+  color: #0d0d0d;
   border-radius: 999px;
-  text-decoration: none;
-  transition: background 0.2s ease;
+  padding: 0.5rem 1.25rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-.contact-item .contact-link:hover {
+.contact-link:hover {
   background: #bfa128 !important;
   color: #fff !important;
 }
 
-/* Dropdown menu container */
+/* AUTH */
+.auth-item {
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #333;
+}
+
+.logout-button {
+  background: transparent;
+  border: none;
+  color: #333;
+  text-transform: uppercase;
+  cursor: pointer;}
+
+/* Dropdown */
 .dropdown-menu {
   display: none;
-  list-style: none;
   position: absolute;
   top: 100%;
   left: 0;
   background: white;
-  min-width: 180px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+  min-width: 180px;
   border-radius: 4px;
   padding: 0.5rem 0;
+  list-style: none;
 }
 
-/* Dropdown menu list items */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
 .dropdown-menu li {
   margin: 0;
 }
 
-/* Dropdown menu links */
 .dropdown-menu a {
   padding: 0.5rem 1rem;
   color: #333;
@@ -244,50 +294,51 @@ h4,
   text-decoration: none;
 }
 
-/* Hover state for dropdown menu links */
 .dropdown-menu a:hover {
   background-color: #f0f0f0;
 }
 
-/* Show dropdown menu on parent hover or focus */
-.dropdown:hover > .dropdown-menu,
-.dropdown:focus-within > .dropdown-menu {
-  display: block;
-}
-
-/* Add arrow after dropdown toggle */
-.dropdown-toggle::after {
-  content: ' ▼';
-  font-size: 0.6rem;
-  margin-left: 0.2rem;
-  color: #333;
-}
-
-/* Hamburger button */
+/* HAMBURGER */
 .menu-toggle {
   display: none;
-  background: none;
   font-size: 2rem;
+  background: none;
   border: none;
   cursor: pointer;
+  color: #000; /* Ensure it's visible */
+  z-index: 1001; /* Above nav */
 }
 
-/* Mobile styles */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
   }
+}
 
-  .nav-links {
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    background-color: white;
     position: absolute;
     top: 100%;
     left: 0;
-    right: 0;
-    flex-direction: column;
-    background: white;
+    padding: 1rem 0;
+    z-index: 999;
     display: none;
-    gap: 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-wrapper.open {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0;
   }
 
   .nav-links.open {
@@ -296,27 +347,79 @@ h4,
 
   .nav-links li {
     width: 100%;
-    text-align: center;
-    padding: 0.5rem 0;
+    padding: 0.5rem 1.5rem;
   }
 
-  .contact-item {
-    margin-left: 0;
-  }
-
-  /* Optional: Make dropdown-menu inside mobile menu display block on click
-     You can add JS to toggle this if needed */
   .dropdown-menu {
     position: static;
-    box-shadow: none;
     background: transparent;
+    box-shadow: none;
+    display: none;
     padding: 0;
+    margin: 0;
+  }
+
+  .dropdown.open .dropdown-menu {
+    display: block;
   }
 
   .dropdown-menu a {
-    padding-left: 2rem; /* indent dropdown items on mobile */
-    color: #000;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    background: none;
+    width: 100%;
   }
+}
+
+
+.form-container {
+  max-width: 500px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', sans-serif;
+}
+
+.form-container h2 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #0d0d0d;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.form-container label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+.form-container input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-top: 0.5rem;
+}
+
+.submit-btn {
+  margin-top: 2rem;
+  width: 100%;
+  background: #d4af37;
+  color: white;
+  border: none;
+  padding: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.submit-btn:hover {
+  background: #bfa128;
 }
 
 /*------------------------------------
@@ -1520,8 +1623,10 @@ a.btn-primary:hover {
 }
 
 .page-light-theme {
-  background-color: #fff;
+  position: relative;
+  background: linear-gradient(135deg, #fffdfa 0%, #f9f6f1 100%);
 }
+
 /*------------------------------------
   Private Office Intro Section (Styled)
 ------------------------------------*/
@@ -2226,4 +2331,38 @@ a.btn-primary:hover {
 
 .post-title a:hover {
   color: var(--primary-color, #d4af37);
+}
+/* Logged in Users */
+.auth-links a,
+.logout-button {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.auth-links a:hover,
+.logout-button:hover {
+  color: #d4af37;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.logout-button {
+  background: none;
+  border: none;
+  color: black;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+
+.logout-button:hover {
+  color: #d4af37;
+  background: rgba(255, 255, 255, 0.05);
 }
