@@ -1,8 +1,9 @@
 from django import forms
 from .models import Enquiry
-from django import forms
+from .models import Subscriber
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+
 
 class CustomUserCreationForm(UserCreationForm):
     email = forms.EmailField(required=True)
@@ -52,4 +53,17 @@ def signup_view(request):
         form = CustomUserCreationForm()
 
     return render(request, 'registration/signup.html', {'form': form})
+
+
+
+class SubscriberForm(forms.ModelForm):
+    class Meta:
+        model = Subscriber
+        fields = ['email']
+        widgets = {
+            'email': forms.EmailInput(attrs={
+                'placeholder': 'Enter your email',
+                'class': 'form-control',
+            })
+        }
 

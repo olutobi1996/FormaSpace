@@ -56,23 +56,38 @@
           </form>
         </div>
       </div>
+      <div class="footer-subscribe scroll-fade">
+        <h4>Stay In The Loop</h4>
+        <p>Sign up to receive updates, insights & offers.</p>
+      </div> <!-- End .footer-container -->
+    </div> <!-- End .footer-glow-box -->
 
-    </div> <!-- End .footer-container -->
-  </div> <!-- End .footer-glow-box -->
+    <form method="post" action="{% url 'enquiries:subscribe' %}" class="subscribe-form">
+      {% csrf_token %}
+      {{ subscription_form.email }}
+      <button type="submit" class="cta-button">Subscribe</button>
+    </form>
 
-  <!-- ✅ Footer Bottom moved outside the grid -->
-  <div id="footer-bottom">
-    <div class="container footer-bottom-content">
-      <ul class="social-icons">
-        <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-        <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
-        <li><a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i
-              class="fab fa-instagram"></i></a></li>
-        <li><a href="#" aria-label="RSS"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <p id="footer-info">
-        &copy; {{ now|date:"Y" }} <a href="#">FormaSpace</a>
-      </p>
+    {% if subscription_success %}
+    <p class="success-message">{{ subscription_success }}</p>
+    {% endif %}
+    {% if subscription_error %}
+    <p class="error-message">{{ subscription_error }}</p>
+    {% endif %}
+
+    <!-- ✅ Footer Bottom moved outside the grid -->
+    <div id="footer-bottom">
+      <div class="container footer-bottom-content">
+        <ul class="social-icons">
+          <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i
+                class="fab fa-instagram"></i></a></li>
+          <li><a href="#" aria-label="RSS"><i class="fas fa-rss"></i></a></li>
+        </ul>
+        <p id="footer-info">
+          &copy; {{ now|date:"Y" }} <a href="#">FormaSpace</a>
+        </p>
+      </div>
     </div>
-  </div>
 </footer>

@@ -11,3 +11,12 @@ class Enquiry(models.Model):
 
     def __str__(self):
         return f"Enquiry from {self.name} - {self.email}"
+
+
+
+class Subscriber(models.Model):
+    email = models.EmailField(unique=True)
+    date_joined = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.email

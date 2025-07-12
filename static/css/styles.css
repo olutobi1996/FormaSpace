@@ -1351,6 +1351,56 @@ a.btn-secondary {
     padding: 1.5rem 1rem 2rem;
   }
 }
+.footer-subscribe {
+  margin-top: 2rem;
+  background-color: #1e1e1e;
+  padding: 1.5rem;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.subscribe-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.subscribe-box input[type="email"] {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background: #2c2c2c;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.subscribe-box button.cta-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #d4af37;
+  border: none;
+  border-radius: 4px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.subscribe-box button.cta-button:hover {
+  background-color: #b9972f;
+}
+
+.success-message {
+  margin-top: 1rem;
+  color: #d4af37;
+  font-weight: bold;
+}
+
+.subscribe-form input[type="email"] {
+  display: block !important;
+}
+
 
 /*------------------------------------
   About Section

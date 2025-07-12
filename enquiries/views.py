@@ -1,10 +1,13 @@
 from django.shortcuts import render, redirect
-from .forms import EnquiryForm
+from django.http import HttpResponseRedirect 
 from django.core.mail import send_mail
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
-from django.urls import reverse
+from django.conf import settings
+from .forms import EnquiryForm, SubscriberForm, CustomUserCreationForm
+from urllib.parse import urlencode
+
 
 @login_required
 def enquiry_create(request):
@@ -17,8 +20,8 @@ def enquiry_create(request):
             send_mail(
                 subject=f'New Enquiry from {enquiry.name}',
                 message=enquiry.message,
-                from_email=enquiry.email,
-                recipient_list=['you@formaspace.com'],  # Update this email
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=[settings.DEFAULT_FROM_EMAIL],
                 fail_silently=False,
             )
 
@@ -31,7 +34,7 @@ def enquiry_create(request):
                     "We've received your message and will get back to you shortly.\n\n"
                     "— The FormaSpace Team"
                 ),
-                from_email='you@formaspace.com',
+                from_email=settings.DEFAULT_FROM_EMAIL,
                 recipient_list=[enquiry.email],
                 fail_silently=False,
             )
@@ -55,7 +58,7 @@ def thank_you(request):
 
 def signup_view(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)
@@ -69,15 +72,43 @@ def signup_view(request):
                     "You can now book rooms and submit enquiries through your account.\n\n"
                     "— The FormaSpace Team"
                 ),
-                from_email='you@formaspace.com',
+                from_email=settings.DEFAULT_FROM_EMAIL,
                 recipient_list=[user.email],
                 fail_silently=False,
             )
 
-            # Redirect to thank you page with a URL param for auto-redirect if you want
             return redirect('enquiries:thank_you')
     else:
-        form = UserCreationForm()
+        form = CustomUserCreationForm()
 
     return render(request, 'registration/signup.html', {'form': form})
+
+
+def subscribe_newsletter(request):
+    if request.method == "POST":
+        form = SubscriberForm(request.POST)
+        if form.is_valid():
+            subscriber = form.save()
+
+            send_mail(
+                subject="Welcome to FormaSpace News!",
+                message=(
+                    "Hi there,\n\n"
+                    "Thanks for subscribing to FormaSpace News. "
+                    "We'll keep you updated with the latest insights and updates!\n\n"
+                    "— The FormaSpace Team"
+                ),
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=[subscriber.email],
+                fail_silently=False,
+            )
+
+            # Redirect back with success message in query param
+            return HttpResponseRedirect(f"{request.META.get('HTTP_REFERER')}?subscribed=1")
+        else:
+            return HttpResponseRedirect(f"{request.META.get('HTTP_REFERER')}?subscribed=0")
+    else:
+        return redirect("enquiries:enquiry_create")
+
+
 
