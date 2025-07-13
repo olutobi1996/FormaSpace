@@ -1187,10 +1187,11 @@ a.btn-secondary {
 /* Grid Layout */
 .premium-footer .footer-container {
   display: grid;
-  grid-template-columns: 1.2fr 2fr;
+  grid-template-columns: 1.2fr 2fr 1.2fr;
   gap: 3rem;
   padding: 1rem;
 }
+
 
 /* Responsive Grid */
 @media (max-width: 768px) {
@@ -1350,13 +1351,26 @@ a.btn-secondary {
   #footer-bottom {
     padding: 1.5rem 1rem 2rem;
   }
+  @media (max-width: 768px) {
+  .premium-footer .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-subscribe {
+    order: 3;
+    margin-top: 2rem;
+  }
+}
 }
 .footer-subscribe {
-  margin-top: 2rem;
-  background-color: #1e1e1e;
-  padding: 1.5rem;
+  background-color: #000; /* Match the full black background */
+  padding: 1rem;
   border-radius: 8px;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
 .subscribe-form {
@@ -1366,26 +1380,47 @@ a.btn-secondary {
   margin-top: 1rem;
 }
 
+.subscribe-subtitle {
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+
+.footer-subscribe .subscribe-form {
+  max-width: 500px;
+  margin: 1rem auto 0;
+}
+
 .subscribe-box input[type="email"] {
   flex: 1;
-  padding: 0.75rem 1rem;
-  border: 1px solid #444;
-  border-radius: 4px;
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 6px;
   background: #2c2c2c;
   color: #fff;
   font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box;
 }
 
+
 .subscribe-box button.cta-button {
-  padding: 0.75rem 1.5rem;
   background-color: #d4af37;
+  color: #111;
+  padding: 0.8rem 1.5rem;
   border: none;
   border-radius: 4px;
-  color: #000;
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s ease;
 }
+
+.subscribe-box button.cta-button:hover {
+  background-color: #b48a2c;
+}
+
 
 .subscribe-box button.cta-button:hover {
   background-color: #b9972f;
@@ -1401,6 +1436,71 @@ a.btn-secondary {
   display: block !important;
 }
 
+.subscribe-box input::placeholder {
+  color: #fff;
+  opacity: 0.7; /* optional: slightly dim for subtlety */
+}
+
+.popup-messages {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 90%;
+  width: 500px;
+}
+
+.popup-message {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  animation: slideDown 0.4s ease;
+}
+
+.popup-message.success {
+  background-color: #111;
+  color: #d4af37;
+  border-left: 6px solid #d4af37;
+}
+
+.popup-message.error {
+  background-color: #2c0000;
+  color: #ffb3b3;
+  border-left: 6px solid #ff4d4d;
+}
+
+.popup-text {
+  flex: 1;
+  padding-right: 1rem;
+}
+
+.close-popup {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Animation */
+@keyframes slideDown {
+  from {
+    transform: translateY(-50%) translateX(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) translateX(-50%);
+    opacity: 1;
+  }
+}
 
 /*------------------------------------
   About Section

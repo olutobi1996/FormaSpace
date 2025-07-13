@@ -13,20 +13,36 @@ class CustomUserCreationForm(UserCreationForm):
         fields = ['username', 'email', 'password1', 'password2']
 
 
+from django import forms
+from .models import Enquiry
+
 class EnquiryForm(forms.ModelForm):
     class Meta:
         model = Enquiry
-        fields = ['name', 'email', 'phone', 'preferred_location', 'space_requirements', 'message']
+        fields = ['name', 'phone', 'email', 'space_requirements', 'message']  # Removed preferred_location
+
         widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Your full name'}),
-            'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Your email'}),
-            'phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Optional phone number'}),
-            'preferred_location': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'e.g. Austin, TX'}),
-            'space_requirements': forms.Textarea(attrs={'class': 'form-control', 'rows': 3, 'placeholder': 'What kind of space are you looking for?'}),
-            'message': forms.Textarea(attrs={'class': 'form-control', 'rows': 4, 'placeholder': 'Additional message...'}),
+            'name': forms.TextInput(attrs={
+                'placeholder': 'Name',
+                'required': True,
+            }),
+            'phone': forms.TextInput(attrs={
+                'placeholder': 'Phone',
+            }),
+            'email': forms.EmailInput(attrs={
+                'placeholder': 'Email Address',
+                'required': True,
+            }),
+            'space_requirements': forms.TextInput(attrs={
+                'placeholder': 'Space Requirements',
+            }),
+            'message': forms.Textarea(attrs={
+                'placeholder': 'Message',
+                'rows': 4,
+                'required': True,
+            }),
         }
 
-from .forms import CustomUserCreationForm  # import your custom form
 
 def signup_view(request):
     if request.method == 'POST':

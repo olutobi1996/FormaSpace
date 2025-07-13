@@ -7,6 +7,7 @@ from django.contrib.auth import login
 from django.conf import settings
 from .forms import EnquiryForm, SubscriberForm, CustomUserCreationForm
 from urllib.parse import urlencode
+from django.contrib import messages  
 
 
 @login_required
@@ -84,6 +85,7 @@ def signup_view(request):
     return render(request, 'registration/signup.html', {'form': form})
 
 
+
 def subscribe_newsletter(request):
     if request.method == "POST":
         form = SubscriberForm(request.POST)
@@ -103,12 +105,14 @@ def subscribe_newsletter(request):
                 fail_silently=False,
             )
 
-            # Redirect back with success message in query param
-            return HttpResponseRedirect(f"{request.META.get('HTTP_REFERER')}?subscribed=1")
+            messages.success(request, "Thanks for subscribing!")  
         else:
-            return HttpResponseRedirect(f"{request.META.get('HTTP_REFERER')}?subscribed=0")
-    else:
-        return redirect("enquiries:enquiry_create")
+            messages.error(request, "Subscription failed. Please check your email.")  
+
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+    return redirect("enquiries:enquiry_create")
+
 
 
 

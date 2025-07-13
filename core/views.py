@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from core.models import MyVideo
-from enquiries.forms import SubscriberForm
+from enquiries.forms import SubscriberForm, EnquiryForm
 
 
 def home(request):
@@ -21,6 +21,7 @@ def home(request):
         'subscription_form': subscription_form,
         'subscription_success': subscription_success,
         'subscription_error': subscription_error,
+        'enquiry_form': EnquiryForm(),
     })
 
 

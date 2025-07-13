@@ -22,6 +22,16 @@
 <body>
     {% include "partials/navbar.html" %}
 
+    {% if messages %}
+    <div class="popup-messages">
+        {% for message in messages %}
+        <div class="popup-message {{ message.tags }}">
+            <span class="popup-text">{{ message }}</span>
+            <button class="close-popup" onclick="this.parentElement.style.display='none';">&times;</button>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
 
     <main>{% block content %}{% endblock %}</main>
 
@@ -90,6 +100,13 @@
         });
     </script>
 
+    <script>
+        setTimeout(() => {
+            document.querySelectorAll('.popup-message').forEach(el => {
+                el.style.display = 'none';
+            });
+        }, 5000); // 5 seconds
+    </script>
 
 </body>
 
