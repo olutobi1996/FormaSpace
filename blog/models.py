@@ -19,6 +19,10 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+    def get_absolute_url(self):
+        # Adjust 'blog:post_detail' to your URL pattern name
+        return reverse('blog:post_detail', args=[self.id])
+
 class Event(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()

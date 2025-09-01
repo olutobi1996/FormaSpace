@@ -32,11 +32,11 @@ class BlogSitemap(Sitemap):
     changefreq = 'daily'
 
     def items(self):
-        # Only include posts where published_at is in the past
         return Post.objects.filter(published_at__lte=timezone.now())
 
     def location(self, obj):
         return obj.get_absolute_url()
 
     def lastmod(self, obj):
-        return obj.published_at  # or obj.updated_at if you prefer
+        return obj.published_at
+
