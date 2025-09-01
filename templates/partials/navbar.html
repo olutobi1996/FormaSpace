@@ -17,9 +17,9 @@
           <a href="#" class="dropdown-toggle">SPACES</a>
           <ul class="dropdown-menu">
             <li><a href="{% url 'offices:private_office' %}">Private Offices</a></li>
-            <li><a href="{% url 'offices:co_working' %}">Co-working</a></li>
-            <li><a href="{% url 'offices:virtual_office' %}">Virtual Offices</a></li>
-            <li><a href="{% url 'offices:meeting_rooms' %}">Meeting Rooms</a></li>
+           {% comment %} <li><a href="{% url 'offices:co_working' %}">Co-working</a></li>{% endcomment %}
+            {% comment %}<li><a href="{% url 'offices:virtual_office' %}">Virtual Offices</a></li>{% endcomment %}
+            {% comment %}<li><a href="{% url 'offices:meeting_rooms' %}">Meeting Rooms</a></li>{% endcomment %}
           </ul>
         </li>
         <li><a href="{% url 'blog:post_list' %}">JOURNAL</a></li>

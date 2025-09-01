@@ -5,17 +5,15 @@
 <!-- HERO SECTION with Background Video -->
 {% if video %}
 <section class="hero-section video-hero">
-  <!-- Background Video -->
   <video class="hero-video" autoplay muted loop playsinline>
     <source src="https://formaspace-assets.s3.eu-north-1.amazonaws.com/office-tour.mp4" type="video/mp4">
     <img src="{% static 'images/office-wide.jpg' %}" alt="Premium office interior">
   </video>
 
   <div class="hero-overlay"></div>
-
   <div class="container hero-content text-center">
     <h1 class="heading-xl">Premium Workspace in the Heart of Ayr</h1>
-    <p class="subheading">Private offices, co‑working, and meeting rooms built for productivity and comfort.</p>
+    <p class="subheading">Private offices built for productivity and comfort.</p>
     <a href="/book" class="btn-primary">Book a Tour</a>
   </div>
 </section>
@@ -39,12 +37,13 @@
         <img src="{% static 'images/office.jpg' %}" alt="Office space" />
         <div class="card-content">
           <h3>Office Space</h3>
-          <p>Remove the hassle of serviced offices. Focus on work — we’ll handle the rest.</p>
+          <p>Focus on work — we’ll handle the rest.</p>
           <a href="/offices" class="learn-link">Learn more</a>
         </div>
       </article>
     </div>
 
+    {% comment "hide until future launch" %}
     <div class="hex-container" data-aos="zoom-in" data-aos-delay="200">
       <article class="service-card">
         <div class="card-icon">
@@ -86,6 +85,7 @@
         </div>
       </article>
     </div>
+     {% endcomment %}
   </section>
 </section>
 
@@ -144,7 +144,7 @@
           <i class="ph ph-plug"></i>
         </div>
         <h3 class="step-title">Plug In & Start Instantly</h3>
-        <p class="step-desc">Your workspace is move-in ready. All tech, furniture, and services are included.</p>
+        <p class="step-desc">Your workspace is move-in ready with essentials set up — just plug in and go.</p>
       </div>
     </div>
 

@@ -10,23 +10,29 @@ from urllib.parse import urlencode
 from django.contrib import messages  
 
 
-@login_required
+
 def enquiry_create(request):
     if request.method == 'POST':
         form = EnquiryForm(request.POST)
         if form.is_valid():
             enquiry = form.save()
 
-            # Send notification to FormaSpace team
+            # ✅ Send notification to FormaSpace Gmail
             send_mail(
                 subject=f'New Enquiry from {enquiry.name}',
-                message=enquiry.message,
-                from_email=settings.DEFAULT_FROM_EMAIL,
-                recipient_list=[settings.DEFAULT_FROM_EMAIL],
+                message=(
+                    f"Name: {enquiry.name}\n"
+                    f"Email: {enquiry.email}\n"
+                    f"Phone: {enquiry.phone}\n"
+                    f"Requirements: {enquiry.space_requirements}\n\n"
+                    f"Message:\n{enquiry.message}"
+                ),
+                from_email=settings.DEFAULT_FROM_EMAIL,   # still from Zoho
+                recipient_list=["formaspaceoffice@gmail.com"],  # ✅ your Gmail
                 fail_silently=False,
             )
 
-            # Send confirmation to user
+            # Confirmation back to the user
             send_mail(
                 subject="Thanks for your enquiry — FormaSpace",
                 message=(
@@ -41,16 +47,7 @@ def enquiry_create(request):
             )
 
             return redirect('registration:thank_you')
-    else:
-        initial_data = {}
-        if request.user.is_authenticated:
-            initial_data = {
-                'name': request.user.get_full_name() or request.user.username,
-                'email': request.user.email,
-            }
-        form = EnquiryForm(initial=initial_data)
 
-    return render(request, 'registration/enquiry_form.html', {'form': form})
 
 
 def thank_you(request):
