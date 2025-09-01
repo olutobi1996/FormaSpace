@@ -14,13 +14,19 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-
 from django.contrib import admin
 from django.urls import path, include
 from core.views import home
 from django.conf import settings
 from django.conf.urls.static import static
-from enquiries.views import thank_you
+from django.contrib.sitemaps.views import sitemap
+from core.sitemaps import StaticViewSitemap, BlogSitemap
+from django.views.generic import TemplateView
+
+sitemaps = {
+    'static': StaticViewSitemap,
+    'blog': BlogSitemap,
+}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,8 +39,9 @@ urlpatterns = [
     path('locations/', include('locations.urls')),
     path('integrations/', include('integrations.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
+     path('robots.txt', TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
 ]
-
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])

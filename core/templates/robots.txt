@@ -1,0 +1,11 @@
+# Allow all search engines to crawl the main site
+User-agent: *
+Disallow: /admin/                   # Prevent indexing of Django admin
+Disallow: /accounts/                # Prevent indexing of login/auth pages
+Disallow: /enquiries/signup/        # Optional: signup pages you may not want indexed
+Disallow: /enquiries/subscribe/     # Optional: newsletter subscribe endpoint
+Disallow: /static/                   # Ignore static files
+Disallow: /media/                    # Ignore media files
+
+# Sitemap location
+Sitemap: https://www.formaspace.co.uk/sitemap.xml
