@@ -30,22 +30,6 @@
         <li><a href="{% url 'blog:event_list' %}">EVENTS</a></li>
       </ul>
 
-      <!-- Auth / Contact Links -->
-      <ul class="nav-links auth-nav">
-        <li><a href="{% url 'enquiries:enquiry_create' %}" class="contact-link">CONTACT</a></li>
-        {% if user.is_authenticated %}
-        <li class="auth-item">Welcome, {{ user.get_username }}!</li>
-        <li>
-          <form method="post" action="{% url 'logout' %}">
-            {% csrf_token %}
-            <button type="submit" class="logout-button">LOGOUT</button>
-          </form>
-        </li>
-        {% else %}
-        <li><a href="{% url 'login' %}">LOGIN</a></li>
-        <li><a href="{% url 'enquiries:signup' %}">SIGN UP</a></li>
-        {% endif %}
-      </ul>
     </div>
   </div>
 </header>
