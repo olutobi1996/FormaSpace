@@ -32,9 +32,9 @@
             professionals...</p>
           <p>FormaSpace delivers more than just desks — we offer an environment where focus, community, and ambition
             flourish.</p>
-          <a href="/enquire/" class="btn-small" style="max-width: fit-content; display: inline-block;">Get In Touch</a>
+          <a href="{% url 'enquiries:enquiry_create' %}" class="btn-small"
+            style="max-width: fit-content; display: inline-block;">Get In Touch</a>
         </div>
-
       </div>
     </section>
 
@@ -62,7 +62,7 @@
             infrastructure needed to do your best work — whether you're a legal firm, creative agency, or scaling
             startup.
           </p>
-          <a href="/enquire/" class="btn-primary">Book a Tour</a>
+          <a href="{% url 'enquiries:enquiry_create' %}" class="btn-primary">Book a Tour</a>
         </div>
       </div>
 
@@ -72,11 +72,12 @@
           <h2 class="section-heading">Find Us Here</h2>
         </div>
         <div class="map-container" data-aos="fade-up" data-aos-delay="200">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2262.0963954598487!2d-4.6400214732436345!3d55.46098622297759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s21%20Wellington%20Square%2C%20Ayr!5e0!3m2!1sen!2suk!4v1752071156109!5m2!1sen!2suk"
-            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          <iframe src="https://www.google.com/maps?q=21+Wellington+Square,+Ayr&output=embed" width="100%" height="400"
+            style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
         </div>
       </section>
+
 
       <!-- SERVICES SUMMARY GRID -->
       <section class="private-feature-grid container" data-aos="fade-up" data-aos-delay="400">

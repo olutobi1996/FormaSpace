@@ -14,7 +14,7 @@
   <div class="container hero-content text-center">
     <h1 class="heading-xl">Premium Workspace in the Heart of Ayr</h1>
     <p class="subheading">Private offices built for productivity and comfort.</p>
-    <a href="/book" class="btn-primary">Book a Tour</a>
+    <a href="{% url 'enquiries:enquiry_create' %}" class="btn-primary">Book a Tour</a>
   </div>
 </section>
 {% else %}
@@ -149,7 +149,7 @@
     </div>
 
     <div class="cta-container" data-aos="fade-up" data-aos-delay="400">
-      <a href="#get-started" class="btn-primary">Get Started →</a>
+      <a href="{% url 'enquiries:enquiry_create' %}" class="btn-primary">Get Started →</a>
     </div>
   </section>
 
@@ -168,7 +168,7 @@
       </div>
       <p>Located at 21 Wellington Square, our flagship site offers ten premium, high-specification offices designed
         for ambitious professionals and growing teams.</p>
-      <a href="/enquire/" class="btn-primary">Get Started →</a>
+      <a href="{% url 'enquiries:enquiry_create' %}" class="btn-primary">Get Started →</a>
     </div>
   </div>
 
@@ -183,7 +183,7 @@
       </div>
       <p>Enjoy superfast internet, secure 24/7 access, contemporary furnishings, and thoughtful design — ideal for
         professionals who demand quality and efficiency.</p>
-      <a href="/enquire/" class="btn-primary">Get Started →</a>
+      <a href="{% url 'enquiries:enquiry_create' %}" class="btn-primary">Get Started →</a>
     </div>
   </div>
 
@@ -198,7 +198,7 @@
       </div>
       <p>Join a growing network of like-minded professionals in a space that encourages collaboration, connection, and
         long-term business growth.</p>
-      <a href="/enquire/" class="btn-primary">Get Started →</a>
+      <a href="{% url 'enquiries:enquiry_create' %}" class="btn-primary">Get Started →</a>
     </div>
   </div>
 
@@ -213,7 +213,7 @@
       </div>
       <p>Whether you need a solo office or a team suite, our flexible private offices adapt to your workflow and business size.
         Enjoy 24/7 access and a high-specification environment built for productivity.</p>
-      <a href="/enquire/" class="btn-primary">Get Started →</a>
+      <a href="{% url 'enquiries:enquiry_create' %}" class="btn-primary">Get Started →</a>
     </div>
   </div>
 
@@ -228,7 +228,7 @@
       </div>
       <p>Our workspaces combine comfort, design, and focus — helping you stay productive and inspired, whether you're
         hosting clients or working solo.</p>
-      <a href="/enquire/" class="btn-primary">Get Started →</a>
+     <a href="{% url 'enquiries:enquiry_create' %}" class="btn-primary">Get Started →</a>
     </div>
   </div>
 
@@ -273,7 +273,7 @@
         <li>✔ 24/7 access</li>
       </ul>
     </div>
-    <a href="/enquire/" class="btn-primary large-btn">Get Started →</a>
+    <a href="{% url 'enquiries:enquiry_create' %}" class="btn-primary">Get Started →</a>
   </div>
 </section>
 {% endblock %}

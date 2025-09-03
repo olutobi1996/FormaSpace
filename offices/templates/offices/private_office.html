@@ -20,7 +20,7 @@
     <div class="container hero-content text-center">
       <h1 class="heading-xl">Premium Workspace in the Heart of Ayr</h1>
       <p class="subheading">Private offices, co‑working, and meeting rooms built for productivity and comfort.</p>
-      <a href="/book" class="btn-primary">Book a Tour</a>
+       <a href="{% url 'enquiries:enquiry_create' %}" class="btn-primary">Book a Tour →</a>
     </div>
   </section>
   {% else %}
@@ -117,7 +117,7 @@
       </div>
     </div>
     <div class="cta-container text-center cta-spacing" data-aos="fade-up" data-aos-delay="400">
-      <a href="#get-started" class="btn-primary">Book Now</a>
+       <a href="{% url 'enquiries:enquiry_create' %}" class="btn-primary">Book Now →</a>
     </div>
   </section>
 </div>

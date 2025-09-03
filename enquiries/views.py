@@ -8,7 +8,7 @@ from django.conf import settings
 from .forms import EnquiryForm, SubscriberForm, CustomUserCreationForm
 from urllib.parse import urlencode
 from django.contrib import messages  
-
+from .forms import EnquiryForm
 
 
 def enquiry_create(request):
@@ -27,12 +27,12 @@ def enquiry_create(request):
                     f"Requirements: {enquiry.space_requirements}\n\n"
                     f"Message:\n{enquiry.message}"
                 ),
-                from_email=settings.DEFAULT_FROM_EMAIL,   # still from Zoho
-                recipient_list=["formaspaceoffice@gmail.com"],  # ✅ your Gmail
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=["formaspaceoffice@gmail.com"],
                 fail_silently=False,
             )
 
-            # Confirmation back to the user
+            # ✅ Confirmation email to user
             send_mail(
                 subject="Thanks for your enquiry — FormaSpace",
                 message=(
@@ -47,6 +47,11 @@ def enquiry_create(request):
             )
 
             return redirect('registration:thank_you')
+    else:
+        form = EnquiryForm()
+
+    return render(request, 'registration/enquiry_form.html', {'form': form})
+
 
 
 
@@ -75,7 +80,7 @@ def signup_view(request):
                 fail_silently=False,
             )
 
-            return redirect('enquiries:thank_you')
+            return redirect('registration:thank_you')
     else:
         form = CustomUserCreationForm()
 
