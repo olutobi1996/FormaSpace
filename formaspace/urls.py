@@ -39,8 +39,11 @@ urlpatterns = [
     path('locations/', include('locations.urls')),
     path('integrations/', include('integrations.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path("privacy/", TemplateView.as_view(template_name="legal/privacy.html"), name="privacy"),
+    path("terms/", TemplateView.as_view(template_name="legal/terms.html"), name="terms"),
+    path("cookies/", TemplateView.as_view(template_name="legal/cookies.html"), name="cookies"),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
-     path('robots.txt', TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
+    path('robots.txt', TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
 ]
 
 if settings.DEBUG:
