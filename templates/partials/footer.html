@@ -32,11 +32,12 @@
 
         <!-- ✅ Brochure Download Button -->
         <p>
-          <a href="{% static 'files/formaspace-brochure.pdf' %}" 
-             class="btn-primary" 
-             target="_blank" 
-             download>
-             📄 Download Brochure
+          <!-- Preview Link -->
+          <a href="{% static 'files/formaspace-brochure.pdf' %}" class="btn-secondary" target="_blank">
+            👀 View Brochure
+          </a>
+          <a href="{% static 'files/formaspace-brochure.pdf' %}" class="btn-primary" target="_blank" download>
+            📄 Download Brochure
           </a>
         </p>
       </div>
@@ -87,17 +88,20 @@
     <div class="container footer-bottom-content">
       <ul class="social-icons">
         <li>
-          <a href="https://www.facebook.com/formaspaceoffice" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <a href="https://www.facebook.com/formaspaceoffice" target="_blank" rel="noopener noreferrer"
+            aria-label="Facebook">
             <i class="fab fa-facebook-f"></i>
           </a>
         </li>
         <li>
-          <a href="https://www.linkedin.com/in/formaspaceoffice" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/formaspaceoffice" target="_blank" rel="noopener noreferrer"
+            aria-label="LinkedIn">
             <i class="fab fa-linkedin-in"></i>
           </a>
         </li>
         <li>
-          <a href="https://www.instagram.com/formaspaceoffice" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <a href="https://www.instagram.com/formaspaceoffice" target="_blank" rel="noopener noreferrer"
+            aria-label="Instagram">
             <i class="fab fa-instagram"></i>
           </a>
         </li>
@@ -108,13 +112,11 @@
         </li>
       </ul>
       <p id="footer-info">
-        &copy; {{ now|date:"Y" }} <a href="#">FormaSpace</a> | 
-        <a href="{% url 'privacy' %}">Privacy Policy</a> | 
-        <a href="{% url 'terms' %}">Terms</a> | 
+        &copy; {{ now|date:"Y" }} <a href="#">FormaSpace</a> |
+        <a href="{% url 'privacy' %}">Privacy Policy</a> |
+        <a href="{% url 'terms' %}">Terms</a> |
         <a href="{% url 'cookies' %}">Cookies</a>
       </p>
     </div>
   </div>
 </footer>
-
-

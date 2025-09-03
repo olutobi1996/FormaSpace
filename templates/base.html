@@ -32,6 +32,14 @@
         {% endfor %}
     </div>
     {% endif %}
+    <div id="cookie-banner" class="cookie-banner">
+        <p>
+            We use cookies to improve your experience. By continuing to browse, you accept our
+            <a href="{% url 'cookies' %}">Cookie Policy</a>.
+        </p>
+        <button id="accept-cookies" class="btn-primary">Accept All</button>
+    </div>
+
 
     <main>{% block content %}{% endblock %}</main>
 
@@ -106,6 +114,24 @@
                 el.style.display = 'none';
             });
         }, 5000); // 5 seconds
+    </script>
+
+    <!-- Cokies -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const banner = document.getElementById('cookie-banner');
+
+            // Show banner only if cookies haven't been accepted
+            if (!localStorage.getItem('cookies_accepted')) {
+                banner.classList.add('show');
+            }
+
+            // Accept button
+            document.getElementById('accept-cookies').addEventListener('click', function () {
+                localStorage.setItem('cookies_accepted', 'true');
+                banner.classList.remove('show');
+            });
+        });
     </script>
 
 </body>

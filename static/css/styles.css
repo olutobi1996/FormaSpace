@@ -1172,6 +1172,56 @@ a.btn-secondary {
 }
 
 /*------------------------------------
+ Legal Pages
+------------------------------------*/
+/* Legal Pages */
+.legal-page {
+  background-color: #ffffff; /* white background */
+  color: #0d0d0d; /* dark text for readability */
+  padding: 4rem 2rem;
+  border-radius: 8px; /* optional for nicer look */
+}
+
+/*------------------------------------
+ Cookies Pop UP
+------------------------------------*/
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #d4af37;
+  color: #000;
+  padding: 1rem;
+  text-align: center;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+    /* Hidden by default */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.cookie-banner a {
+  color: #000;
+  text-decoration: underline;
+}
+
+.cookie-banner button {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.cookie-banner.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/*------------------------------------
   Footer
 ------------------------------------*/
 
