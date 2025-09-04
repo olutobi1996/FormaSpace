@@ -46,7 +46,7 @@ def enquiry_create(request):
                 fail_silently=False,
             )
 
-            return redirect('registration:thank_you')
+            return redirect('enquiries:thank_you')
     else:
         form = EnquiryForm()
 
