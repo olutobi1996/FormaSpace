@@ -1183,25 +1183,39 @@ a.btn-secondary {
 }
 
 /*------------------------------------
- Cookies Pop UP
+  Cookies Pop Up
 ------------------------------------*/
 .cookie-banner {
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
   background: #d4af37;
   color: #000;
   padding: 1rem;
-  text-align: center;
-  z-index: 9999;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
-    /* Hidden by default */
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+  text-align: center;
+  z-index: 9999;
+
+  /* start hidden & off-screen for a smooth slide-in */
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform .3s ease, opacity .3s ease;
+}
+
+/* when we decide to show it */
+.cookie-banner.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* hard-hide when not needed */
+.cookie-banner[hidden] {
+  display: none;
 }
 
 .cookie-banner a {
@@ -1209,17 +1223,14 @@ a.btn-secondary {
   text-decoration: underline;
 }
 
-.cookie-banner button {
+.cookie-banner .btn-primary {
   background: #000;
   color: #fff;
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
 }
-.cookie-banner.show {
-    opacity: 1;
-    visibility: visible;
-}
+
 
 /*------------------------------------
   Footer

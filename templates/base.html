@@ -32,15 +32,15 @@
         {% endfor %}
     </div>
     {% endif %}
-    <div id="cookie-banner" class="cookie-banner">
+    <div id="cookie-banner" class="cookie-banner" aria-live="polite" hidden>
         <p>
             We use cookies to improve your experience. By continuing to browse, you accept our
             <a href="{% url 'cookies' %}">Cookie Policy</a>.
         </p>
-        <button id="accept-cookies" class="btn-primary">Accept All</button>
+        <div class="cookie-actions">
+            <button id="accept-cookies" type="button" class="btn-primary">Accept All</button>
+        </div>
     </div>
-
-
     <main>{% block content %}{% endblock %}</main>
 
     {% include "partials/footer.html" %}
@@ -116,23 +116,43 @@
         }, 5000); // 5 seconds
     </script>
 
-    <!-- Cokies -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        (function () {
             const banner = document.getElementById('cookie-banner');
+            const acceptBtn = document.getElementById('accept-cookies');
+            if (!banner || !acceptBtn) return;
 
-            // Show banner only if cookies haven't been accepted
-            if (!localStorage.getItem('cookies_accepted')) {
-                banner.classList.add('show');
+            const LS_KEY = 'fs_cookies_accepted';
+            const COOKIE_NAME = 'fs_cookies_accepted';
+
+            function hasAccepted() {
+                try {
+                    if (localStorage.getItem(LS_KEY) === '1') return true;
+                } catch (e) { /* localStorage blocked */ }
+                return document.cookie.split('; ').some(c => c.startsWith(COOKIE_NAME + '=1'));
             }
 
-            // Accept button
-            document.getElementById('accept-cookies').addEventListener('click', function () {
-                localStorage.setItem('cookies_accepted', 'true');
+            function accept() {
+                try {
+                    localStorage.setItem(LS_KEY, '1');
+                } catch (e) { /* ignore */ }
+                // 1 year cookie, site-wide
+                document.cookie = COOKIE_NAME + '=1; max-age=31536000; path=/; SameSite=Lax';
                 banner.classList.remove('show');
-            });
-        });
+                banner.setAttribute('hidden', '');
+            }
+
+            // Only show if not accepted yet
+            if (!hasAccepted()) {
+                // unhide immediately (for a11y), then animate in
+                banner.removeAttribute('hidden');
+                requestAnimationFrame(() => banner.classList.add('show'));
+            }
+
+            acceptBtn.addEventListener('click', accept);
+        })();
     </script>
+
 
 </body>
 
