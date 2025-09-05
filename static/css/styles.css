@@ -1551,6 +1551,12 @@ a.btn-secondary {
   cursor: pointer;
 }
 
+.brochure-buttons {
+    display: flex;
+    gap: 10px; /* Adjust gap as needed */
+    flex-wrap: wrap; /* Optional: keeps buttons from overflowing on small screens */
+}
+
 /* Animation */
 @keyframes slideDown {
   from {

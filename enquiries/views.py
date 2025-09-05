@@ -9,6 +9,7 @@ from .forms import EnquiryForm, SubscriberForm, CustomUserCreationForm
 from urllib.parse import urlencode
 from django.contrib import messages  
 from .forms import EnquiryForm
+from .models import Enquiry, Subscriber
 
 
 def enquiry_create(request):
@@ -87,33 +88,36 @@ def signup_view(request):
     return render(request, 'registration/signup.html', {'form': form})
 
 
-
 def subscribe_newsletter(request):
     if request.method == "POST":
-        form = SubscriberForm(request.POST)
-        if form.is_valid():
-            subscriber = form.save()
+        email = request.POST.get('email')
+        if email:
+            subscriber, created = Subscriber.objects.get_or_create(email=email)
+            try:
+                send_mail(
+                    subject="Welcome to FormaSpace News!",
+                    message=(
+                        f"Hi there,\n\nThanks for subscribing to FormaSpace News. "
+                        "We'll keep you updated with the latest insights and updates!\n\n"
+                        "— The FormaSpace Team"
+                    ),
+                    from_email=settings.DEFAULT_FROM_EMAIL,
+                    recipient_list=[email],
+                    fail_silently=False,
+                )
+                messages.success(request, "✅ Thanks for subscribing! Please check your email.")
+            except Exception as e:
+                messages.error(request, f"⚠️ Subscription saved, but email failed: {str(e)}")
 
-            send_mail(
-                subject="Welcome to FormaSpace News!",
-                message=(
-                    "Hi there,\n\n"
-                    "Thanks for subscribing to FormaSpace News. "
-                    "We'll keep you updated with the latest insights and updates!\n\n"
-                    "— The FormaSpace Team"
-                ),
-                from_email=settings.DEFAULT_FROM_EMAIL,
-                recipient_list=[subscriber.email],
-                fail_silently=False,
-            )
-
-            messages.success(request, "Thanks for subscribing!")  
         else:
-            messages.error(request, "Subscription failed. Please check your email.")  
+            messages.error(request, "⚠️ Please enter a valid email.")
 
-        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+        return redirect(request.META.get("HTTP_REFERER", "/"))
 
     return redirect("enquiries:enquiry_create")
+
+
+
 
 
 

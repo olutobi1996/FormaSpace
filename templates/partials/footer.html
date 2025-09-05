@@ -30,16 +30,18 @@
           <a href="mailto:formaspaceoffice@gmail.com">formaspaceoffice@gmail.com</a>
         </p>
 
-        <!-- ✅ Brochure Download Button -->
-        <p>
-          <!-- Preview Link -->
+
+        <!-- Brochure Buttons -->
+        <div class="brochure-buttons">
           <a href="{% static 'files/formaspace-brochure.pdf' %}" class="btn-secondary" target="_blank">
-            👀 View Brochure
+            View Brochure
           </a>
-          <a href="{% static 'files/formaspace-brochure.pdf' %}" class="btn-primary" target="_blank" download>
+          <a href="{% static 'files/formaspace-brochure.pdf' %}" class="btn-secondary" target="_blank" download>
             📄 Download Brochure
           </a>
-        </p>
+        </div>
+
+
       </div>
 
       <!-- Contact Form -->
@@ -75,11 +77,13 @@
         <form method="post" action="{% url 'enquiries:subscribe' %}" class="subscribe-form">
           {% csrf_token %}
           <div class="subscribe-box">
-            {{ subscription_form.email }}
+            <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
             <button type="submit" class="cta-button">Subscribe</button>
           </div>
+
         </form>
       </div>
+
     </div> <!-- End .footer-container -->
   </div> <!-- End .footer-glow-box -->
 
