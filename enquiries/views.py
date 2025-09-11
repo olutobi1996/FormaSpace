@@ -34,7 +34,7 @@ def enquiry_create(request):
                     f"Message:\n{enquiry.message}"
                 ),
                 from_email=settings.DEFAULT_FROM_EMAIL,
-                recipient_list=["formaspaceoffice@gmail.com"],
+                recipient_list=["enquiries@formaspace.co.uk"],
                 fail_silently=False,
             )
 
