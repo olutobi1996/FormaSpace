@@ -12,13 +12,13 @@ from .forms import EnquiryForm
 from .models import Enquiry, Subscriber
 
 
-def enquiry_create(request):
+def enquiry_create(request): 
     if request.method == 'POST':
         form = EnquiryForm(request.POST)
         if form.is_valid():
             enquiry = form.save()
 
-            # ✅ Send notification to FormaSpace Gmail
+            # ✅ Send notification to Gmail
             send_mail(
                 subject=f'New Enquiry from {enquiry.name}',
                 message=(
@@ -33,8 +33,8 @@ def enquiry_create(request):
                     f"Hear About Us: {enquiry.hear_about_us}\n\n"
                     f"Message:\n{enquiry.message}"
                 ),
-                from_email=settings.DEFAULT_FROM_EMAIL,
-                recipient_list=["enquiries@formaspace.co.uk"],
+                from_email=settings.DEFAULT_FROM_EMAIL,  # enquiries@formaspace.co.uk
+                recipient_list=["formaspaceoffice@gmail.com"],  # your Gmail inbox
                 fail_silently=False,
             )
 
@@ -57,8 +57,6 @@ def enquiry_create(request):
         form = EnquiryForm()
 
     return render(request, 'registration/enquiry_form.html', {'form': form})
-
-
 
 
 def thank_you(request):
@@ -120,6 +118,7 @@ def subscribe_newsletter(request):
         return redirect(request.META.get("HTTP_REFERER", "/"))
 
     return redirect("enquiries:enquiry_create")
+
 
 
 
