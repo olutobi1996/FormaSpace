@@ -23,9 +23,14 @@ def enquiry_create(request):
                 subject=f'New Enquiry from {enquiry.name}',
                 message=(
                     f"Name: {enquiry.name}\n"
+                    f"Company: {enquiry.company_name}\n"
                     f"Email: {enquiry.email}\n"
                     f"Phone: {enquiry.phone}\n"
-                    f"Requirements: {enquiry.space_requirements}\n\n"
+                    f"Team Size: {enquiry.team_size}\n"
+                    f"Move-in Timeline: {enquiry.move_in_timeline}\n"
+                    f"Budget Range: {enquiry.budget_range}\n"
+                    f"Requirements: {enquiry.space_requirements}\n"
+                    f"Hear About Us: {enquiry.hear_about_us}\n\n"
                     f"Message:\n{enquiry.message}"
                 ),
                 from_email=settings.DEFAULT_FROM_EMAIL,
@@ -39,7 +44,7 @@ def enquiry_create(request):
                 message=(
                     f"Hi {enquiry.name},\n\n"
                     "Thanks for reaching out to FormaSpace! "
-                    "We've received your message and will get back to you shortly.\n\n"
+                    "We've received your enquiry and will get back to you shortly.\n\n"
                     "— The FormaSpace Team"
                 ),
                 from_email=settings.DEFAULT_FROM_EMAIL,

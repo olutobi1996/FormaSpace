@@ -3,57 +3,82 @@
 
 {% block content %}
 <div class="page-light-theme">
-<section class="page-hero py-5 bg-light">
-  <div class="container">
-    <div class="fancy-hover-box p-4 text-center">
-      <div class="section-title mb-3">
-        <h1 class="section-heading">Make an Enquiry</h1>
-      </div>
-      <p class="text-muted">Let us know your space needs — we’ll get back to you shortly.</p>
-    </div>
-  </div>
-</section>
-
-
-<section class="container py-5">
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <div class="fancy-hover-box p-4">
-        <form method="post" novalidate>
-          {% csrf_token %}
-          {{ form.non_field_errors }}
-
-          <div class="mb-3">
-            {{ form.name.label_tag }} {{ form.name }}
-          </div>
-
-          <div class="mb-3">
-            {{ form.email.label_tag }} {{ form.email }}
-          </div>
-
-          <div class="mb-3">
-            {{ form.phone.label_tag }} {{ form.phone }}
-          </div>
-
-          <div class="mb-3">
-            {{ form.preferred_location.label_tag }} {{ form.preferred_location }}
-          </div>
-
-          <div class="mb-3">
-            {{ form.space_requirements.label_tag }} {{ form.space_requirements }}
-          </div>
-
-          <div class="mb-3">
-            {{ form.message.label_tag }} {{ form.message }}
-          </div>
-
-          <div class="text-center">
-            <button type="submit" class="btn-small">Send Enquiry</button>
-          </div>
-        </form>
+  <section class="page-hero py-5 bg-light">
+    <div class="container">
+      <div class="fancy-hover-box p-4 text-center">
+        <div class="section-title mb-3">
+          <h1 class="section-heading">Make an Enquiry</h1>
+        </div>
+        <p class="text-muted">Tell us about your workspace needs, and we’ll be in touch shortly.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="fancy-hover-box p-4">
+          <form method="post" novalidate>
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+
+            <div class="mb-3">
+              {{ form.name.label_tag }}
+              {{ form.name }}
+            </div>
+
+            <div class="mb-3">
+              {{ form.company_name.label_tag }}
+              {{ form.company_name }}
+            </div>
+
+            <div class="mb-3">
+              {{ form.email.label_tag }}
+              {{ form.email }}
+            </div>
+
+            <div class="mb-3">
+              {{ form.phone.label_tag }}
+              {{ form.phone }}
+            </div>
+
+            <div class="mb-3">
+              {{ form.team_size.label_tag }}
+              {{ form.team_size }}
+            </div>
+
+            <div class="mb-3">
+              {{ form.move_in_timeline.label_tag }}
+              {{ form.move_in_timeline }}
+            </div>
+
+            <div class="mb-3">
+              {{ form.budget_range.label_tag }}
+              {{ form.budget_range }}
+            </div>
+
+            <div class="mb-3">
+              {{ form.space_requirements.label_tag }}
+              {{ form.space_requirements }}
+            </div>
+
+            <div class="mb-3">
+              {{ form.message.label_tag }}
+              {{ form.message }}
+            </div>
+
+            <div class="mb-3">
+              {{ form.hear_about_us.label_tag }}
+              {{ form.hear_about_us }}
+            </div>
+
+            <div class="text-center mt-4">
+              <button type="submit" class="btn btn-primary px-4 py-2">Send Enquiry</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
 {% endblock %}

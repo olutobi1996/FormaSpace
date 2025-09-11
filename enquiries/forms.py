@@ -16,29 +16,32 @@ class CustomUserCreationForm(UserCreationForm):
 class EnquiryForm(forms.ModelForm):
     class Meta:
         model = Enquiry
-        fields = ['name', 'phone', 'email', 'space_requirements', 'message']  # Removed preferred_location
+        fields = [
+            'name',
+            'company_name',
+            'email',
+            'phone',
+            'team_size',
+            'move_in_timeline',
+            'budget_range',
+            'space_requirements',
+            'message',
+            'hear_about_us',
+        ]
 
         widgets = {
-            'name': forms.TextInput(attrs={
-                'placeholder': 'Name',
-                'required': True,
-            }),
-            'phone': forms.TextInput(attrs={
-                'placeholder': 'Phone',
-            }),
-            'email': forms.EmailInput(attrs={
-                'placeholder': 'Email Address',
-                'required': True,
-            }),
-            'space_requirements': forms.TextInput(attrs={
-                'placeholder': 'Space Requirements',
-            }),
-            'message': forms.Textarea(attrs={
-                'placeholder': 'Message',
-                'rows': 4,
-                'required': True,
-            }),
+            'name': forms.TextInput(attrs={'placeholder': 'Full Name', 'required': True}),
+            'company_name': forms.TextInput(attrs={'placeholder': 'Company Name'}),
+            'email': forms.EmailInput(attrs={'placeholder': 'Email Address', 'required': True}),
+            'phone': forms.TextInput(attrs={'placeholder': 'Phone Number'}),
+            'team_size': forms.TextInput(attrs={'placeholder': 'Number of People / Team Size'}),
+            'move_in_timeline': forms.Select(choices=Enquiry._meta.get_field("move_in_timeline").choices),
+            'budget_range': forms.TextInput(attrs={'placeholder': 'Budget Range'}),
+            'space_requirements': forms.Textarea(attrs={'placeholder': 'Space Requirements', 'rows': 3}),
+            'message': forms.Textarea(attrs={'placeholder': 'Additional Details', 'rows': 4}),
+            'hear_about_us': forms.TextInput(attrs={'placeholder': 'How did you hear about us?'}),
         }
+
 
 
 def signup_view(request):
